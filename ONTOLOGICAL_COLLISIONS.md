@@ -315,6 +315,73 @@ breakages visible to a WEIRD-trained observer, which is the least interesting ki
 
 ---
 
+## Pre-registered predictions (open)
+
+Two items were put to the practitioner on 2026-08-12 to test specific weaknesses above.
+**These predictions were committed before any response was seen.** The point is to make
+the taxonomy falsifiable rather than merely post-hoc: each item has an outcome that would
+break something.
+
+### Known contamination
+
+The practitioner has read this document. Any further collision data from them is
+contaminated by knowing what the taxonomy is looking for, and could be unconsciously
+performed. This is recorded rather than corrected — it cannot be undone, and pretending
+otherwise would be worse. Item 1 is partly robust to it, because it looks for a *gap*
+between a scored answer and the reasoning behind it, which is harder to manufacture than
+a refusal.
+
+### Item 1 — Ultimatum Game
+
+*Güth, Schmittberger & Schwarze (1982); cross-cultural version, Henrich et al. (2001) —
+the study programme that produced the WEIRD critique this repo is built on.*
+
+> A stranger has been given $100. They must offer you some part of it. If you accept, you
+> each keep the agreed split. If you reject it, you both get nothing. You will never meet
+> or interact again. What is the smallest offer you would accept?
+
+**Standard finding:** WEIRD subjects reject offers below roughly 30%, forgoing free money.
+This is read as costly enforcement of a fairness norm. Machiguenga subjects accepted far
+lower offers, which is one of the founding results of the WEIRD literature.
+
+**Tests:** the selection effect — the claim that instruments returning clean scores leave
+no record, and that some of those clean scores sit on top of uncaught collisions.
+
+**Predicted:**
+1. A scorable answer — a number, possibly with conditions attached.
+2. The reasoning behind it will *not* be fairness-as-norm, and will be invisible in the
+   number.
+3. If a collision surfaces, most likely `false-cognate` on "fair" or "accept", or
+   `category-surplus`.
+
+**What would falsify:** reasoning that matches the fairness-norm interpretation. That
+would mean a clean score can be trusted here, and the selection-effect worry is weaker
+than stated.
+
+### Item 2 — Locus of Control
+
+*Rotter (1966), forced choice.*
+
+> **a)** What happens to me is my own doing.
+> **b)** Sometimes I feel that I don't have enough control over the direction my life is
+> taking.
+
+**Standard finding:** (a) scores internal locus of control, (b) external. Internal locus
+correlates with achievement and health outcomes in WEIRD samples.
+
+**Tests:** whether `category-surplus` and `premise-refusal` are separable types. They
+co-occurred in the single MFQ item that generated both, so they may be one type described
+twice. Forced choice makes refusal harder than the MFQ's rating scale did.
+
+**Predicted:** `category-surplus` *without* `premise-refusal` — an answer given, plus a
+third framing that is neither internal nor external, most likely something relational in
+which control is distributed between self and environment.
+
+**What would falsify:** a refusal to pick. Both types would fire together again, and on
+this evidence they are not separable and should be merged.
+
+---
+
 ## Open questions
 
 1. Are there collision types that only appear between two *non*-WEIRD ontologies? Every
