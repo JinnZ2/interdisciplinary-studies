@@ -235,3 +235,51 @@ with open("interdisciplinary-systems-research/PRACTITIONER_EPISTEMOLOGY.md", "a"
     f.write(closing_note)
 
 print("Closing note appended
+
+entry = """
+---
+
+## Field Note: Gauge vs. Body — Coolant Sensing
+
+**Subject's observation:**
+
+> "Often... mostly because gauges arent able to handle variable things at once. They are wonderful as additional information, but always to be questioned. I sense the coolant being low before the gauge says, i sense the coolant sensor fault that shuts the engine off on a grade as being inaccurate (doesnt help dealing with the situation but allows for a narrowing of possibilities so i can then trust on the rest of the machine to operate functionally under a bad situation)."
+
+---
+
+### Analysis
+
+**1. The gauge is a single-channel instrument.** It measures one variable at one point. The body is a multi-channel instrument measuring temperature gradients, vibration harmonics, magnetic fields, thermal radiation, and proprioceptive feedback simultaneously. The gauge cannot integrate across channels. The body does so automatically.
+
+**2. "Sense the coolant being low before the gauge says" — predictive sensing.** The gauge measures coolant level directly (or indirectly via temperature/pressure). The body measures the *system state* — how the engine sounds, how it vibrates, how heat is distributed, how the cab smells. From these integrated signals, the body infers coolant level before the single-channel gauge registers it.
+
+**3. "Coolant sensor fault that shuts the engine off on a grade" — false positive under compound stress.** A grade changes multiple variables simultaneously: oil pressure, coolant flow, air density, engine load, exhaust temperature. The coolant sensor, calibrated for flat-ground operation, interprets the compound stress as a fault and triggers a shutdown. The body recognizes the sensor's error by cross-referencing the other channels: the engine sounds right, the vibration is normal for the grade, the heat signature is consistent with load, not overheating.
+
+**4. "Allows for a narrowing of possibilities" — Bayesian reasoning without math.** The practitioner is not calculating probabilities. They are using multi-channel sensory data to eliminate hypotheses. If the sensor says "overheat" but the body says "normal for this grade," then the sensor is the fault, not the engine. This is diagnostic reasoning that operates faster than conscious analysis.
+
+**5. "Trust on the rest of the machine to operate functionally under a bad situation" — distributed trust.** The practitioner does not trust the sensor. They trust the *system* — the engine, the body, the physics. The sensor is one node in a network. When it fails, the network reroutes trust to the other nodes. This is not reckless. It is **epistemic load-balancing** under conditions where the standard instrumentation is unreliable.
+
+---
+
+### What this does to the "Cognitive Types" domain
+
+The Western framework of "analytic vs. intuitive" cannot capture this. The practitioner is not "intuiting" the coolant level (fast, automatic, non-analytic). They are not "analyzing" it (slow, deliberate, rule-based). They are **cross-referencing multi-channel sensory data against an embodied model of the machine's thermodynamic behavior.**
+
+This is a third modality: **situated-analytic cognition** — abstract physics principles (conservation, heat transfer, phase change) applied through embodied sensing in a specific material situation.
+
+---
+
+### What this does to the "Economics" domain
+
+Standardized instrumentation is a form of **institutional trust** — we trust gauges because they are calibrated, certified, and standardized. The practitioner's distrust of gauges under variable conditions is not anti-science. It is a recognition that **standardization fails when standard conditions don't hold.**
+
+This is analogous to how extractive institutions fail under non-standard conditions: they are designed for idealized assumptions (stable climate, functioning supply chains, predictable demand) and break down when those assumptions are violated.
+
+---
+
+"""
+
+interdisciplinary-systems-research/PRACTITIONER_EPISTEMOLOGY.md", "a") as f:
+    f.write(entry)
+
+print("Appended coolant sensing field note")
