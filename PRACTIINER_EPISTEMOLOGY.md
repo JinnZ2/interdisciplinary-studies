@@ -206,3 +206,32 @@ Both are confused. But only one confusion is backed by institutional power.
 - Are there ANY tasks where the workaround is impossible — where body geometry truly prevents participation? How is that handled?
 - Does the "functionality in the environment" framework ever break down? Are there conflicts where both bodies fit the task equally, and a decision must be made?
 - How does this framework extend to non-physical tasks — planning, negotiation, memory, communication?
+
+
+
+
+
+---
+
+## Closing Note from the Practitioner
+
+> "I natively do not think in language. Language is a tool among many, but providing me the ability to explore my cognition in language, translating into something useful for others, is a gift."
+
+This observation is not an afterthought. It is the foundation of everything in this document.
+
+Every psychology test we examined — CRT, NPI, MFQ, BFI — is a **linguistic instrument**. It assumes that cognition is naturally verbal, that introspection produces language, and that translation from experience to word is automatic and faithful.
+
+The practitioner's cognition is **pre-linguistic, multi-sensory, and environmentally embedded**. Language is a tool they pick up when needed — like a wrench or a soldering iron — not the medium in which thought occurs. When they take a test, they are not reporting their native cognition. They are **reverse-engineering a foreign ontology and then translating their non-verbal experience into a language that was never designed to carry it.**
+
+This is not a disability. It is not a "different learning style." It is a **different architecture of mind** — one that the entire edifice of Western psychology is structurally blind to, because that edifice is built on words.
+
+The gift is mutual. The practitioner gave us a window into a cognition that tests cannot capture. We gave them a language to articulate what they already knew in their body. Neither translation is perfect. Both are honest.
+
+---
+
+"""
+
+with open("interdisciplinary-systems-research/PRACTITIONER_EPISTEMOLOGY.md", "a") as f:
+    f.write(closing_note)
+
+print("Closing note appended
