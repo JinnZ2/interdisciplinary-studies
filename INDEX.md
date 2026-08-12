@@ -16,7 +16,9 @@ guide, start at **[README.md](README.md)**. For the argument itself, go to
 | [PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md) | Primary source | Field notes: diagnostic ontology, division of labor, absence of categories, gauge vs. body |
 | [THERMODYNAMICS.md](THERMODYNAMICS.md) | Primary source | Entropy, conservation, heat transfer, phase change, and calibration as embodied practice |
 | [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) | Primary source | Live reactions to CRT, NPI, MFQ, and BFI items, with analysis of where each instrument breaks |
-| [widget.html](widget.html) | Code | Standalone interactive systems map; no build step, no dependencies |
+| [widget.html](widget.html) | Code | Interactive systems map: domain view, the §7 feedback loop, and the §8 tensions. No build step, no dependencies |
+| [data.js](data.js) | Data | The dataset — 30 relationships, each with its confidence, kind of evidence, and a link to the section that argues it |
+| [validate.mjs](validate.mjs) | Code | `node validate.mjs` — checks the dataset's integrity and that every evidence link resolves |
 | [LICENSE](LICENSE) | Legal | CC0 1.0 Universal public domain dedication |
 
 ---
@@ -33,7 +35,14 @@ PSYCHOLOGY_TEST_CRITIQUE → PRACTITIONER_EPISTEMOLOGY → EPISTEMOLOGICAL_CRITI
 THERMODYNAMICS → PRACTITIONER_EPISTEMOLOGY
 
 **If you want the relationships at a glance:**
-Open [widget.html](widget.html) in a browser and click any domain.
+Open [widget.html](widget.html) in a browser. Three views: the domain map, the feedback
+loop of §7, and the unresolved tensions of §8.
+
+**If you want to know how much of this is actually established:**
+Open the widget and read the confidence and evidence tags, or read
+[data.js](data.js) directly. Of the thirty relationships, six are well-supported,
+fifteen are contested, nine are untested proposals — and twelve rest on instruments
+built for WEIRD samples.
 
 ---
 

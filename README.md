@@ -30,7 +30,7 @@ But this is not a standard academic literature review. It is built on two premis
 | File | What It Is | Start Here If... |
 |------|-----------|-----------------|
 | **[RESEARCH_SYNTHESIS.md](RESEARCH_SYNTHESIS.md)** | Main research synthesis — the full theoretical framework, bibliography with methodology notes, research agenda, and the integrated feedback loop | You want the big picture |
-| **[widget.html](widget.html)** | Standalone interactive HTML map — click any domain to see all five bidirectional connections | You want to explore relationships visually |
+| **[widget.html](widget.html)** | Standalone interactive HTML map — the six domains, the §7 feedback loop, and the §8 tensions, with every claim tagged by how well it is actually supported | You want to explore relationships visually |
 | **[EPISTEMOLOGICAL_CRITIQUE.md](EPISTEMOLOGICAL_CRITIQUE.md)** | Foundational critique of WEIRD bias across all six domains; reframes the research agenda through non-WEIRD ontologies | You want to understand why most of the cited studies are suspect |
 | **[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md)** | Field notes from a practitioner — diagnostic ontology, division of labor, embodied sensing, and material reasoning under extreme conditions | You want to see what non-WEIRD cognition actually looks like in practice |
 | **[THERMODYNAMICS.md](THERMODYNAMICS.md)** | The practitioner's framework for entropy, conservation, heat transfer, and phase change as embodied knowledge rather than equations | You want the physics half of the practitioner epistemology |
@@ -49,6 +49,30 @@ Extractive institutions create economic inequality. Inequality selects for preda
 
 ---
 
+## How Much of This Is Actually Established
+
+Every one of the thirty relationships in [data.js](data.js) is tagged with how well it is
+supported and what kind of evidence stands behind it. The tally is not flattering, which
+is the point:
+
+| | |
+|---|---|
+| **Well-supported** | 6 of 30 |
+| **Contested** | 15 of 30 |
+| **Proposed** (argued here, never tested) | 9 of 30 |
+| **Resting on WEIRD instruments** | 12 of 30 |
+
+The feedback loop above is the clearest case. Its first step — extractive institutions
+produce inequality — is historically well-supported. The step that *closes* the loop —
+cognitive depletion preserving extraction — is a theoretical proposal with no direct
+measurement behind it. The cycle is stated with more confidence than its weakest link
+can carry, and the widget now shows exactly where that happens.
+
+These tags are a first pass and are meant to be argued with. Revising them is a
+legitimate contribution.
+
+---
+
 ## Who This Is For
 
 - Researchers in institutional economics, cultural evolution, cognitive science, or anthropology who want to see their field's blind spots
@@ -64,7 +88,11 @@ Extractive institutions create economic inequality. Inequality selects for preda
 2. **Extend the practitioner epistemology:** If you have experience that doesn't fit standard categories, add field notes. Raw is better than polished.
 3. **Test more instruments:** Try standardized psychology tests from your own non-WEIRD perspective. Record where they break.
 4. **Critique the critique:** The epistemology critique is itself WEIRD-written. If you can push it further from the inside of a non-WEIRD ontology, do so.
-5. **Fork the widget:** Add new domains, connections, or relationship types.
+5. **Fork the widget:** Add new domains, connections, or relationship types. Everything
+   lives in [data.js](data.js); run `node validate.mjs` before opening a PR.
+6. **Dispute the evidence tags:** If a relationship is marked `well-supported` and you
+   know the replication failed, or marked `proposed` when there is a literature you can
+   cite, change it and say why. Downgrades are as valuable as upgrades.
 
 ---
 

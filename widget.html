@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Interactive map of the bidirectional relationships between religions, cultures, economics, cognitive types, pathologies, and extraction/predation.">
+<meta name="description" content="Interactive map of the bidirectional relationships between religions, cultures, economics, cognitive types, pathologies, and extraction/predation — with the evidence behind each claim marked.">
 <title>Interdisciplinary Systems Map</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,358 +14,793 @@
     padding: 24px;
     line-height: 1.6;
   }
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #f0f6fc;
-  }
-  .subtitle {
-    font-size: 14px;
-    color: #8b949e;
-    margin-bottom: 24px;
-  }
-  .node-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  @media (max-width: 640px) {
-    .node-grid { grid-template-columns: 1fr; }
-  }
-  .domain-node {
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; color: #f0f6fc; }
+  .subtitle { font-size: 14px; color: #8b949e; margin-bottom: 20px; }
+  a { color: #58a6ff; }
+
+  /* ---- the caveat the practitioner material demands ---- */
+  .caveat {
     border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 16px;
-    cursor: pointer;
-    transition: border-color 0.2s ease, background 0.2s ease;
-    background: #161b22;
-    /* Reset the <button> defaults so the node still reads as a card. */
-    font: inherit;
-    color: inherit;
-    text-align: left;
-    width: 100%;
-    display: block;
-  }
-  .domain-node:hover {
-    border-color: #58a6ff;
-    background: #1c2128;
-  }
-  .domain-node:focus-visible {
-    outline: 2px solid #58a6ff;
-    outline-offset: 2px;
-  }
-  .domain-node[aria-pressed="true"] {
-    border-color: #58a6ff;
-    background: #1c2128;
-    box-shadow: 0 0 0 1px #58a6ff;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .domain-node { transition: none; }
-  }
-  .domain-node .node-icon {
-    width: 32px;
-    height: 32px;
+    border-left: 3px solid #d29922;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  .domain-node .node-title {
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-    color: #f0f6fc;
-    margin-bottom: 4px;
-  }
-  .domain-node .node-desc {
-    display: block;
-    font-size: 12px;
-    color: #8b949e;
-    line-height: 1.5;
-  }
-  .connection-panel {
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 20px;
     background: #161b22;
-    min-height: 160px;
-  }
-  .connection-panel h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 14px 0;
-    color: #f0f6fc;
-  }
-  .connection-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .connection-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    background: #0d1117;
-    border: 1px solid #21262d;
-    border-left: 3px solid var(--accent, #21262d);
+    padding: 12px 16px;
+    margin-bottom: 24px;
     font-size: 13px;
-    line-height: 1.6;
-    color: #c9d1d9;
   }
-  .connection-item .arrow {
-    color: var(--accent, #58a6ff);
-    flex-shrink: 0;
-    margin-top: 2px;
-    font-weight: 600;
-  }
-  .connection-item strong {
+  .caveat summary {
+    cursor: pointer;
     color: #f0f6fc;
+    font-weight: 600;
+    list-style: revert;
   }
-  .connection-item .rel-type {
-    font-size: 11px;
-    color: #8b949e;
-    font-style: italic;
-  }
-  .legend-bar {
+  .caveat p { margin-top: 10px; color: #8b949e; }
+  .caveat .caveat-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; }
+
+  /* ---- tabs ---- */
+  .tabs {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 20px;
-    font-size: 12px;
+    gap: 4px;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 20px;
+  }
+  .tab {
+    font: inherit;
+    font-size: 14px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
     color: #8b949e;
+    padding: 8px 14px;
+    cursor: pointer;
+    margin-bottom: -1px;
   }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .legend-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent, #8b949e);
-    flex-shrink: 0;
-  }
-  .footer {
-    margin-top: 24px;
-    padding-top: 16px;
-    border-top: 1px solid #21262d;
+  .tab:hover { color: #c9d1d9; }
+  .tab[aria-selected="true"] { color: #f0f6fc; border-bottom-color: #f78166; font-weight: 600; }
+  .tab:focus-visible { outline: 2px solid #58a6ff; outline-offset: -2px; border-radius: 4px; }
+
+  /* ---- filters ---- */
+  .filters {
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #161b22;
+    padding: 14px 16px;
+    margin-bottom: 20px;
     font-size: 12px;
-    color: #484f58;
-    text-align: center;
   }
+  .filters fieldset { border: none; margin-bottom: 10px; }
+  .filters fieldset:last-of-type { margin-bottom: 0; }
+  .filters legend { color: #8b949e; margin-bottom: 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .filter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filter-row label {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid #30363d; border-radius: 999px;
+    padding: 4px 12px 4px 8px; cursor: pointer; color: #c9d1d9;
+  }
+  .filter-row label:hover { border-color: #58a6ff; }
+  .filter-row input { accent-color: #58a6ff; }
+  .filter-note { margin-top: 12px; color: #8b949e; }
+
+  /* ---- domain grid ---- */
+  .node-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 640px) { .node-grid { grid-template-columns: 1fr; } }
+  .domain-node {
+    border: 1px solid #30363d; border-radius: 10px; padding: 16px;
+    cursor: pointer; transition: border-color 0.2s ease, background 0.2s ease;
+    background: #161b22;
+    /* Reset <button> defaults so the node still reads as a card. */
+    font: inherit; color: inherit; text-align: left; width: 100%; display: block;
+  }
+  .domain-node:hover { border-color: #58a6ff; background: #1c2128; }
+  .domain-node:focus-visible { outline: 2px solid #58a6ff; outline-offset: 2px; }
+  .domain-node[aria-pressed="true"] {
+    border-color: var(--accent, #58a6ff);
+    background: #1c2128;
+    box-shadow: 0 0 0 1px var(--accent, #58a6ff);
+  }
+  .node-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; margin-bottom: 10px;
+  }
+  .node-title { display: block; font-size: 15px; font-weight: 600; color: #f0f6fc; margin-bottom: 4px; }
+  .node-desc { display: block; font-size: 12px; color: #8b949e; line-height: 1.5; }
+  .node-count { display: block; font-size: 11px; color: #6e7681; margin-top: 8px; }
+  @media (prefers-reduced-motion: reduce) { .domain-node { transition: none; } }
+
+  /* ---- connection panel ---- */
+  .panel {
+    border: 1px solid #30363d; border-radius: 10px;
+    padding: 20px; background: #161b22; min-height: 160px;
+  }
+  .panel h3 { font-size: 16px; font-weight: 600; margin: 0 0 14px 0; color: #f0f6fc; }
+  .connection-list { display: flex; flex-direction: column; gap: 10px; }
+  .connection-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 12px; border-radius: 8px;
+    background: #0d1117; border: 1px solid #21262d;
+    border-left: 3px solid var(--accent, #21262d);
+    font-size: 13px; line-height: 1.6; color: #c9d1d9;
+  }
+  .connection-item .arrow { color: var(--accent, #58a6ff); flex-shrink: 0; margin-top: 2px; font-weight: 600; }
+  .connection-item strong { color: #f0f6fc; }
+  .rel-type { font-size: 11px; color: #8b949e; font-style: italic; }
+  .conn-text { margin: 4px 0 8px 0; }
+  .conn-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 11px; }
+
+  /* ---- evidence tagging ---- */
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    border-radius: 999px; padding: 2px 9px;
+    font-size: 11px; border: 1px solid #30363d; color: #8b949e;
+  }
+  .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .pill.conf-well-supported { color: #3fb950; border-color: #23803a; }
+  .pill.conf-contested      { color: #d29922; border-color: #8f6c17; }
+  .pill.conf-proposed       { color: #8b949e; border-color: #40474f; }
+  .pill.tension { color: #a371f7; border-color: #6f42c1; }
+  .pill.evidence-weird-instrument { color: #f0883e; border-color: #8f4d1a; }
+  .conn-meta a { font-size: 11px; }
+
+  /* ---- feedback loop ---- */
+  .loop-wrap { text-align: center; }
+  svg.ring { width: 100%; max-width: 640px; height: auto; }
+  .ring-arc { fill: none; stroke-width: 3; opacity: 0.55; transition: opacity 0.15s ease, stroke-width 0.15s ease; }
+  .ring-hit { fill: none; stroke: transparent; stroke-width: 26; cursor: pointer; }
+  .ring-step.is-active .ring-arc { opacity: 1; stroke-width: 5; }
+  .ring-step.is-dimmed .ring-arc { opacity: 0.12; }
+  .ring-node circle { fill: #161b22; stroke-width: 2; cursor: pointer; }
+  .ring-node text { fill: #c9d1d9; font-size: 12px; text-anchor: middle; pointer-events: none; }
+  .ring-node .ring-icon { font-size: 20px; }
+  .ring-node:hover circle { fill: #1c2128; }
+  .step-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 20px; text-align: left; counter-reset: step; }
+  .step-btn {
+    font: inherit; text-align: left; width: 100%; cursor: pointer;
+    display: flex; gap: 12px; align-items: flex-start;
+    background: #0d1117; color: #c9d1d9;
+    border: 1px solid #21262d; border-left: 3px solid var(--accent, #21262d);
+    border-radius: 8px; padding: 10px 12px; font-size: 13px;
+  }
+  .step-btn:hover { border-color: #58a6ff; border-left-color: var(--accent, #58a6ff); }
+  .step-btn:focus-visible { outline: 2px solid #58a6ff; outline-offset: 2px; }
+  .step-btn[aria-pressed="true"] { background: #1c2128; box-shadow: 0 0 0 1px var(--accent, #58a6ff); }
+  .step-num { color: var(--accent, #58a6ff); font-weight: 600; flex-shrink: 0; }
+  .escapes { margin-top: 20px; text-align: left; font-size: 13px; }
+  .escapes h4 { color: #3fb950; font-size: 13px; margin-bottom: 8px; }
+  .escapes ul { padding-left: 20px; color: #8b949e; }
+
+  /* ---- tensions ---- */
+  .tension-card {
+    border: 1px solid #30363d; border-left: 3px solid #a371f7;
+    border-radius: 10px; background: #161b22; padding: 16px 18px; margin-bottom: 16px;
+  }
+  .tension-card h3 { color: #f0f6fc; font-size: 16px; margin-bottom: 8px; }
+  .tension-q { color: #c9d1d9; font-size: 14px; margin-bottom: 8px; }
+  .tension-note { color: #8b949e; font-size: 13px; margin-bottom: 14px; }
+  .tension-edges { display: flex; flex-direction: column; gap: 8px; }
+  .tension-edge {
+    font-size: 12px; background: #0d1117; border: 1px solid #21262d;
+    border-radius: 6px; padding: 8px 10px;
+  }
+  .tension-edge .edge-head { color: #f0f6fc; margin-bottom: 4px; }
+  .edge-dir { color: #8b949e; }
+
+  /* ---- legend + footer ---- */
+  .legend-bar { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; font-size: 12px; color: #8b949e; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent, #8b949e); flex-shrink: 0; }
+  .footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid #21262d; font-size: 12px; color: #484f58; text-align: center; }
+  .empty { color: #8b949e; font-size: 13px; }
+  [hidden] { display: none !important; }
 </style>
 </head>
 <body>
 <div class="container">
   <h1>Interdisciplinary Systems Map</h1>
-  <p class="subtitle">Select any domain to explore its bidirectional connections. This map traces how religions, cultures, economics, cognitive types, pathologies, and extraction/predation form a single interconnected system.</p>
-  
-  <div class="node-grid" id="nodeGrid"></div>
+  <p class="subtitle">Thirty claimed relationships between six domains, each tagged with the kind of evidence behind it and linked to the section of the synthesis that argues it.</p>
 
-  <div class="connection-panel" id="connectionPanel">
-    <h3 id="panelTitle">Select a domain above</h3>
-    <div class="connection-list" id="connectionList" aria-live="polite">
-      <div class="connection-item">
-        <span class="arrow" aria-hidden="true">→</span>
-        <div>Choose any domain node to reveal its bidirectional relationships with the other five domains.</div>
-      </div>
-    </div>
+  <details class="caveat" id="caveat">
+    <summary id="caveatTitle"></summary>
+    <p id="caveatBody"></p>
+    <div class="caveat-links" id="caveatLinks"></div>
+  </details>
+
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" id="tab-domains" aria-controls="view-domains" aria-selected="true">Domains</button>
+    <button class="tab" role="tab" id="tab-loop" aria-controls="view-loop" aria-selected="false" tabindex="-1">Feedback loop</button>
+    <button class="tab" role="tab" id="tab-tensions" aria-controls="view-tensions" aria-selected="false" tabindex="-1">Tensions</button>
   </div>
 
-  <div class="legend-bar" id="legendBar"></div>
+  <!-- ============ DOMAINS ============ -->
+  <section id="view-domains" role="tabpanel" aria-labelledby="tab-domains" tabindex="0">
+    <div class="filters">
+      <fieldset>
+        <legend>Confidence</legend>
+        <div class="filter-row" id="filterConfidence"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Kind of evidence</legend>
+        <div class="filter-row" id="filterEvidence"></div>
+      </fieldset>
+      <div class="filter-note" id="filterNote" aria-live="polite"></div>
+    </div>
+
+    <div class="node-grid" id="nodeGrid"></div>
+
+    <div class="panel">
+      <h3 id="panelTitle">Select a domain above</h3>
+      <div class="connection-list" id="connectionList" aria-live="polite">
+        <div class="connection-item">
+          <span class="arrow" aria-hidden="true">→</span>
+          <div>Choose any domain node to reveal its bidirectional relationships with the other five domains.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend-bar" id="legendBar"></div>
+  </section>
+
+  <!-- ============ FEEDBACK LOOP ============ -->
+  <section id="view-loop" role="tabpanel" aria-labelledby="tab-loop" tabindex="0" hidden>
+    <div class="panel loop-wrap">
+      <h3 id="loopTitle"></h3>
+      <p class="subtitle" id="loopIntro"></p>
+      <svg class="ring" id="ring" viewBox="0 0 640 524" role="img" aria-label="A six-step cycle: extraction to economics to pathologies to religions to cultures to cognitive types and back to extraction."></svg>
+      <ol class="step-list" id="stepList"></ol>
+      <div class="escapes">
+        <h4>Escape routes</h4>
+        <ul id="escapeList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TENSIONS ============ -->
+  <section id="view-tensions" role="tabpanel" aria-labelledby="tab-tensions" tabindex="0" hidden>
+    <p class="subtitle" id="tensionIntro"></p>
+    <div id="tensionList"></div>
+  </section>
 
   <div class="footer">
     Interdisciplinary Systems Research — August 2026
   </div>
 </div>
 
+<script src="data.js"></script>
 <script>
-// Single source of truth for the six domains. The node grid, the legend, the panel
-// titles, and the per-connection accent colours are all rendered from this list, so
-// adding a seventh domain means adding one entry here (plus its connections below).
-const domains = [
-  { id: "religion",   label: "Religions",              icon: "⛪",  accent: "#58a6ff", desc: "Moralizing gods, ritual modes, doctrinal vs imagistic transmission" },
-  { id: "culture",    label: "Cultures",               icon: "🌍", accent: "#a371f7", desc: "Fluid vs hardwired attributes, collectivism vs individualism" },
-  { id: "economics",  label: "Economics",              icon: "⚖️", accent: "#3fb950", desc: "Extractive vs inclusive institutions, behavioral biases, inequality" },
-  { id: "cognitive",  label: "Cognitive Types",        icon: "🧠", accent: "#d29922", desc: "Analytic vs intuitive/holistic, System 1 vs System 2, rationality" },
-  { id: "pathology",  label: "Pathologies",            icon: "⚡", accent: "#f85149", desc: "Dark Triad traits, adaptive dysfunction, systemic parasitism" },
-  { id: "extraction", label: "Extraction & Predation", icon: "🔺", accent: "#db6d28", desc: "Surplus extraction, rent-seeking, parasitic institutions" }
-];
+(function () {
+  "use strict";
 
-const connections = {
-  religion: [
-    { target: "Cultures", text: "'Big God' religions create hardwired, entangled cultural attributes that coordinate large-scale cooperation but resist reform. Polytheistic traditions tend toward more fluid cultures.", type: "structural coupling" },
-    { target: "Economics", text: "Religious involvement correlates with greater consistency in economic decision-making and reduced reactivity to gains/losses. Religious dietary laws and observances reshape entire market demand patterns.", type: "behavioral modulation" },
-    { target: "Cognitive Types", text: "Intuitive cognitive style correlates with stronger religious belief; analytic thinking is inversely related to supernatural belief. Rational thinkers may develop intrinsic (internalized) religiosity rather than extrinsic.", type: "cognitive fit" },
-    { target: "Pathologies", text: "Doctrinal modes of religiosity (repetitive teaching, institutional hierarchy) can be co-opted by narcissistic leaders. Religious legitimation is a classic tool for masking extractive power.", type: "exploitation vector" },
-    { target: "Extraction & Predation", text: "The dominium terrae (Genesis 1:26) has served as theological justification for both environmental extraction and human exploitation. Religious surplus extraction (tithes, temple economies) predates capitalism.", type: "ideological justification" }
-  ],
-  culture: [
-    { target: "Religions", text: "Cultural fluidity determines how readily religious configurations can be repurposed or reformed. Hardwired cultures (e.g., caste systems) make religious-political reform extremely difficult.", type: "constraint / enablement" },
-    { target: "Economics", text: "Collectivist cultures prioritize group-oriented purchasing and risk-pooling; individualist cultures drive demand for status-enhancing, personalized products. Cultural distance directly affects transaction costs.", type: "market shaping" },
-    { target: "Cognitive Types", text: "Analytic thinking correlates with individualism; holistic/intuitive thinking correlates with collectivism and social density. Wheat-farming cultures develop more analytic cognition than rice-farming ones.", type: "co-evolution" },
-    { target: "Pathologies", text: "Cultures with high social density and strong conformity pressures may suppress detection of Dark Triad leaders. Conversely, individualist cultures may under-provide collective guardrails against predation.", type: "vulnerability differential" },
-    { target: "Extraction & Predation", text: "Hardwired cultural attributes (entangled, specific) make societies easier to exploit through divide-and-conquer. Fluid cultures can more rapidly reorganize against extractive elites.", type: "resilience / fragility" }
-  ],
-  economics: [
-    { target: "Religions", text: "Economic inequality intensifies status anxiety, which increases demand for religious meaning-making. Low-income countries show more negative perceptions of nature/resource conflicts, often mediated by religious frameworks.", type: "demand-side" },
-    { target: "Cultures", text: "Extractive economic institutions tend to produce cultures of distrust and short-termism. Inclusive institutions foster cultures of innovation, broad-based prosperity, and adaptive efficiency.", type: "institutional imprinting" },
-    { target: "Cognitive Types", text: "Economic inequality elicits Dark Triad-like competitive mindsets (distrust, self-interest, dominance preference) across populations. Cognitive load from poverty impairs decision-making quality.", type: "cognitive stress" },
-    { target: "Pathologies", text: "Economic inequality is positively associated with Dark Triad traits at the population level. Extractive systems select for and reward psychopathic, narcissistic, and Machiavellian behavior in leadership.", type: "selection pressure" },
-    { target: "Extraction & Predation", text: "Extractive political institutions naturally accompany extractive economic institutions—power concentrates, property rights narrow, and surplus flows upward. This is the core engine of predation.", type: "structural identity" }
-  ],
-  cognitive: [
-    { target: "Religions", text: "Analytic cognitive style activates brain networks that suppress social cognition, making religious belief less intuitive. Holistic thinkers gravitate toward intrinsic religious orientation (faith as end, not means).", type: "neural correlate" },
-    { target: "Cultures", text: "Cognitive style is not just individual—it is shaped by social, cultural, and economic environment. Analytic thinking encourages inspecting cultural teachings for self-relevance and questioning social mores.", type: "cultural feedback" },
-    { target: "Economics", text: "Cognitive biases (loss aversion, anchoring, present bias) systematically distort economic decisions. Religious individuals show attenuated impulsivity in investment tasks, suggesting cognitive self-regulation.", type: "decision architecture" },
-    { target: "Pathologies", text: "Dark Triad individuals exploit cognitive biases in others—using charm (Machiavellianism), appearance (narcissism), or threats (psychopathy) as manipulation tools. They are experts at hacking bounded rationality.", type: "exploitation of limits" },
-    { target: "Extraction & Predation", text: "Predatory systems depend on information asymmetries and cognitive overload. Extractive elites benefit when populations operate under high cognitive load, depleted self-control, and heuristic-driven reasoning.", type: "epistemic capture" }
-  ],
-  pathology: [
-    { target: "Religions", text: "Narcissistic leaders often perform well in religious job interviews and gain followings through favorable first impressions. Religious institutions with strong hierarchy and deference to authority are vulnerable to Dark Triad infiltration.", type: "institutional capture" },
-    { target: "Cultures", text: "Dark Triad traits are more prevalent in unequal societies because they are adaptive for status competition. Cultural norms that incentivize ruthless self-advancement normalize what would otherwise be pathological.", type: "cultural normalization" },
-    { target: "Economics", text: "Dark Triad individuals are drawn to economics, law, and politics majors. Companies with psychopathic leaders destroy shareholder value long-term but deliver short-term extraction. Machiavellianism predicts higher salaries.", type: "career selection" },
-    { target: "Cognitive Types", text: "Dark Triad individuals show reduced empathy and theory of mind, but heightened sensitivity to status threats. They exploit the intuitive, social-cognitive processing of others while remaining analytically cold.", type: "cognitive asymmetry" },
-    { target: "Extraction & Predation", text: "Pathology and predation are not identical but are systemically coupled. What is labeled 'pathological' in a cooperative context may be highly adaptive in an extractive one—psychopathy as institutional logic.", type: "contextual adaptation" }
-  ],
-  extraction: [
-    { target: "Religions", text: "Religious institutions have historically managed extraction through tithes, temple economies, and theocratic rent. Moralizing gods can enforce cooperation for elites or mobilize resistance against them.", type: "dual use" },
-    { target: "Cultures", text: "Extractive systems produce cultures of survivalism, risk aversion, and distrust. Peasant economies under extraction develop strategies that prioritize security over profit maximization.", type: "cultural deformation" },
-    { target: "Economics", text: "Extraction and exploitation are the key engines in surplus production for the few by the many. Both natural resources and reproductive labor are treated as externalities in capitalist accounting.", type: "foundational mechanism" },
-    { target: "Cognitive Types", text: "Extractive institutions create chronic cognitive load through unpredictability, surveillance, and scarcity. This impairs the analytic capacities needed to recognize and resist predation.", type: "cognitive depletion" },
-    { target: "Pathologies", text: "Predatory extraction systems select for and elevate individuals with Dark Triad traits. The 'pathology' label often reflects the mismatch between predatory behavior and cooperative norms, not dysfunction per se.", type: "systemic selection" }
-  ]
-};
+  const DATA = SYSTEMS_DATA;
+  const SVG_NS = "http://www.w3.org/2000/svg";
 
-const byId = new Map(domains.map(function(d) { return [d.id, d]; }));
-const byLabel = new Map(domains.map(function(d) { return [d.label, d]; }));
+  const byId = new Map(DATA.domains.map(function (d) { return [d.id, d]; }));
+  const confById = new Map(DATA.confidenceLevels.map(function (c) { return [c.id, c]; }));
+  const evById = new Map(DATA.evidenceKinds.map(function (e) { return [e.id, e]; }));
+  const tensionById = new Map(DATA.tensions.map(function (t) { return [t.id, t]; }));
 
-const nodeGrid = document.getElementById('nodeGrid');
-const legendBar = document.getElementById('legendBar');
-const panelTitle = document.getElementById('panelTitle');
-const connectionList = document.getElementById('connectionList');
+  const SYNTHESIS = "RESEARCH_SYNTHESIS.md";
 
-function renderNodes() {
-  domains.forEach(function(d) {
-    // A real <button> so the node is reachable by Tab and activates on Enter/Space.
-    var node = document.createElement('button');
-    node.type = 'button';
-    node.className = 'domain-node';
-    node.dataset.domain = d.id;
-    node.setAttribute('aria-pressed', 'false');
+  // Active filters. An edge is shown when both its confidence and its
+  // evidence kind are still selected.
+  const active = {
+    confidence: new Set(DATA.confidenceLevels.map(function (c) { return c.id; })),
+    evidence: new Set(DATA.evidenceKinds.map(function (e) { return e.id; }))
+  };
 
-    var icon = document.createElement('span');
-    icon.className = 'node-icon';
-    icon.setAttribute('aria-hidden', 'true');
-    icon.style.background = d.accent + '26'; // ~15% alpha
-    icon.style.color = d.accent;
-    icon.textContent = d.icon;
+  let selectedDomain = null;
+  let selectedStep = null;
 
-    var title = document.createElement('span');
-    title.className = 'node-title';
-    title.textContent = d.label;
-
-    var desc = document.createElement('span');
-    desc.className = 'node-desc';
-    desc.textContent = d.desc;
-
-    node.append(icon, title, desc);
-    nodeGrid.appendChild(node);
-  });
-}
-
-function renderLegend() {
-  domains.forEach(function(d) {
-    var item = document.createElement('span');
-    item.className = 'legend-item';
-
-    var dot = document.createElement('span');
-    dot.className = 'legend-dot';
-    dot.style.setProperty('--accent', d.accent);
-
-    var label = document.createElement('span');
-    label.textContent = d.label;
-
-    item.append(dot, label);
-    legendBar.appendChild(item);
-  });
-}
-
-function selectDomain(id) {
-  var domain = byId.get(id);
-  if (!domain) return; // ignore unknown ids (e.g. a stale or hand-edited URL hash)
-
-  nodeGrid.querySelectorAll('.domain-node').forEach(function(n) {
-    n.setAttribute('aria-pressed', String(n.dataset.domain === id));
-  });
-
-  // "↔" throughout: every relationship in this map is claimed to be bidirectional.
-  panelTitle.textContent = domain.label + ' ↔ Connected Domains';
-  connectionList.replaceChildren();
-
-  (connections[id] || []).forEach(function(conn) {
-    var target = byLabel.get(conn.target);
-
-    var item = document.createElement('div');
-    item.className = 'connection-item';
-    if (target) item.style.setProperty('--accent', target.accent);
-
-    var arrow = document.createElement('span');
-    arrow.className = 'arrow';
-    arrow.setAttribute('aria-hidden', 'true');
-    arrow.textContent = '↔';
-
-    var body = document.createElement('div');
-
-    var name = document.createElement('strong');
-    name.textContent = conn.target;
-
-    var relType = document.createElement('span');
-    relType.className = 'rel-type';
-    relType.textContent = ' (' + conn.type + ')';
-
-    // textContent throughout: connection prose is treated as text, never as markup,
-    // so contributed entries can contain <, &, or quotes without breaking the page.
-    var text = document.createElement('div');
-    text.textContent = conn.text;
-
-    body.append(name, relType, text);
-    item.append(arrow, body);
-    connectionList.appendChild(item);
-  });
-
-  if (window.location.hash.slice(1) !== id) {
-    history.replaceState(null, '', '#' + id);
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
   }
-}
 
-renderNodes();
-renderLegend();
+  function svgEl(tag, attrs) {
+    const node = document.createElementNS(SVG_NS, tag);
+    for (const k in attrs) node.setAttribute(k, attrs[k]);
+    return node;
+  }
 
-// One delegated listener rather than six inline onclick attributes: keeps the page
-// working under a strict Content-Security-Policy and survives re-rendered nodes.
-nodeGrid.addEventListener('click', function(event) {
-  var node = event.target.closest('.domain-node');
-  if (node) selectDomain(node.dataset.domain);
-});
+  function edgeFor(fromId, toId) {
+    return (DATA.connections[fromId] || []).find(function (c) { return c.to === toId; }) || null;
+  }
 
-// Deep links: widget.html#economics opens with Economics already selected.
-window.addEventListener('hashchange', function() {
-  selectDomain(window.location.hash.slice(1));
-});
-if (window.location.hash) selectDomain(window.location.hash.slice(1));
+  function passesFilters(conn) {
+    return active.confidence.has(conn.confidence) && active.evidence.has(conn.evidence);
+  }
+
+  function allEdges() {
+    const out = [];
+    for (const from in DATA.connections) {
+      DATA.connections[from].forEach(function (c) { out.push({ from: from, conn: c }); });
+    }
+    return out;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Shared: the pills that carry an edge's epistemic status.
+   * ------------------------------------------------------------------ */
+  function pill(className, label, title) {
+    const p = el("span", "pill " + className);
+    p.append(el("span", "pill-dot"), el("span", null, label));
+    if (title) p.title = title;
+    return p;
+  }
+
+  function metaRow(conn) {
+    const row = el("div", "conn-meta");
+
+    const conf = confById.get(conn.confidence);
+    if (conf) row.appendChild(pill("conf-" + conn.confidence, conf.label, conf.desc));
+
+    const ev = evById.get(conn.evidence);
+    if (ev) row.appendChild(pill("evidence-" + conn.evidence, ev.label, ev.desc));
+
+    if (conn.tension) {
+      const t = tensionById.get(conn.tension);
+      if (t) {
+        const badge = pill("tension", t.label, t.question);
+        row.appendChild(badge);
+      }
+    }
+
+    // Traceability: every claim either points at the argument behind it or
+    // openly admits there isn't one yet.
+    if (conn.source) {
+      const link = el("a", null, "Evidence →");
+      link.href = SYNTHESIS + conn.source;
+      link.title = "Open the section of RESEARCH_SYNTHESIS.md that argues this";
+      row.appendChild(link);
+    } else {
+      row.appendChild(el("span", "pill", "No section yet"));
+    }
+
+    return row;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Caveat
+   * ------------------------------------------------------------------ */
+  function renderCaveat() {
+    document.getElementById("caveatTitle").textContent = DATA.caveat.title;
+    document.getElementById("caveatBody").textContent = DATA.caveat.body;
+    const links = document.getElementById("caveatLinks");
+    DATA.caveat.links.forEach(function (l) {
+      const a = el("a", null, l.label);
+      a.href = l.href;
+      links.appendChild(a);
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Filters
+   * ------------------------------------------------------------------ */
+  function renderFilters() {
+    buildFilterGroup("filterConfidence", DATA.confidenceLevels, "confidence");
+    buildFilterGroup("filterEvidence", DATA.evidenceKinds, "evidence");
+    updateFilterNote();
+  }
+
+  function buildFilterGroup(containerId, items, key) {
+    const container = document.getElementById(containerId);
+    items.forEach(function (item) {
+      const label = el("label");
+      label.title = item.desc;
+
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.checked = true;
+      box.value = item.id;
+      box.addEventListener("change", function () {
+        if (box.checked) active[key].add(item.id);
+        else active[key].delete(item.id);
+        applyFilters();
+      });
+
+      const count = allEdges().filter(function (e) { return e.conn[key] === item.id; }).length;
+      label.append(box, el("span", null, item.label + " (" + count + ")"));
+      container.appendChild(label);
+    });
+  }
+
+  function updateFilterNote() {
+    const total = allEdges().length;
+    const shown = allEdges().filter(function (e) { return passesFilters(e.conn); }).length;
+    const note = document.getElementById("filterNote");
+    note.textContent = "Showing " + shown + " of " + total + " relationships. " +
+      "Only " + allEdges().filter(function (e) { return e.conn.confidence === "well-supported"; }).length +
+      " are well-supported; " +
+      allEdges().filter(function (e) { return e.conn.evidence === "weird-instrument"; }).length +
+      " rest on instruments built for WEIRD samples.";
+  }
+
+  function applyFilters() {
+    updateFilterNote();
+    renderNodeCounts();
+    if (selectedDomain) renderConnections(selectedDomain);
+    updateRingDimming();
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Domains view
+   * ------------------------------------------------------------------ */
+  const nodeGrid = document.getElementById("nodeGrid");
+  const panelTitle = document.getElementById("panelTitle");
+  const connectionList = document.getElementById("connectionList");
+
+  function renderNodes() {
+    DATA.domains.forEach(function (d) {
+      // A real <button>: reachable by Tab, activates on Enter/Space.
+      const node = el("button", "domain-node");
+      node.type = "button";
+      node.dataset.domain = d.id;
+      node.setAttribute("aria-pressed", "false");
+      node.style.setProperty("--accent", d.accent);
+
+      const icon = el("span", "node-icon", d.icon);
+      icon.setAttribute("aria-hidden", "true");
+      icon.style.background = d.accent + "26"; // ~15% alpha
+      icon.style.color = d.accent;
+
+      node.append(icon, el("span", "node-title", d.label), el("span", "node-desc", d.desc), el("span", "node-count"));
+      nodeGrid.appendChild(node);
+    });
+    renderNodeCounts();
+  }
+
+  function renderNodeCounts() {
+    nodeGrid.querySelectorAll(".domain-node").forEach(function (node) {
+      const list = DATA.connections[node.dataset.domain] || [];
+      const shown = list.filter(passesFilters).length;
+      node.querySelector(".node-count").textContent =
+        shown === list.length
+          ? list.length + " connections"
+          : shown + " of " + list.length + " connections match filters";
+    });
+  }
+
+  function renderLegend() {
+    const legendBar = document.getElementById("legendBar");
+    DATA.domains.forEach(function (d) {
+      const item = el("span", "legend-item");
+      const dot = el("span", "legend-dot");
+      dot.style.setProperty("--accent", d.accent);
+      item.append(dot, el("span", null, d.label));
+      legendBar.appendChild(item);
+    });
+  }
+
+  function renderConnections(id) {
+    const domain = byId.get(id);
+    if (!domain) return;
+
+    // "↔" throughout: every relationship in this map is claimed to be bidirectional.
+    panelTitle.textContent = domain.label + " ↔ Connected Domains";
+    connectionList.replaceChildren();
+
+    const visible = (DATA.connections[id] || []).filter(passesFilters);
+
+    if (!visible.length) {
+      connectionList.appendChild(el("p", "empty", "No relationships from this domain match the current filters."));
+      return;
+    }
+
+    visible.forEach(function (conn) {
+      const target = byId.get(conn.to);
+
+      const item = el("div", "connection-item");
+      if (target) item.style.setProperty("--accent", target.accent);
+
+      const arrow = el("span", "arrow", "↔");
+      arrow.setAttribute("aria-hidden", "true");
+
+      const body = el("div");
+      const head = el("div");
+      head.append(
+        el("strong", null, target ? target.label : conn.to),
+        el("span", "rel-type", " (" + conn.type + ")")
+      );
+
+      // textContent throughout: connection prose is treated as text, never as
+      // markup, so contributed entries can contain <, & or quotes safely.
+      body.append(head, el("div", "conn-text", conn.text), metaRow(conn));
+      item.append(arrow, body);
+      connectionList.appendChild(item);
+    });
+  }
+
+  function selectDomain(id) {
+    if (!byId.has(id)) return; // ignore unknown ids (stale or hand-edited hash)
+    selectedDomain = id;
+
+    nodeGrid.querySelectorAll(".domain-node").forEach(function (n) {
+      n.setAttribute("aria-pressed", String(n.dataset.domain === id));
+    });
+
+    renderConnections(id);
+
+    if (window.location.hash.slice(1) !== id) {
+      history.replaceState(null, "", "#" + id);
+    }
+  }
+
+  nodeGrid.addEventListener("click", function (event) {
+    // One delegated listener rather than six inline onclick attributes: keeps
+    // the page working under a strict Content-Security-Policy.
+    const node = event.target.closest(".domain-node");
+    if (node) selectDomain(node.dataset.domain);
+  });
+
+  /* ------------------------------------------------------------------ *
+   * Feedback loop — a path through the graph, drawn as a ring.
+   * ------------------------------------------------------------------ */
+  const RING = { cx: 320, cy: 262, r: 185, nodeR: 50, gapDeg: 20 };
+  const ringSteps = [];
+
+  function pointAt(deg) {
+    const rad = (deg * Math.PI) / 180;
+    return { x: RING.cx + RING.r * Math.cos(rad), y: RING.cy + RING.r * Math.sin(rad) };
+  }
+
+  function angleFor(index) {
+    // Start at the top and advance clockwise, one node per loop step.
+    return -90 + index * (360 / DATA.loop.steps.length);
+  }
+
+  function wrapLabel(label) {
+    const words = label.split(" ");
+    const lines = [];
+    let line = "";
+    words.forEach(function (w) {
+      if ((line + " " + w).trim().length > 13 && line) { lines.push(line); line = w; }
+      else line = (line ? line + " " : "") + w;
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function renderRing() {
+    const ring = document.getElementById("ring");
+    const defs = svgEl("defs");
+
+    // One arrowhead marker per domain: marker stroke cannot reliably inherit
+    // from the referencing path across browsers.
+    DATA.domains.forEach(function (d) {
+      const marker = svgEl("marker", {
+        id: "arrow-" + d.id, viewBox: "0 0 10 10", refX: "8", refY: "5",
+        markerWidth: "6", markerHeight: "6", orient: "auto-start-reverse"
+      });
+      marker.appendChild(svgEl("path", { d: "M 0 0 L 10 5 L 0 10 z", fill: d.accent }));
+      defs.appendChild(marker);
+    });
+    ring.appendChild(defs);
+
+    DATA.loop.steps.forEach(function (step, i) {
+      const from = byId.get(step.from);
+      const a0 = angleFor(i) + RING.gapDeg;
+      const a1 = angleFor(i + 1) - RING.gapDeg;
+      const p0 = pointAt(a0);
+      const p1 = pointAt(a1);
+
+      const group = svgEl("g", { class: "ring-step" });
+      group.appendChild(svgEl("path", {
+        class: "ring-arc",
+        d: "M " + p0.x + " " + p0.y + " A " + RING.r + " " + RING.r + " 0 0 1 " + p1.x + " " + p1.y,
+        stroke: from.accent,
+        "marker-end": "url(#arrow-" + from.id + ")"
+      }));
+      // Invisible fat stroke so the thin arc is still easy to point at.
+      const hit = svgEl("path", {
+        class: "ring-hit",
+        d: "M " + p0.x + " " + p0.y + " A " + RING.r + " " + RING.r + " 0 0 1 " + p1.x + " " + p1.y
+      });
+      hit.addEventListener("click", function () { selectStep(i); });
+      hit.addEventListener("mouseenter", function () { highlightStep(i); });
+      hit.addEventListener("mouseleave", function () { highlightStep(selectedStep); });
+      group.appendChild(hit);
+
+      ring.appendChild(group);
+      ringSteps.push(group);
+    });
+
+    DATA.loop.steps.forEach(function (step, i) {
+      const d = byId.get(step.from);
+      const p = pointAt(angleFor(i));
+
+      const g = svgEl("g", { class: "ring-node" });
+      g.appendChild(svgEl("circle", { cx: p.x, cy: p.y, r: RING.nodeR, stroke: d.accent }));
+
+      const icon = svgEl("text", { x: p.x, y: p.y - 2, class: "ring-icon" });
+      icon.textContent = d.icon;
+      g.appendChild(icon);
+
+      wrapLabel(d.label).forEach(function (line, li) {
+        const t = svgEl("text", { x: p.x, y: p.y + 19 + li * 13 });
+        t.textContent = line;
+        g.appendChild(t);
+      });
+
+      // Clicking a ring node jumps to that domain's full connection list.
+      g.addEventListener("click", function () {
+        showTab("domains");
+        selectDomain(d.id);
+      });
+      ring.appendChild(g);
+    });
+  }
+
+  function highlightStep(index) {
+    ringSteps.forEach(function (g, i) {
+      g.classList.toggle("is-active", i === index);
+    });
+  }
+
+  function selectStep(index) {
+    selectedStep = selectedStep === index ? null : index;
+    highlightStep(selectedStep);
+    document.querySelectorAll(".step-btn").forEach(function (b, i) {
+      b.setAttribute("aria-pressed", String(i === selectedStep));
+    });
+  }
+
+  function updateRingDimming() {
+    // A loop step is dimmed when the edge underneath it is filtered out —
+    // the cycle is only as visible as the evidence supporting its links.
+    DATA.loop.steps.forEach(function (step, i) {
+      const edge = edgeFor(step.from, step.to);
+      const dim = edge ? !passesFilters(edge) : false;
+      if (ringSteps[i]) ringSteps[i].classList.toggle("is-dimmed", dim);
+      const btn = document.querySelectorAll(".step-btn")[i];
+      if (btn) btn.style.opacity = dim ? "0.35" : "";
+    });
+  }
+
+  function renderLoop() {
+    document.getElementById("loopTitle").textContent = DATA.loop.title;
+    const intro = document.getElementById("loopIntro");
+    intro.replaceChildren(
+      document.createTextNode(
+        "The cycle argued in §7. It is not separate data: each step below is one of the thirty relationships above, so the loop inherits the evidence of its weakest link. "
+      )
+    );
+    const introLink = el("a", null, "Read §7 →");
+    introLink.href = SYNTHESIS + DATA.loop.source;
+    intro.appendChild(introLink);
+
+    renderRing();
+
+    const stepList = document.getElementById("stepList");
+    DATA.loop.steps.forEach(function (step, i) {
+      const from = byId.get(step.from);
+      const to = byId.get(step.to);
+      const edge = edgeFor(step.from, step.to);
+
+      const li = el("li");
+      const btn = el("button", "step-btn");
+      btn.type = "button";
+      btn.setAttribute("aria-pressed", "false");
+      btn.style.setProperty("--accent", from.accent);
+
+      const body = el("div");
+      body.append(
+        el("div", null, from.label + " → " + to.label),
+        el("div", "conn-text", step.label)
+      );
+      if (edge) body.appendChild(metaRow(edge));
+
+      btn.append(el("span", "step-num", String(i + 1)), body);
+      btn.addEventListener("click", function () { selectStep(i); });
+      btn.addEventListener("mouseenter", function () { highlightStep(i); });
+      btn.addEventListener("focus", function () { highlightStep(i); });
+      btn.addEventListener("mouseleave", function () { highlightStep(selectedStep); });
+      btn.addEventListener("blur", function () { highlightStep(selectedStep); });
+
+      li.appendChild(btn);
+      stepList.appendChild(li);
+    });
+
+    const escapeList = document.getElementById("escapeList");
+    DATA.loop.escapes.forEach(function (e) { escapeList.appendChild(el("li", null, e)); });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Tensions — edges that cannot all be true at once.
+   * ------------------------------------------------------------------ */
+  function renderTensions() {
+    document.getElementById("tensionIntro").textContent =
+      "The unresolved tensions of §8, shown as the edges that participate in them. " +
+      "Where a tension collects arrows pointing in opposite directions, the map is holding a contradiction rather than resolving it.";
+
+    const container = document.getElementById("tensionList");
+
+    DATA.tensions.forEach(function (t) {
+      const card = el("div", "tension-card");
+      card.appendChild(el("h3", null, t.label));
+      card.appendChild(el("p", "tension-q", t.question));
+      card.appendChild(el("p", "tension-note", t.note));
+
+      const edges = allEdges().filter(function (e) { return e.conn.tension === t.id; });
+      const list = el("div", "tension-edges");
+
+      edges.forEach(function (e) {
+        const from = byId.get(e.from);
+        const to = byId.get(e.conn.to);
+        const row = el("div", "tension-edge");
+        row.style.borderLeft = "3px solid " + from.accent;
+
+        const head = el("div", "edge-head");
+        head.append(
+          document.createTextNode(from.label + " "),
+          el("span", "edge-dir", "→"),
+          document.createTextNode(" " + to.label),
+          el("span", "rel-type", "  (" + e.conn.type + ")")
+        );
+        row.append(head, el("div", null, e.conn.text), metaRow(e.conn));
+        list.appendChild(row);
+      });
+
+      card.appendChild(list);
+
+      const link = el("a", null, "Read the full tension in §8 →");
+      link.href = SYNTHESIS + t.source;
+      link.style.fontSize = "12px";
+      const linkWrap = el("div");
+      linkWrap.style.marginTop = "12px";
+      linkWrap.appendChild(link);
+      card.appendChild(linkWrap);
+
+      container.appendChild(card);
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Tabs
+   * ------------------------------------------------------------------ */
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+
+  function showTab(name) {
+    tabs.forEach(function (tab) {
+      const isTarget = tab.id === "tab-" + name;
+      tab.setAttribute("aria-selected", String(isTarget));
+      tab.tabIndex = isTarget ? 0 : -1;
+      document.getElementById(tab.getAttribute("aria-controls")).hidden = !isTarget;
+    });
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function () {
+      showTab(tab.id.replace("tab-", ""));
+    });
+    tab.addEventListener("keydown", function (event) {
+      const delta = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+      if (!delta) return;
+      event.preventDefault();
+      const next = tabs[(i + delta + tabs.length) % tabs.length];
+      showTab(next.id.replace("tab-", ""));
+      next.focus();
+    });
+  });
+
+  /* ------------------------------------------------------------------ *
+   * Boot
+   * ------------------------------------------------------------------ */
+  renderCaveat();
+  renderFilters();
+  renderNodes();
+  renderLegend();
+  renderLoop();
+  renderTensions();
+  updateRingDimming();
+
+  // Deep links: widget.html#economics opens with Economics already selected.
+  window.addEventListener("hashchange", function () {
+    selectDomain(window.location.hash.slice(1));
+  });
+  if (window.location.hash) selectDomain(window.location.hash.slice(1));
+})();
 </script>
 </body>
 </html>
