@@ -77,7 +77,7 @@ This solved collective action problems and enabled state-building.
 The same attributes make Big God religions **hardwired** and **entangled**—difficult to reform. Historical cases:
 
 - **Ottoman Empire:** Legislation remained "God's monopoly," making the introduction of more representative institutions very difficult. Any challenge to rulers had to be couched in religious language, creating an "obscurantist equilibrium."
-- **European Reformation:** Resistance became a practical possibility only after "a long process of social change, shifting economic power away from the aristocracy... had been underway."
+- **European Reformation:** Resistance became a practical possibility only after "a long process of social change, shifting economic power away from the aristocracy... had been underway." The Reformation gathered pace because material conditions had already begun shifting.
 
 ### Cognitive Science of Religion
 
@@ -99,7 +99,7 @@ Analytic thinking also correlates with **individualism**, and individualism corr
 
 ### Inequality Elicits the Dark Triad
 
-Research finds that **economic inequality elicits the Dark Triad** at the population level. In unequal societies, people develop:
+Research by various authors (cited in [§9 Bibliography](#9-bibliography-with-methodology-notes)) finds that **economic inequality elicits the Dark Triad** at the population level. In unequal societies, people develop:
 - Ruthless self-advancement
 - Distrust
 - Dominance preferences
@@ -169,7 +169,7 @@ Psychopathy's reduced empathy becomes an asset when the system rewards surplus e
 ### Religious Masking of Predation
 
 Extractive elites have historically used religious legitimation to normalize predation:
-- Despots use religion to legitimize themselves, provoking religious backlashes that further entrench autocracy.
+- Despots use religion to legitimize themselves, provoking religious backlashes that further entrench autocracy: "When despots use religion to legitimize themselves, they provoke religious backlashes... superior fidelity to the faith."
 - Temple economies, tithes, and theocratic rent are pre-capitalist forms of surplus extraction.
 
 ### Cultural Resistance

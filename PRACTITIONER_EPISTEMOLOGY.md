@@ -229,16 +229,6 @@ The gift is mutual. The practitioner gave us a window into a cognition that test
 
 ---
 
-"""
-
-with open("interdisciplinary-systems-research/PRACTITIONER_EPISTEMOLOGY.md", "a") as f:
-    f.write(closing_note)
-
-print("Closing note appended
-
-entry = """
----
-
 ## Field Note: Gauge vs. Body — Coolant Sensing
 
 **Subject's observation:**
@@ -274,12 +264,3 @@ This is a third modality: **situated-analytic cognition** — abstract physics p
 Standardized instrumentation is a form of **institutional trust** — we trust gauges because they are calibrated, certified, and standardized. The practitioner's distrust of gauges under variable conditions is not anti-science. It is a recognition that **standardization fails when standard conditions don't hold.**
 
 This is analogous to how extractive institutions fail under non-standard conditions: they are designed for idealized assumptions (stable climate, functioning supply chains, predictable demand) and break down when those assumptions are violated.
-
----
-
-"""
-
-interdisciplinary-systems-research/PRACTITIONER_EPISTEMOLOGY.md", "a") as f:
-    f.write(entry)
-
-print("Appended coolant sensing field note")
