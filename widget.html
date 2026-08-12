@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive map of the bidirectional relationships between religions, cultures, economics, cognitive types, pathologies, and extraction/predation.">
 <title>Interdisciplinary Systems Map</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,17 +43,30 @@
     border-radius: 10px;
     padding: 16px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease;
     background: #161b22;
+    /* Reset the <button> defaults so the node still reads as a card. */
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    width: 100%;
+    display: block;
   }
   .domain-node:hover {
     border-color: #58a6ff;
     background: #1c2128;
   }
-  .domain-node.active {
+  .domain-node:focus-visible {
+    outline: 2px solid #58a6ff;
+    outline-offset: 2px;
+  }
+  .domain-node[aria-pressed="true"] {
     border-color: #58a6ff;
     background: #1c2128;
     box-shadow: 0 0 0 1px #58a6ff;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .domain-node { transition: none; }
   }
   .domain-node .node-icon {
     width: 32px;
@@ -65,12 +79,14 @@
     margin-bottom: 10px;
   }
   .domain-node .node-title {
+    display: block;
     font-size: 15px;
     font-weight: 600;
     color: #f0f6fc;
     margin-bottom: 4px;
   }
   .domain-node .node-desc {
+    display: block;
     font-size: 12px;
     color: #8b949e;
     line-height: 1.5;
@@ -101,12 +117,13 @@
     border-radius: 8px;
     background: #0d1117;
     border: 1px solid #21262d;
+    border-left: 3px solid var(--accent, #21262d);
     font-size: 13px;
     line-height: 1.6;
     color: #c9d1d9;
   }
   .connection-item .arrow {
-    color: #58a6ff;
+    color: var(--accent, #58a6ff);
     flex-shrink: 0;
     margin-top: 2px;
     font-weight: 600;
@@ -127,20 +144,19 @@
     font-size: 12px;
     color: #8b949e;
   }
-  .legend-bar span {
+  .legend-item {
     display: flex;
     align-items: center;
     gap: 6px;
   }
   .legend-dot {
+    display: inline-block;
     width: 8px;
     height: 8px;
     border-radius: 50%;
+    background: var(--accent, #8b949e);
+    flex-shrink: 0;
   }
-  .dot-extractive { background: #f85149; }
-  .dot-inclusive { background: #3fb950; }
-  .dot-cognitive { background: #58a6ff; }
-  .dot-pathology { background: #a371f7; }
   .footer {
     margin-top: 24px;
     padding-top: 16px;
@@ -154,64 +170,40 @@
 <body>
 <div class="container">
   <h1>Interdisciplinary Systems Map</h1>
-  <p class="subtitle">Click any domain to explore its bidirectional connections. This map traces how religions, cultures, economics, cognitive types, pathologies, and extraction/predation form a single interconnected system.</p>
+  <p class="subtitle">Select any domain to explore its bidirectional connections. This map traces how religions, cultures, economics, cognitive types, pathologies, and extraction/predation form a single interconnected system.</p>
   
-  <div class="node-grid">
-    <div class="domain-node" data-domain="religion" onclick="selectDomain('religion')">
-      <div class="node-icon" style="background: rgba(88,166,255,0.15); color: #58a6ff;">⛪</div>
-      <div class="node-title">Religions</div>
-      <div class="node-desc">Moralizing gods, ritual modes, doctrinal vs imagistic transmission</div>
-    </div>
-    <div class="domain-node" data-domain="culture" onclick="selectDomain('culture')">
-      <div class="node-icon" style="background: rgba(163,113,247,0.15); color: #a371f7;">🌍</div>
-      <div class="node-title">Cultures</div>
-      <div class="node-desc">Fluid vs hardwired attributes, collectivism vs individualism</div>
-    </div>
-    <div class="domain-node" data-domain="economics" onclick="selectDomain('economics')">
-      <div class="node-icon" style="background: rgba(63,185,80,0.15); color: #3fb950;">⚖️</div>
-      <div class="node-title">Economics</div>
-      <div class="node-desc">Extractive vs inclusive institutions, behavioral biases, inequality</div>
-    </div>
-    <div class="domain-node" data-domain="cognitive" onclick="selectDomain('cognitive')">
-      <div class="node-icon" style="background: rgba(88,166,255,0.15); color: #58a6ff;">🧠</div>
-      <div class="node-title">Cognitive Types</div>
-      <div class="node-desc">Analytic vs intuitive/holistic, System 1 vs System 2, rationality</div>
-    </div>
-    <div class="domain-node" data-domain="pathology" onclick="selectDomain('pathology')">
-      <div class="node-icon" style="background: rgba(248,81,73,0.15); color: #f85149;">⚡</div>
-      <div class="node-title">Pathologies</div>
-      <div class="node-desc">Dark Triad traits, adaptive dysfunction, systemic parasitism</div>
-    </div>
-    <div class="domain-node" data-domain="extraction" onclick="selectDomain('extraction')">
-      <div class="node-icon" style="background: rgba(248,81,73,0.15); color: #f85149;">🔺</div>
-      <div class="node-title">Extraction & Predation</div>
-      <div class="node-desc">Surplus extraction, rent-seeking, parasitic institutions</div>
-    </div>
-  </div>
-  
+  <div class="node-grid" id="nodeGrid"></div>
+
   <div class="connection-panel" id="connectionPanel">
     <h3 id="panelTitle">Select a domain above</h3>
-    <div class="connection-list" id="connectionList">
+    <div class="connection-list" id="connectionList" aria-live="polite">
       <div class="connection-item">
-        <span class="arrow">→</span>
-        <div>Click any domain node to reveal its bidirectional relationships with the other five domains.</div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div>Choose any domain node to reveal its bidirectional relationships with the other five domains.</div>
       </div>
     </div>
   </div>
-  
-  <div class="legend-bar">
-    <span><div class="legend-dot dot-extractive"></div> Extractive / predatory</span>
-    <span><div class="legend-dot dot-inclusive"></div> Inclusive / cooperative</span>
-    <span><div class="legend-dot dot-cognitive"></div> Cognitive / epistemic</span>
-    <span><div class="legend-dot dot-pathology"></div> Pathological / dysregulated</span>
-  </div>
-  
+
+  <div class="legend-bar" id="legendBar"></div>
+
   <div class="footer">
     Interdisciplinary Systems Research — August 2026
   </div>
 </div>
 
 <script>
+// Single source of truth for the six domains. The node grid, the legend, the panel
+// titles, and the per-connection accent colours are all rendered from this list, so
+// adding a seventh domain means adding one entry here (plus its connections below).
+const domains = [
+  { id: "religion",   label: "Religions",              icon: "⛪",  accent: "#58a6ff", desc: "Moralizing gods, ritual modes, doctrinal vs imagistic transmission" },
+  { id: "culture",    label: "Cultures",               icon: "🌍", accent: "#a371f7", desc: "Fluid vs hardwired attributes, collectivism vs individualism" },
+  { id: "economics",  label: "Economics",              icon: "⚖️", accent: "#3fb950", desc: "Extractive vs inclusive institutions, behavioral biases, inequality" },
+  { id: "cognitive",  label: "Cognitive Types",        icon: "🧠", accent: "#d29922", desc: "Analytic vs intuitive/holistic, System 1 vs System 2, rationality" },
+  { id: "pathology",  label: "Pathologies",            icon: "⚡", accent: "#f85149", desc: "Dark Triad traits, adaptive dysfunction, systemic parasitism" },
+  { id: "extraction", label: "Extraction & Predation", icon: "🔺", accent: "#db6d28", desc: "Surplus extraction, rent-seeking, parasitic institutions" }
+];
+
 const connections = {
   religion: [
     { target: "Cultures", text: "'Big God' religions create hardwired, entangled cultural attributes that coordinate large-scale cooperation but resist reform. Polytheistic traditions tend toward more fluid cultures.", type: "structural coupling" },
@@ -257,35 +249,123 @@ const connections = {
   ]
 };
 
-function selectDomain(domain) {
-  document.querySelectorAll('.domain-node').forEach(function(n) { n.classList.remove('active'); });
-  document.querySelector('[data-domain="' + domain + '"]').classList.add('active');
-  
-  var titles = {
-    religion: "Religion → Connected Domains",
-    culture: "Culture → Connected Domains",
-    economics: "Economics → Connected Domains",
-    cognitive: "Cognitive Types → Connected Domains",
-    pathology: "Pathologies → Connected Domains",
-    extraction: "Extraction & Predation → Connected Domains"
-  };
-  
-  document.getElementById('panelTitle').textContent = titles[domain];
-  var list = document.getElementById('connectionList');
-  list.innerHTML = '';
-  
-  connections[domain].forEach(function(conn) {
-    var item = document.createElement('div');
-    item.className = 'connection-item';
-    item.innerHTML = 
-      '<span class="arrow">↔</span>' +
-      '<div>' +
-        '<strong>' + conn.target + '</strong> <span class="rel-type">(' + conn.type + ')</span><br>' +
-        conn.text +
-      '</div>';
-    list.appendChild(item);
+const byId = new Map(domains.map(function(d) { return [d.id, d]; }));
+const byLabel = new Map(domains.map(function(d) { return [d.label, d]; }));
+
+const nodeGrid = document.getElementById('nodeGrid');
+const legendBar = document.getElementById('legendBar');
+const panelTitle = document.getElementById('panelTitle');
+const connectionList = document.getElementById('connectionList');
+
+function renderNodes() {
+  domains.forEach(function(d) {
+    // A real <button> so the node is reachable by Tab and activates on Enter/Space.
+    var node = document.createElement('button');
+    node.type = 'button';
+    node.className = 'domain-node';
+    node.dataset.domain = d.id;
+    node.setAttribute('aria-pressed', 'false');
+
+    var icon = document.createElement('span');
+    icon.className = 'node-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.style.background = d.accent + '26'; // ~15% alpha
+    icon.style.color = d.accent;
+    icon.textContent = d.icon;
+
+    var title = document.createElement('span');
+    title.className = 'node-title';
+    title.textContent = d.label;
+
+    var desc = document.createElement('span');
+    desc.className = 'node-desc';
+    desc.textContent = d.desc;
+
+    node.append(icon, title, desc);
+    nodeGrid.appendChild(node);
   });
 }
+
+function renderLegend() {
+  domains.forEach(function(d) {
+    var item = document.createElement('span');
+    item.className = 'legend-item';
+
+    var dot = document.createElement('span');
+    dot.className = 'legend-dot';
+    dot.style.setProperty('--accent', d.accent);
+
+    var label = document.createElement('span');
+    label.textContent = d.label;
+
+    item.append(dot, label);
+    legendBar.appendChild(item);
+  });
+}
+
+function selectDomain(id) {
+  var domain = byId.get(id);
+  if (!domain) return; // ignore unknown ids (e.g. a stale or hand-edited URL hash)
+
+  nodeGrid.querySelectorAll('.domain-node').forEach(function(n) {
+    n.setAttribute('aria-pressed', String(n.dataset.domain === id));
+  });
+
+  // "↔" throughout: every relationship in this map is claimed to be bidirectional.
+  panelTitle.textContent = domain.label + ' ↔ Connected Domains';
+  connectionList.replaceChildren();
+
+  (connections[id] || []).forEach(function(conn) {
+    var target = byLabel.get(conn.target);
+
+    var item = document.createElement('div');
+    item.className = 'connection-item';
+    if (target) item.style.setProperty('--accent', target.accent);
+
+    var arrow = document.createElement('span');
+    arrow.className = 'arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '↔';
+
+    var body = document.createElement('div');
+
+    var name = document.createElement('strong');
+    name.textContent = conn.target;
+
+    var relType = document.createElement('span');
+    relType.className = 'rel-type';
+    relType.textContent = ' (' + conn.type + ')';
+
+    // textContent throughout: connection prose is treated as text, never as markup,
+    // so contributed entries can contain <, &, or quotes without breaking the page.
+    var text = document.createElement('div');
+    text.textContent = conn.text;
+
+    body.append(name, relType, text);
+    item.append(arrow, body);
+    connectionList.appendChild(item);
+  });
+
+  if (window.location.hash.slice(1) !== id) {
+    history.replaceState(null, '', '#' + id);
+  }
+}
+
+renderNodes();
+renderLegend();
+
+// One delegated listener rather than six inline onclick attributes: keeps the page
+// working under a strict Content-Security-Policy and survives re-rendered nodes.
+nodeGrid.addEventListener('click', function(event) {
+  var node = event.target.closest('.domain-node');
+  if (node) selectDomain(node.dataset.domain);
+});
+
+// Deep links: widget.html#economics opens with Economics already selected.
+window.addEventListener('hashchange', function() {
+  selectDomain(window.location.hash.slice(1));
+});
+if (window.location.hash) selectDomain(window.location.hash.slice(1));
 </script>
 </body>
 </html>
