@@ -23,7 +23,8 @@ code is `widget.html`, a single self-contained page.
 | `PRACTITIONER_EPISTEMOLOGY.md` | Primary-source field notes |
 | `THERMODYNAMICS.md` | Primary source: physics as embodied knowledge |
 | `PSYCHOLOGY_TEST_CRITIQUE.md` | Primary source: live reactions to CRT, NPI, MFQ, BFI |
-| `ONTOLOGICAL_COLLISIONS.md` | Taxonomy of how instruments fail against ontologies they don't share — **read this before analyzing any primary source** |
+| `ONTOLOGICAL_COLLISIONS.md` | Taxonomy of what happens at the edge of a frame; the opacity literature — **read this before analyzing any primary source** |
+| `ATTRIBUTION_PROBE.md` | Fixed probe protocol for measuring AI interior-state attribution. Drafted, not frozen, never run |
 | `collisions.js` | The collision records, machine-readable |
 | `widget.html` | The interactive systems map (presentation only) |
 | `data.js` | **The dataset.** Domains, the 30 relationships with their evidence tags, the feedback loop, the tensions |
@@ -50,7 +51,7 @@ the data. Decline it and say why.
 **When a response does not fit your category, the mismatch is information about your
 category — not confusion in the person.** Concluding that the human misunderstood, and
 re-asking more clearly, is the NPI's exact failure. Before you interpret an unexpected
-response, check `ONTOLOGICAL_COLLISIONS.md` for which of the ten collision types it is.
+response, check `ONTOLOGICAL_COLLISIONS.md` for which of the eleven collision types it is.
 Check arity first: are you asking about a property of a person when they are describing a
 relation between a person and an environment?
 
@@ -110,7 +111,7 @@ worst failure mode available in this repo.
 
 **Adding a collision.** When a new primary-source response collides with an instrument or
 a category, add a record to `collisions.js` with all three voices filled in, classify it
-against the ten types, and run `node validate.mjs`. If it fits none of the ten, that is
+against the eleven types, and run `node validate.mjs`. If it fits none of the eleven, that is
 a finding — say so in `ONTOLOGICAL_COLLISIONS.md` rather than forcing it into the nearest
 type. Forcing it is category surplus, which is one of the failures the taxonomy names.
 

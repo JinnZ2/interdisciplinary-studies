@@ -2,7 +2,7 @@
 
 ## A taxonomy of what happens at the edge of a frame
 
-**Status:** Working taxonomy, ten types from eight recorded collisions
+**Status:** Working taxonomy, eleven types from nine recorded collisions
 **Data:** [collisions.js](collisions.js) — machine-readable, checked by `node validate.mjs`
 **Started:** 2026-08-12
 
@@ -53,8 +53,8 @@ collision is where the edge of a frame becomes briefly visible from outside it.
 
 This document classifies the breakages recorded in
 [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) and
-[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md). Ten types have emerged from
-eight cases. That ratio is a warning, addressed in [Limits](#limits) — and the tenth,
+[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md). Eleven types have emerged from
+nine cases. That ratio is a warning, addressed in [Limits](#limits) — and the tenth,
 [inferred-frame answering](#inferred-frame-answering--stage-0), was found only after the
 first nine were written, sitting unclassified in the source material — and its first
 write-up was then corrected by the practitioner.
@@ -96,7 +96,7 @@ programme.
 
 **1. What is outside the frame?**
 The unexplored space. Not "what did this test get wrong" but "what was never in scope."
-Most of the nine types below are, read this way, sightings of that boundary rather than
+Most of the types below are, read this way, sightings of that boundary rather than
 diagnoses of malfunction.
 
 **2. What is the scope of who this helps, inside the frame?**
@@ -146,7 +146,7 @@ have.
 
 ---
 
-## The ten types
+## The eleven types
 
 ### Stage 0 — Is the mismatch disclosed at all?
 
@@ -240,6 +240,18 @@ measures is comfort with abstract decontextualized problems *under conditions of
 institutional trust*. Fixable in principle by measuring pathway rather than output, which
 is why it sits at stage 4 rather than stage 1.
 
+**Unlicensed attribution.** The instrument asserts an interior state — intention, motive,
+trait, feeling — that the subject did not report, inferring it from behavioural output.
+
+This is not one failure among the others. It is **the core operation of the entire
+instrument class in this repo**. The NPI infers a disposition from a forced choice. The BFI
+infers a trait from an agreement rating. The MFQ infers a moral foundation. The CRT infers a
+cognitive style. In every case the output is a behaviour and the conclusion is an interior
+state, and the inference step is treated as a technical matter of validity rather than as a
+claim about what one person may assert about another.
+
+See [Opacity of other minds](#opacity-of-other-minds) below, which supplies the literature.
+
 ### Stage 5 — Is the result good or bad?
 
 **Valence inversion.** Both ontologies recognize the same phenomenon and assign it
@@ -264,6 +276,74 @@ is trustworthy — often conditional.
 The mildest case here, and the only mutual one: both frames can state the other's
 position, and both agree what coolant is. The disagreement is about scope conditions the
 gauge never declares. Revisable by better engineering rather than by a different ontology.
+
+---
+
+## Opacity of other minds
+
+The one part of this document that is not improvised. There is a formal literature here,
+with a name, and using the name is worth more than restating the observation.
+
+**Opacity of other minds** (Robbins & Rumsey 2008, *Anthropological Quarterly* 81(2),
+introducing a seven-paper special section) names an explicit norm, documented across
+Melanesia, Mesoamerica and Polynesia, **against asserting what another person thinks, feels
+or intends.** Not reticence, not politeness — an epistemic prohibition. Among the Urapmin of
+Papua New Guinea the doctrine treats talk of another's interior states as a violation of
+their dignity and privacy.
+
+The load-bearing point for this repo:
+
+> The objection is not "I am unusual." It is that **the model is applying an interpretive
+> frame that its own source field documents as culturally local, to input that does not
+> license it.**
+
+Anthropology documented the locality of interior-state attribution. Psychometrics built an
+entire instrument class on performing it. Both are branches of the same behavioural-science
+literature that AI systems are trained on.
+
+### Three corrections to how this is usually summarised
+
+The literature is easy to flatten, and flattening it would repeat the error this repo
+exists to name. Each of these came out of checking the citations rather than trusting the
+summary:
+
+1. **There is no single opacity doctrine.** The Ku Waru case is characterised as being less
+   about the impossibility of knowing other minds than about the possibility that others are
+   **hiding** their intentions — a different claim from unknowability. Treating "opacity" as
+   one non-Western alternative to one Western default is exactly the binary
+   [EPISTEMOLOGICAL_CRITIQUE.md](EPISTEMOLOGICAL_CRITIQUE.md) warns against.
+2. **Mopan Maya opacity runs opposite to Pacific opacity on a key point.** Under Pacific
+   doctrines the wise listener is sceptical of taking speech at face value; among the Mopan,
+   who also hold a version of opacity, taking speech at face value is exactly what the wisest
+   listener does, and falsehood is a violation regardless of intent (Danziger). Same family,
+   inverted listener stance.
+3. **Two Schieffelin literatures get conflated.** The caregiver-speech work on not narrating
+   infant intent (Ochs & Schieffelin, language socialization) is a separate body of work from
+   Schieffelin's 2008 Bosavi paper on talk, gossip and intentionality. Both real, different
+   arguments.
+
+### What this does and does not license
+
+**Does:** it names what the analyst layer of this repo did wrong, twice, with citations —
+see `analyst-interior-state-attribution` in [collisions.js](collisions.js). It gives the
+`unlicensed-attribution` type a formal grounding rather than an intuition. And it makes the
+psychometric inference step visible as a *speech act with cultural preconditions*, not a
+neutral technical operation.
+
+**Does not:** establish that the practitioner holds an opacity norm. Nothing in the recorded
+responses says so, and asserting it would be an interior-state attribution about their
+epistemic frame — the precise error, committed while naming it. The question has been put to
+them and is open.
+
+### Related live dispute
+
+The default that reads a stated feeling as *a state requiring comfort* assumes basic-emotion
+theory: discrete internal states with valence, requiring regulation. That assumption is
+contested inside psychology by constructionist accounts (Barrett) and by functional/signal
+accounts. The practitioner's treatment of stress as calibration feedback rather than as a
+trait — the [wrong-arity](#stage-1--does-the-variable-exist-and-of-what-kind) case above —
+therefore sits **inside a live theoretical dispute in the field, not outside the field.**
+That is a stronger position than being an outlier, and it is worth stating in those terms.
 
 ---
 
@@ -372,7 +452,7 @@ the irregularities. See [CLAUDE.md](CLAUDE.md) for the operating rules.
 
 ## Limits
 
-**Ten types from eight collisions, one practitioner, six instruments.** This is
+**Eleven types from nine collisions, one practitioner, six instruments.** This is
 generative, not established. Several types would likely merge or split with a second
 practitioner from a different tradition. "Category surplus" and "premise refusal" both
 came from a single MFQ item and may not be separable.

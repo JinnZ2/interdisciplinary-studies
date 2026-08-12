@@ -339,6 +339,40 @@ How do we operationalize:
 
 ---
 
+### G. Opacity of Other Minds and the Attribution of Interior States
+
+**Provenance note:** this section was contributed by another AI instance via the practitioner
+and is therefore held to the repo's citation rule with extra care — AI systems are a known
+source of plausible-looking references. Each entry carries a verification status. Verified
+entries were checked against indexed catalogue records; **verification confirms that the work
+exists as described, not that the summary of its argument is adequate.** Nothing here has been
+read in full.
+
+**13. Robbins, J. & Rumsey, A. (2008). "Introduction: Cultural and Linguistic Anthropology and the Opacity of Other Minds." *Anthropological Quarterly* 81(2): 407–420.** — VERIFIED
+- **Content:** Introduces a seven-paper special section (pp. 407–494). Documents an explicit norm, found across Melanesia and beyond, against asserting what another person thinks, feels or intends. The Urapmin of Papua New Guinea hold a severe version treating such talk as a violation of dignity and privacy.
+- **Why it matters here:** Names, with a formal literature behind it, the operation that every psychometric instrument in this repo performs by design — inferring an interior state from behavioural output. See `unlicensed-attribution` in [ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md).
+- **Methodology note:** Ethnographic. The doctrines documented are *not uniform* — see entries 14 and 15. Treating "opacity" as a single non-Western position would reproduce the flattening this repo criticises.
+
+**14. Danziger, E. — work on Mopan Maya intentionality, truth and blame** (incl. "On trying and lying: cultural configurations of Grice's Maxim of Quality"; "Conventional Wisdom: Imagination, Obedience and Intersubjectivity," *Language and Communication* 33(3): 251–262, 2013). — VERIFIED (author and works exist; specific page-level claims not checked)
+- **Key finding:** Mopan judge truth by literal accuracy rather than speaker intent; falsehood is a moral violation regardless of what was meant.
+- **Why it matters here:** Mopan opacity **inverts** the Pacific listener stance. Where Pacific doctrines make the wise listener sceptical of face-value speech, Mopan makes taking speech at face value the wisest response. Same family, opposite posture — evidence that opacity is a family of local theories, not one alternative universal.
+
+**15. Rumsey, A. — Ku Waru (Highland PNG); Schieffelin, B. (2008). "Speaking Only Your Own Mind: Reflections on Talk, Gossip and Intentionality in Bosavi (PNG)." *Anthropological Quarterly* 81: 431–442.** — VERIFIED
+- **Methodology note:** The Ku Waru doctrine is characterised as concerning the possibility that others **hide** their intentions, rather than the bare impossibility of knowing them — a materially different claim.
+- **Caution:** Schieffelin's Bosavi paper is distinct from the Ochs & Schieffelin language-socialization literature on caregiver speech that does not narrate infant intent. The two are frequently conflated. Both are relevant; they are not the same work.
+
+**16. Evidentiality as a grammatical category** (standard reference: Aikhenvald, *Evidentiality*). — UNVERIFIED
+- **Claim as supplied:** many languages grammatically mark the source of knowledge and provide no unmarked way to assert another's interior state, making such attribution not merely impolite but unsayable without a false evidential.
+- **Status:** the existence of evidentiality as a grammatical category is well established; the **specific strong claim** about no unmarked way to assert another's interior state was not confirmed and should not be cited from this repo until someone checks it against the typological literature.
+
+**17. Henrich, J., Heine, S. J. & Norenzayan, A. (2010). "The Weirdest People in the World?" *Behavioral and Brain Sciences* 33(2–3): 61–83.** — VERIFIED
+- **Note on the famous numbers:** the "96% of samples from 12% of the world's population" figure is routinely attributed to this paper, but the 96% statistic originates with **Arnett, J. (2008), *American Psychologist* 63: 602–614**, which Henrich et al. cite. The accompanying 12% population figure was **not confirmed** in checking. Cite Arnett for the sampling statistic, and do not reproduce the 12% figure from this repo without a source.
+
+**18. Barrett, L. F. — theory of constructed emotion, contra basic-emotion theory.** — UNVERIFIED IN THIS PASS (widely known; not checked here)
+- **Why it matters here:** the assumption that a stated feeling is a discrete internal state requiring comfort is basic-emotion theory, and it is contested *inside* psychology. The practitioner's treatment of stress as calibration feedback rather than as a trait therefore sits within a live theoretical dispute in the field rather than outside it.
+
+---
+
 ## 10. Research Agenda
 
 ### Immediate Priorities

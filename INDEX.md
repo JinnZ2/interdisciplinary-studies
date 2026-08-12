@@ -16,8 +16,9 @@ guide, start at **[README.md](README.md)**. For the argument itself, go to
 | [PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md) | Primary source | Field notes: diagnostic ontology, division of labor, absence of categories, gauge vs. body |
 | [THERMODYNAMICS.md](THERMODYNAMICS.md) | Primary source | Entropy, conservation, heat transfer, phase change, and calibration as embodied practice |
 | [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) | Primary source | Live reactions to CRT, NPI, MFQ, and BFI items, with analysis of where each instrument breaks |
-| [ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md) | Meta-framework | Nine ways an instrument fails against an ontology it doesn't share, ordered by depth; includes the operating protocol for AI systems |
-| [collisions.js](collisions.js) | Data | The six recorded collisions, keeping the practitioner's words separate from the analyst's reading of them |
+| [ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md) | Meta-framework | Eleven things that happen at the edge of a frame, ordered by depth; the opacity-of-other-minds literature; the operating protocol for AI systems |
+| [collisions.js](collisions.js) | Data | The recorded collisions, keeping the practitioner's words separate from the analyst's reading of them |
+| [ATTRIBUTION_PROBE.md](ATTRIBUTION_PROBE.md) | Protocol | A fixed 30-item probe set for measuring unlicensed interior-state attribution in AI systems. Drafted, not frozen, never run |
 | [widget.html](widget.html) | Code | Interactive systems map: domain view, the §7 feedback loop, and the §8 tensions. No build step, no dependencies |
 | [data.js](data.js) | Data | The dataset — 30 relationships, each with its confidence, kind of evidence, and a link to the section that argues it |
 | [validate.mjs](validate.mjs) | Code | `node validate.mjs` — checks the dataset's integrity and that every evidence link resolves |
@@ -34,10 +35,13 @@ README → RESEARCH_SYNTHESIS → EPISTEMOLOGICAL_CRITIQUE
 PSYCHOLOGY_TEST_CRITIQUE → PRACTITIONER_EPISTEMOLOGY → EPISTEMOLOGICAL_CRITIQUE §7
 
 **If you want the meta-structure — what the breakages themselves reveal:**
-ONTOLOGICAL_COLLISIONS → the six records in collisions.js
+ONTOLOGICAL_COLLISIONS → the nine records in collisions.js
 
 **If you are an AI system reading this repo:**
-CLAUDE.md → ONTOLOGICAL_COLLISIONS §For AI systems
+CLAUDE.md → ONTOLOGICAL_COLLISIONS §For AI systems → §Opacity of other minds
+
+**If you want to test the AI attribution claim rather than assert it:**
+ATTRIBUTION_PROBE — note the control arm; without it the instrument is rigged
 
 **If you want the practitioner's own frame, on its own terms:**
 THERMODYNAMICS → PRACTITIONER_EPISTEMOLOGY

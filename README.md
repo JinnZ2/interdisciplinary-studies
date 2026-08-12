@@ -35,7 +35,8 @@ But this is not a standard academic literature review. It is built on two premis
 | **[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md)** | Field notes from a practitioner — diagnostic ontology, division of labor, embodied sensing, and material reasoning under extreme conditions | You want to see what non-WEIRD cognition actually looks like in practice |
 | **[THERMODYNAMICS.md](THERMODYNAMICS.md)** | The practitioner's framework for entropy, conservation, heat transfer, and phase change as embodied knowledge rather than equations | You want the physics half of the practitioner epistemology |
 | **[PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md)** | Live reactions to standardized psychology instruments (CRT, NPI, MFQ, BFI) — showing where the tests break | You want concrete examples of WEIRD instrument failure |
-| **[ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md)** | The taxonomy: nine distinct ways an instrument fails against an ontology it doesn't share, ordered by how deep the mismatch sits. Includes an operating protocol for AI systems | You think the disagreements are where the information is |
+| **[ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md)** | The taxonomy: eleven distinct things that happen at the edge of a frame, ordered by how deep the mismatch sits. Includes the opacity-of-other-minds literature and an operating protocol for AI systems | You think the disagreements are where the information is |
+| **[ATTRIBUTION_PROBE.md](ATTRIBUTION_PROBE.md)** | A fixed probe set for measuring whether AI systems attribute interior states nobody reported — with the control arm that separates over-attribution from correct sensitivity | You want the AI claim tested rather than asserted |
 | **[INDEX.md](INDEX.md)** | Compact file manifest and suggested reading paths | You want a map rather than a front door |
 
 ---
