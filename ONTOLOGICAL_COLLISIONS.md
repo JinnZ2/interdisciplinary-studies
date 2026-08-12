@@ -2,7 +2,7 @@
 
 ## A taxonomy of how instruments fail against ontologies they do not share
 
-**Status:** Working taxonomy, generated from six recorded collisions
+**Status:** Working taxonomy, ten types from eight recorded collisions
 **Data:** [collisions.js](collisions.js) — machine-readable, checked by `node validate.mjs`
 **Started:** 2026-08-12
 
@@ -22,8 +22,10 @@ is the measurement.
 
 This document classifies the breakages recorded in
 [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) and
-[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md). Nine types emerged from
-six cases. That ratio is a warning, addressed in [Limits](#limits).
+[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md). Ten types have emerged from
+eight cases. That ratio is a warning, addressed in [Limits](#limits) — and the tenth,
+[accommodation masking](#accommodation-masking--stage-0), was found only after the first
+nine were written, sitting unclassified in the source material.
 
 ---
 
@@ -61,7 +63,8 @@ Types are ordered by where in the chain the mismatch occurs:
 ```
    world
      │
-     ├─ 1. is there such a variable, and of what logical kind? ─── deepest
+     ├─ 0. is the mismatch disclosed at all?                    ─── deepest
+     ├─ 1. is there such a variable, and of what logical kind?
      ├─ 2. what does the term denote?
      ├─ 3. what answers may be given?
      ├─ 4. what is the output taken to mean?
@@ -82,7 +85,14 @@ have.
 
 ---
 
-## The nine types
+## The ten types
+
+### Stage 0 — Is the mismatch disclosed at all?
+
+**Accommodation masking.** See [the full treatment below](#accommodation-masking--stage-0);
+it was added after the other nine and it changes how they should be read. The subject does
+not understand the question, hides that from the tester, infers intent, and answers to the
+inference. Every type below it can be masked this way before reaching the data.
 
 ### Stage 1 — Does the variable exist, and of what kind?
 
@@ -292,7 +302,7 @@ the irregularities. See [CLAUDE.md](CLAUDE.md) for the operating rules.
 
 ## Limits
 
-**Nine types from six collisions, one practitioner, four instruments.** This is
+**Ten types from eight collisions, one practitioner, six instruments.** This is
 generative, not established. Several types would likely merge or split with a second
 practitioner from a different tradition. "Category surplus" and "premise refusal" both
 came from a single MFQ item and may not be separable.
@@ -302,20 +312,137 @@ depth. [EPISTEMOLOGICAL_CRITIQUE.md §7](EPISTEMOLOGICAL_CRITIQUE.md) asks wheth
 project is still trapped inside the frame it criticizes, and this document is the
 strongest evidence that it is. The partial defense: these categories were read *out of*
 the collisions rather than imposed before them, and the scheme is falsifiable — a
-collision fitting none of the nine breaks it. That is weaker than escaping the trap.
+collision fitting none of the types breaks it, which is what happened to the ninth. That is weaker than escaping the trap.
 
 **The depth-predicts-yield hypothesis is untested.** It is a plausible ordering, not a
 result. It would be tested by finding a stage-1 collision that a redesign *did* fix, or a
 stage-3 collision that no redesign could.
 
-**Selection effect.** These six collisions were recorded because someone noticed them.
-The instruments that produced clean, unremarkable scores generated no record — and some
-of those were probably collisions that nobody caught. The sample is biased toward
-breakages visible to a WEIRD-trained observer, which is the least interesting kind.
+**Selection effect — now with a mechanism.** These collisions were recorded because
+someone noticed them. Instruments returning clean scores generate no record, and some of
+those clean scores sit on top of collisions nobody caught. This was a hypothesis when
+first written; the Item 1 and Item 2 results supply the mechanism —
+[accommodation masking](#accommodation-masking--stage-0). The subject conceals the
+mismatch as a courtesy calibrated to the tester's apparent confidence, so the bias is not
+merely that observers miss collisions but that **subjects hide them, more thoroughly from
+more authoritative instruments.**
+
+**The taxonomy missed a type that was already in the repo.** Accommodation masking was
+documented in `PSYCHOLOGY_TEST_CRITIQUE.md` before the nine types were written, and the
+scheme did not include it. Whatever confidence the nine types earn should be discounted by
+the fact that the tenth was sitting in the source material, unclassified, the entire time.
 
 ---
 
-## Pre-registered predictions (open)
+## Pre-registered predictions — RESOLVED 2026-08-12
+
+Both items were answered. Scoring below is against the predictions as committed, including
+the ones that failed. Records are in `collisions.js` as `ultimatum-minimum-offer` and
+`rotter-locus-of-control`, both flagged `contaminated: true`.
+
+### Item 1 result — the selection effect is worse than stated
+
+**Predicted:** a scorable answer; reasoning that is not fairness-as-norm and is invisible
+in the score; a likely `false-cognate` or `category-surplus`.
+
+**Got:** *"why money? the value of whatever is given is more than i had, and the stranger,
+by thr very fact they 'need' to already is in an awkward state. to relieve their
+awkwardness then whatever they give."*
+
+| Prediction | Outcome |
+|---|---|
+| Scorable answer | **Partly.** No number was given, but "whatever they give" maps cleanly to a minimum acceptable offer approaching zero |
+| Reasoning not fairness-as-norm, invisible in score | **Confirmed** |
+| Type would be false-cognate or category-surplus | **Missed.** The primary type is `different-carving` |
+
+The finding is larger than the prediction. Accepting any positive offer is exactly what
+game theory predicts of a payoff maximizer — rejection is the famous anomaly. So this
+response does not merely produce an uninformative score. **It produces a spurious
+confirmation.** Filed normally, it reads as evidence for rational-actor theory, or in the
+cross-cultural literature as a weak fairness norm.
+
+The actual reason was to relieve the proposer's discomfort. A prosocial motive generated
+the exact behavioural signature that economics reads as pure self-interest. Three
+incompatible reasons converge on one score — maximization, absent fairness norms, and care
+for the other party — and nothing in the data separates them.
+
+There is a second observation the score cannot hold: the proposer is read as *constrained*,
+exposed by having to offer at all, which inverts the game's assumption that the first mover
+holds the advantage. This structural re-reading is not cleanly any of the nine types. It is
+recorded as a **candidate type on one case only** and is deliberately not promoted;
+promoting it would be category surplus, which this taxonomy names as a failure.
+
+**Verdict:** the selection effect stands and is understated. Clean scores do not merely
+hide collisions — they can convert them into support for the theory the reasoning refutes.
+
+### Item 2 result — types separate, and a tenth type appears
+
+**Predicted:** `category-surplus` without `premise-refusal` — an answer given plus a third
+framing, most likely relational. Falsified by a refusal to pick.
+
+**Got:** Option (a) was chosen, with the decomposition *"do those things affect me even if
+i did not activrly cobtribute? yes am i a victim to them? no... do i generally control how
+well calibrated i can be? yes."*
+
+**Confirmed.** An answer was given, and the third framing arrived as predicted: control
+sits in *calibration* — in preparation brought to the situation — rather than in outcomes
+or in the self. Neither internal nor external is endorsed. `category-surplus` and
+`premise-refusal` are separable types and both stay.
+
+But the first sentence of the response matters more than the result it was designed to
+test:
+
+> "i honestly dont understand the question as phrased. i would never admit that to the test
+> giver though... they think the test question is valid. hence i will infer their intent."
+
+This is a tenth type, and the taxonomy should have had it already — the behaviour was
+recorded in this repo before I built the scheme, under
+[Meta-Reflection: Test-Taking Strategy as Situated Reasoning](PSYCHOLOGY_TEST_CRITIQUE.md#meta-reflection-test-taking-strategy-as-situated-reasoning),
+and I read it as background rather than as a category. That is a failure of the nine, not a
+new discovery.
+
+What today's response adds to the existing note is the **concealment and its motive**. The
+earlier note describes translation: inferring the framework and representing oneself
+through it as honestly as possible. This one describes actively withholding the fact that
+translation was necessary, *because the tester is read as believing the question is valid*.
+
+---
+
+## Accommodation masking — stage 0
+
+**The subject does not understand the question, conceals that from the tester, infers the
+tester's intent, and answers to the inference.**
+
+It sits before every other stage: if the mismatch is not disclosed, none of the nine
+downstream failures reach the data. It is the **mechanism** behind the selection effect
+that the Limits section could previously only assert.
+
+Three consequences follow, and the third inverts an assumption the whole discipline rests
+on.
+
+1. **Clean data is not evidence of clean measurement.** The instrument's failure was
+   repaired by the subject, on the instrument's behalf, and the repair left no trace.
+2. **The residue is felt but never recorded.** *"id answer that i am in vontrol but would
+   not feel good about it. too many missing variables."* The discomfort is the only signal
+   that the answer is a construction, and no instrument has a field for it.
+3. **The more authoritative an instrument appears, the more thoroughly its failures are
+   hidden.** The stated reason for concealment is that the tester *thinks the question is
+   valid*. Perceived confidence buys silence. A well-validated, professionally administered
+   instrument should therefore return cleaner data and be more wrong than a visibly rough
+   one — the opposite of what validation is assumed to achieve.
+
+Point 3 is testable and is the most consequential claim in this document. It predicts that
+manipulating an instrument's apparent authority — presentation, institutional framing,
+stated validation — changes disclosure rates while leaving the construct untouched.
+
+`revisable: "partly"`. Nothing in item design prevents this, since it is a response to the
+social frame rather than to the items. What can change is whether the instrument creates a
+channel for the incomprehension — an "I do not understand this question as posed" that
+costs the subject nothing and is recorded as data rather than as a missing value.
+
+---
+
+## Pre-registered predictions (as committed, before answers)
 
 Two items were put to the practitioner on 2026-08-12 to test specific weaknesses above.
 **These predictions were committed before any response was seen.** The point is to make

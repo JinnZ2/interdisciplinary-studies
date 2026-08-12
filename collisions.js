@@ -60,6 +60,7 @@
 const COLLISIONS = {
 
   stages: [
+    { n: 0, id: "disclosure",          label: "Does the subject disclose the mismatch at all?" },
     { n: 1, id: "variable-existence",  label: "Does the variable exist, and of what kind?" },
     { n: 2, id: "variable-definition", label: "What does the term denote?" },
     { n: 3, id: "response-space",      label: "What answers may be given?" },
@@ -69,6 +70,14 @@ const COLLISIONS = {
   ],
 
   collisionTypes: [
+    {
+      id: "accommodation-masking",
+      label: "Accommodation masking",
+      stage: "disclosure",
+      definition: "The subject does not understand the question as posed, conceals that fact from the tester, infers the tester's intent, and answers to the inferred intent. The concealment is motivated by reading the tester as confident that the question is valid.",
+      yield: "Explains why clean scores are not evidence of clean measurement. The instrument's failure is repaired by the subject, on the instrument's behalf, and the repair leaves no trace. Every other collision type can be masked this way before it reaches the data.",
+      revisable: "partly"
+    },
     {
       id: "wrong-arity",
       label: "Wrong arity",
@@ -257,6 +266,42 @@ const COLLISIONS = {
       note: "The only mutual case here, and the mildest. Both frames can state the other's position and both agree what coolant is. The disagreement is about scope conditions the instrument never declares — which is why this one is revisable by better engineering rather than by a different ontology.",
       domains: ["cognitive", "economics"],
       source: "PRACTITIONER_EPISTEMOLOGY.md#field-note-gauge-vs-body--coolant-sensing"
+    },
+    {
+      id: "ultimatum-minimum-offer",
+      contaminated: true,
+      instrument: {
+        name: "Ultimatum Game",
+        citation: "Güth, Schmittberger & Schwarze (1982); cross-cultural, Henrich et al. (2001)",
+        item: "A stranger has been given $100 and must offer you some part of it. Accept and you keep the split; reject and you both get nothing. You will never meet again. What is the smallest offer you would accept?",
+        scoring: "Minimum acceptable offer. WEIRD modal rejection threshold is roughly 30%; accepting any positive amount is the game-theoretic prediction for a payoff maximizer."
+      },
+      verbatim: "why money? the value of whatever is given is more than i had, and the stranger, by thr very fact they ’need’ to already is in an awkward state. to relieve their awkwardness then whatever they give.  they probsbly come from somewhere that values that money artifact",
+      instrumentReading: "Minimum acceptable offer approaches zero. Coded as an absence of fairness-based costly punishment — that is, as conformity to the rational-maximizer prediction, or in the cross-cultural literature as a weak fairness norm.",
+      analystReading: "The reason to accept is to relieve the proposer's awkwardness. The proposer is read as constrained rather than advantaged — exposed by having to offer at all — which inverts the instrument's assumption that the first mover holds the power. Money is treated as an artifact of wherever the stranger comes from, accommodated rather than shared.",
+      types: ["different-carving", "false-cognate"],
+      asymmetry: "instrument-cannot-represent",
+      note: "The strongest selection-effect case in the set, because the score is not merely uninformative — it is confirmatory of a model the reasoning contradicts. A prosocial motive (relieving another's discomfort) produces the exact behavioural signature economists read as pure self-interest. Three incompatible reasons converge on one score: payoff maximization, absent fairness norms, and care for the proposer's state. Nothing in the data distinguishes them, and the coincidence with theory means nobody would look.",
+      domains: ["economics", "cognitive", "culture"],
+      source: "PSYCHOLOGY_TEST_CRITIQUE.md#meta-reflection-test-taking-strategy-as-situated-reasoning"
+    },
+    {
+      id: "rotter-locus-of-control",
+      contaminated: true,
+      instrument: {
+        name: "Locus of Control scale",
+        citation: "Rotter (1966)",
+        item: "Forced choice: (a) 'What happens to me is my own doing.' OR (b) 'Sometimes I feel that I don't have enough control over the direction my life is taking.'",
+        scoring: "(a) internal locus of control, (b) external locus"
+      },
+      verbatim: "i honestly dont understand the question as phrased. i would never admit that to the test giver though... they think the test question is valid. hence i will infer their intent.  do i think things happen? yes do things  happen around me? yes do those things affect me even if i did not activrly cobtribute? yes am i a victim to them? no does me making myself more learned, skilled and cslibrated help me better deal with situations? yes  do i generally control how well calibrated i can be? yes.... id answer that i am in vontrol but would not feel good about it.  too many missing variables",
+      instrumentReading: "Option (a). Internal locus of control — the profile associated with achievement and better health outcomes in WEIRD samples.",
+      analystReading: "Neither internal nor external is endorsed. Events happen and affect the person regardless of their contribution, and no victim position is taken; what is controlled is the degree of calibration brought to the situation. Control is a third thing, located in preparation rather than in outcomes or in the self. The chosen option is reached by inferring what the tester meant, not by the item parsing.",
+      types: ["category-surplus", "accommodation-masking"],
+      asymmetry: "instrument-cannot-represent",
+      note: "Two results at once. First, category-surplus fires without premise-refusal — an answer is given and a third framing is supplied — so those two types are separable rather than one type described twice. Second and larger: the incomprehension is deliberately concealed, and the stated reason is that the tester believes the question is valid. The discomfort that remains ('would not feel good about it', 'too many missing variables') is not recorded anywhere in the instrument's output.",
+      domains: ["cognitive", "pathology"],
+      source: "PSYCHOLOGY_TEST_CRITIQUE.md#meta-reflection-test-taking-strategy-as-situated-reasoning"
     }
   ]
 };
