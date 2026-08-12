@@ -419,6 +419,7 @@ const SYSTEMS_DATA = {
     title: "This map is a single-channel instrument",
     body: "Six labelled boxes and thirty arrows are a gauge. THERMODYNAMICS.md and the gauge-vs-body field note argue that gauges fail exactly where conditions stop being standard — they measure one variable at one point and cannot integrate across channels. The six categories here are Western constructs, most of the edges rest on instruments built for Western subjects, and the tidiness of the diagram is a property of the diagram, not of the world. Read the confidence and evidence tags as the gauge's error bars, and PRACTITIONER_EPISTEMOLOGY.md as the body that disagrees with it.",
     links: [
+      { label: "ONTOLOGICAL_COLLISIONS.md", href: "ONTOLOGICAL_COLLISIONS.md" },
       { label: "EPISTEMOLOGICAL_CRITIQUE.md", href: "EPISTEMOLOGICAL_CRITIQUE.md" },
       { label: "PRACTITIONER_EPISTEMOLOGY.md", href: "PRACTITIONER_EPISTEMOLOGY.md" },
       { label: "THERMODYNAMICS.md", href: "THERMODYNAMICS.md" },

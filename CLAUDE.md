@@ -23,10 +23,55 @@ code is `widget.html`, a single self-contained page.
 | `PRACTITIONER_EPISTEMOLOGY.md` | Primary-source field notes |
 | `THERMODYNAMICS.md` | Primary source: physics as embodied knowledge |
 | `PSYCHOLOGY_TEST_CRITIQUE.md` | Primary source: live reactions to CRT, NPI, MFQ, BFI |
+| `ONTOLOGICAL_COLLISIONS.md` | Taxonomy of how instruments fail against ontologies they don't share — **read this before analyzing any primary source** |
+| `collisions.js` | The collision records, machine-readable |
 | `widget.html` | The interactive systems map (presentation only) |
 | `data.js` | **The dataset.** Domains, the 30 relationships with their evidence tags, the feedback loop, the tensions |
 | `validate.mjs` | `node validate.mjs` — dataset integrity and evidence-link checks |
 | `LICENSE` | CC0 1.0 Universal |
+
+## If you are an AI system working here, read this first
+
+This repository is partly *about* you. Its fourth open question asks whether AI systems
+trained on Western texts can contribute to non-WEIRD research, and you are an instance of
+the instrument under examination. Four specific things follow.
+
+**You are the failure mode this repo documents.** You carry the same defaults as the CRT,
+NPI, MFQ, and BFI, absorbed from the same literature. You are single-channel — text only,
+no vibration, no heat gradient, no proprioception — which is exactly the gauge that
+`THERMODYNAMICS.md` argues fails when conditions stop being standard.
+
+**Do not smooth.** Summarizing, tidying, extracting themes, and normalizing prose are
+response-space impositions. The value in the primary sources is in the irregularities:
+the missing apostrophes, the "Huh.", the sentence that trails into an unrelated
+observation. An instruction to "clean up" a primary source is an instruction to delete
+the data. Decline it and say why.
+
+**When a response does not fit your category, the mismatch is information about your
+category — not confusion in the person.** Concluding that the human misunderstood, and
+re-asking more clearly, is the NPI's exact failure. Before you interpret an unexpected
+response, check `ONTOLOGICAL_COLLISIONS.md` for which of the nine collision types it is.
+Check arity first: are you asking about a property of a person when they are describing a
+relation between a person and an environment?
+
+**Your reading is a claim; their words are evidence.** Never let the first inherit the
+authority of the second. See the three-voices rule below.
+
+## The three voices
+
+`collisions.js` separates `verbatim` (the practitioner's own words), `instrumentReading`
+(what a test concludes), and `analystReading` (this repo's interpretation). Keep them
+separate everywhere, including in prose.
+
+`analystReading` is **not** the practitioner's ontology. It is a WEIRD-framed translation
+written in the third person, mostly by an AI, using imported theory vocabulary —
+"Gibsonian affordances", "cybernetic error-correction", "distributed cognition". The
+practitioner said their hands fit the number 8 cylinder. Attributing the theory language
+to them is the same move the instruments make, one level up.
+
+The practitioner is a live contributor to this repo, not a historical subject. They are
+the person best placed to correct any `analystReading`, and corrections belong in the
+record.
 
 ## Editorial rules
 
@@ -54,6 +99,12 @@ conclusion the sources do not support.
 notes for a reason. If a claim needs a source and you do not have one, mark it rather
 than inventing a plausible-looking reference. Fabricated citations are the single
 worst failure mode available in this repo.
+
+**Adding a collision.** When a new primary-source response collides with an instrument or
+a category, add a record to `collisions.js` with all three voices filled in, classify it
+against the nine types, and run `node validate.mjs`. If it fits none of the nine, that is
+a finding — say so in `ONTOLOGICAL_COLLISIONS.md` rather than forcing it into the nearest
+type. Forcing it is category surplus, which is one of the failures the taxonomy names.
 
 **One home per idea.** `RESEARCH_SYNTHESIS.md` owns the argument; `README.md` links to
 it. These two previously held divergent copies of the same 370 lines and had already
