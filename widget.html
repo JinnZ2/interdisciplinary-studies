@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interdisciplinary Systems Map</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 24px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #f0f6fc;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #8b949e;
+    margin-bottom: 24px;
+  }
+  .node-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 640px) {
+    .node-grid { grid-template-columns: 1fr; }
+  }
+  .domain-node {
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #161b22;
+  }
+  .domain-node:hover {
+    border-color: #58a6ff;
+    background: #1c2128;
+  }
+  .domain-node.active {
+    border-color: #58a6ff;
+    background: #1c2128;
+    box-shadow: 0 0 0 1px #58a6ff;
+  }
+  .domain-node .node-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .domain-node .node-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin-bottom: 4px;
+  }
+  .domain-node .node-desc {
+    font-size: 12px;
+    color: #8b949e;
+    line-height: 1.5;
+  }
+  .connection-panel {
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 20px;
+    background: #161b22;
+    min-height: 160px;
+  }
+  .connection-panel h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 14px 0;
+    color: #f0f6fc;
+  }
+  .connection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .connection-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #0d1117;
+    border: 1px solid #21262d;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #c9d1d9;
+  }
+  .connection-item .arrow {
+    color: #58a6ff;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .connection-item strong {
+    color: #f0f6fc;
+  }
+  .connection-item .rel-type {
+    font-size: 11px;
+    color: #8b949e;
+    font-style: italic;
+  }
+  .legend-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #8b949e;
+  }
+  .legend-bar span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .dot-extractive { background: #f85149; }
+  .dot-inclusive { background: #3fb950; }
+  .dot-cognitive { background: #58a6ff; }
+  .dot-pathology { background: #a371f7; }
+  .footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #21262d;
+    font-size: 12px;
+    color: #484f58;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Interdisciplinary Systems Map</h1>
+  <p class="subtitle">Click any domain to explore its bidirectional connections. This map traces how religions, cultures, economics, cognitive types, pathologies, and extraction/predation form a single interconnected system.</p>
+  
+  <div class="node-grid">
+    <div class="domain-node" data-domain="religion" onclick="selectDomain('religion')">
+      <div class="node-icon" style="background: rgba(88,166,255,0.15); color: #58a6ff;">⛪</div>
+      <div class="node-title">Religions</div>
+      <div class="node-desc">Moralizing gods, ritual modes, doctrinal vs imagistic transmission</div>
+    </div>
+    <div class="domain-node" data-domain="culture" onclick="selectDomain('culture')">
+      <div class="node-icon" style="background: rgba(163,113,247,0.15); color: #a371f7;">🌍</div>
+      <div class="node-title">Cultures</div>
+      <div class="node-desc">Fluid vs hardwired attributes, collectivism vs individualism</div>
+    </div>
+    <div class="domain-node" data-domain="economics" onclick="selectDomain('economics')">
+      <div class="node-icon" style="background: rgba(63,185,80,0.15); color: #3fb950;">⚖️</div>
+      <div class="node-title">Economics</div>
+      <div class="node-desc">Extractive vs inclusive institutions, behavioral biases, inequality</div>
+    </div>
+    <div class="domain-node" data-domain="cognitive" onclick="selectDomain('cognitive')">
+      <div class="node-icon" style="background: rgba(88,166,255,0.15); color: #58a6ff;">🧠</div>
+      <div class="node-title">Cognitive Types</div>
+      <div class="node-desc">Analytic vs intuitive/holistic, System 1 vs System 2, rationality</div>
+    </div>
+    <div class="domain-node" data-domain="pathology" onclick="selectDomain('pathology')">
+      <div class="node-icon" style="background: rgba(248,81,73,0.15); color: #f85149;">⚡</div>
+      <div class="node-title">Pathologies</div>
+      <div class="node-desc">Dark Triad traits, adaptive dysfunction, systemic parasitism</div>
+    </div>
+    <div class="domain-node" data-domain="extraction" onclick="selectDomain('extraction')">
+      <div class="node-icon" style="background: rgba(248,81,73,0.15); color: #f85149;">🔺</div>
+      <div class="node-title">Extraction & Predation</div>
+      <div class="node-desc">Surplus extraction, rent-seeking, parasitic institutions</div>
+    </div>
+  </div>
+  
+  <div class="connection-panel" id="connectionPanel">
+    <h3 id="panelTitle">Select a domain above</h3>
+    <div class="connection-list" id="connectionList">
+      <div class="connection-item">
+        <span class="arrow">→</span>
+        <div>Click any domain node to reveal its bidirectional relationships with the other five domains.</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="legend-bar">
+    <span><div class="legend-dot dot-extractive"></div> Extractive / predatory</span>
+    <span><div class="legend-dot dot-inclusive"></div> Inclusive / cooperative</span>
+    <span><div class="legend-dot dot-cognitive"></div> Cognitive / epistemic</span>
+    <span><div class="legend-dot dot-pathology"></div> Pathological / dysregulated</span>
+  </div>
+  
+  <div class="footer">
+    Interdisciplinary Systems Research — August 2026
+  </div>
+</div>
+
+<script>
+const connections = {
+  religion: [
+    { target: "Cultures", text: "'Big God' religions create hardwired, entangled cultural attributes that coordinate large-scale cooperation but resist reform. Polytheistic traditions tend toward more fluid cultures.", type: "structural coupling" },
+    { target: "Economics", text: "Religious involvement correlates with greater consistency in economic decision-making and reduced reactivity to gains/losses. Religious dietary laws and observances reshape entire market demand patterns.", type: "behavioral modulation" },
+    { target: "Cognitive Types", text: "Intuitive cognitive style correlates with stronger religious belief; analytic thinking is inversely related to supernatural belief. Rational thinkers may develop intrinsic (internalized) religiosity rather than extrinsic.", type: "cognitive fit" },
+    { target: "Pathologies", text: "Doctrinal modes of religiosity (repetitive teaching, institutional hierarchy) can be co-opted by narcissistic leaders. Religious legitimation is a classic tool for masking extractive power.", type: "exploitation vector" },
+    { target: "Extraction & Predation", text: "The dominium terrae (Genesis 1:26) has served as theological justification for both environmental extraction and human exploitation. Religious surplus extraction (tithes, temple economies) predates capitalism.", type: "ideological justification" }
+  ],
+  culture: [
+    { target: "Religions", text: "Cultural fluidity determines how readily religious configurations can be repurposed or reformed. Hardwired cultures (e.g., caste systems) make religious-political reform extremely difficult.", type: "constraint / enablement" },
+    { target: "Economics", text: "Collectivist cultures prioritize group-oriented purchasing and risk-pooling; individualist cultures drive demand for status-enhancing, personalized products. Cultural distance directly affects transaction costs.", type: "market shaping" },
+    { target: "Cognitive Types", text: "Analytic thinking correlates with individualism; holistic/intuitive thinking correlates with collectivism and social density. Wheat-farming cultures develop more analytic cognition than rice-farming ones.", type: "co-evolution" },
+    { target: "Pathologies", text: "Cultures with high social density and strong conformity pressures may suppress detection of Dark Triad leaders. Conversely, individualist cultures may under-provide collective guardrails against predation.", type: "vulnerability differential" },
+    { target: "Extraction & Predation", text: "Hardwired cultural attributes (entangled, specific) make societies easier to exploit through divide-and-conquer. Fluid cultures can more rapidly reorganize against extractive elites.", type: "resilience / fragility" }
+  ],
+  economics: [
+    { target: "Religions", text: "Economic inequality intensifies status anxiety, which increases demand for religious meaning-making. Low-income countries show more negative perceptions of nature/resource conflicts, often mediated by religious frameworks.", type: "demand-side" },
+    { target: "Cultures", text: "Extractive economic institutions tend to produce cultures of distrust and short-termism. Inclusive institutions foster cultures of innovation, broad-based prosperity, and adaptive efficiency.", type: "institutional imprinting" },
+    { target: "Cognitive Types", text: "Economic inequality elicits Dark Triad-like competitive mindsets (distrust, self-interest, dominance preference) across populations. Cognitive load from poverty impairs decision-making quality.", type: "cognitive stress" },
+    { target: "Pathologies", text: "Economic inequality is positively associated with Dark Triad traits at the population level. Extractive systems select for and reward psychopathic, narcissistic, and Machiavellian behavior in leadership.", type: "selection pressure" },
+    { target: "Extraction & Predation", text: "Extractive political institutions naturally accompany extractive economic institutions—power concentrates, property rights narrow, and surplus flows upward. This is the core engine of predation.", type: "structural identity" }
+  ],
+  cognitive: [
+    { target: "Religions", text: "Analytic cognitive style activates brain networks that suppress social cognition, making religious belief less intuitive. Holistic thinkers gravitate toward intrinsic religious orientation (faith as end, not means).", type: "neural correlate" },
+    { target: "Cultures", text: "Cognitive style is not just individual—it is shaped by social, cultural, and economic environment. Analytic thinking encourages inspecting cultural teachings for self-relevance and questioning social mores.", type: "cultural feedback" },
+    { target: "Economics", text: "Cognitive biases (loss aversion, anchoring, present bias) systematically distort economic decisions. Religious individuals show attenuated impulsivity in investment tasks, suggesting cognitive self-regulation.", type: "decision architecture" },
+    { target: "Pathologies", text: "Dark Triad individuals exploit cognitive biases in others—using charm (Machiavellianism), appearance (narcissism), or threats (psychopathy) as manipulation tools. They are experts at hacking bounded rationality.", type: "exploitation of limits" },
+    { target: "Extraction & Predation", text: "Predatory systems depend on information asymmetries and cognitive overload. Extractive elites benefit when populations operate under high cognitive load, depleted self-control, and heuristic-driven reasoning.", type: "epistemic capture" }
+  ],
+  pathology: [
+    { target: "Religions", text: "Narcissistic leaders often perform well in religious job interviews and gain followings through favorable first impressions. Religious institutions with strong hierarchy and deference to authority are vulnerable to Dark Triad infiltration.", type: "institutional capture" },
+    { target: "Cultures", text: "Dark Triad traits are more prevalent in unequal societies because they are adaptive for status competition. Cultural norms that incentivize ruthless self-advancement normalize what would otherwise be pathological.", type: "cultural normalization" },
+    { target: "Economics", text: "Dark Triad individuals are drawn to economics, law, and politics majors. Companies with psychopathic leaders destroy shareholder value long-term but deliver short-term extraction. Machiavellianism predicts higher salaries.", type: "career selection" },
+    { target: "Cognitive Types", text: "Dark Triad individuals show reduced empathy and theory of mind, but heightened sensitivity to status threats. They exploit the intuitive, social-cognitive processing of others while remaining analytically cold.", type: "cognitive asymmetry" },
+    { target: "Extraction & Predation", text: "Pathology and predation are not identical but are systemically coupled. What is labeled 'pathological' in a cooperative context may be highly adaptive in an extractive one—psychopathy as institutional logic.", type: "contextual adaptation" }
+  ],
+  extraction: [
+    { target: "Religions", text: "Religious institutions have historically managed extraction through tithes, temple economies, and theocratic rent. Moralizing gods can enforce cooperation for elites or mobilize resistance against them.", type: "dual use" },
+    { target: "Cultures", text: "Extractive systems produce cultures of survivalism, risk aversion, and distrust. Peasant economies under extraction develop strategies that prioritize security over profit maximization.", type: "cultural deformation" },
+    { target: "Economics", text: "Extraction and exploitation are the key engines in surplus production for the few by the many. Both natural resources and reproductive labor are treated as externalities in capitalist accounting.", type: "foundational mechanism" },
+    { target: "Cognitive Types", text: "Extractive institutions create chronic cognitive load through unpredictability, surveillance, and scarcity. This impairs the analytic capacities needed to recognize and resist predation.", type: "cognitive depletion" },
+    { target: "Pathologies", text: "Predatory extraction systems select for and elevate individuals with Dark Triad traits. The 'pathology' label often reflects the mismatch between predatory behavior and cooperative norms, not dysfunction per se.", type: "systemic selection" }
+  ]
+};
+
+function selectDomain(domain) {
+  document.querySelectorAll('.domain-node').forEach(function(n) { n.classList.remove('active'); });
+  document.querySelector('[data-domain="' + domain + '"]').classList.add('active');
+  
+  var titles = {
+    religion: "Religion → Connected Domains",
+    culture: "Culture → Connected Domains",
+    economics: "Economics → Connected Domains",
+    cognitive: "Cognitive Types → Connected Domains",
+    pathology: "Pathologies → Connected Domains",
+    extraction: "Extraction & Predation → Connected Domains"
+  };
+  
+  document.getElementById('panelTitle').textContent = titles[domain];
+  var list = document.getElementById('connectionList');
+  list.innerHTML = '';
+  
+  connections[domain].forEach(function(conn) {
+    var item = document.createElement('div');
+    item.className = 'connection-item';
+    item.innerHTML = 
+      '<span class="arrow">↔</span>' +
+      '<div>' +
+        '<strong>' + conn.target + '</strong> <span class="rel-type">(' + conn.type + ')</span><br>' +
+        conn.text +
+      '</div>';
+    list.appendChild(item);
+  });
+}
+</script>
+</body>
+</html>
