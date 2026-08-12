@@ -24,8 +24,9 @@ This document classifies the breakages recorded in
 [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) and
 [PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md). Ten types have emerged from
 eight cases. That ratio is a warning, addressed in [Limits](#limits) — and the tenth,
-[accommodation masking](#accommodation-masking--stage-0), was found only after the first
-nine were written, sitting unclassified in the source material.
+[inferred-frame answering](#inferred-frame-answering--stage-0), was found only after the
+first nine were written, sitting unclassified in the source material — and its first
+write-up was then corrected by the practitioner.
 
 ---
 
@@ -89,10 +90,10 @@ have.
 
 ### Stage 0 — Is the mismatch disclosed at all?
 
-**Accommodation masking.** See [the full treatment below](#accommodation-masking--stage-0);
+**Inferred-frame answering.** See [the full treatment below](#inferred-frame-answering--stage-0);
 it was added after the other nine and it changes how they should be read. The subject does
-not understand the question, hides that from the tester, infers intent, and answers to the
-inference. Every type below it can be masked this way before reaching the data.
+not share the frame, infers the asker's, and answers within it because no alternative was
+requested. Every type below it can be absorbed this way before reaching the data.
 
 ### Stage 1 — Does the variable exist, and of what kind?
 
@@ -322,15 +323,18 @@ stage-3 collision that no redesign could.
 someone noticed them. Instruments returning clean scores generate no record, and some of
 those clean scores sit on top of collisions nobody caught. This was a hypothesis when
 first written; the Item 1 and Item 2 results supply the mechanism —
-[accommodation masking](#accommodation-masking--stage-0). The subject conceals the
-mismatch as a courtesy calibrated to the tester's apparent confidence, so the bias is not
-merely that observers miss collisions but that **subjects hide them, more thoroughly from
-more authoritative instruments.**
+[inferred-frame answering](#inferred-frame-answering--stage-0). The subject answers
+inside the asker's frame because no alternative was invited, so the bias is not merely
+that observers miss collisions but that **the data never contained them** — the mismatch
+was resolved, cooperatively and silently, before it reached the instrument.
 
-**The taxonomy missed a type that was already in the repo.** Accommodation masking was
-documented in `PSYCHOLOGY_TEST_CRITIQUE.md` before the nine types were written, and the
-scheme did not include it. Whatever confidence the nine types earn should be discounted by
-the fact that the tenth was sitting in the source material, unclassified, the entire time.
+**The taxonomy missed a type that was already in the repo, then described it wrongly.**
+Inferred-frame answering was documented in `PSYCHOLOGY_TEST_CRITIQUE.md` before the nine
+types were written, and the scheme did not include it. When it was finally added, the
+analyst assigned it the wrong motive — deference to authority — and the practitioner had to
+correct it. Whatever confidence the other types earn should be discounted twice over: the
+tenth sat unclassified in the source material the entire time, and the analyst's first
+account of it failed.
 
 ---
 
@@ -408,37 +412,86 @@ translation was necessary, *because the tester is read as believing the question
 
 ---
 
-## Accommodation masking — stage 0
+## Inferred-frame answering — stage 0
 
-**The subject does not understand the question, conceals that from the tester, infers the
-tester's intent, and answers to the inference.**
+**The subject does not share the frame the question is posed in, infers the asker's frame,
+and answers within it — because no alternate frame was requested.**
 
 It sits before every other stage: if the mismatch is not disclosed, none of the nine
 downstream failures reach the data. It is the **mechanism** behind the selection effect
 that the Limits section could previously only assert.
 
-Three consequences follow, and the third inverts an assumption the whole discipline rests
-on.
+### The analyst got the motive wrong
+
+This type was first written up as *accommodation masking*, with the non-disclosure
+attributed to deference — the tester's evident confidence purchasing the subject's silence.
+The practitioner corrected it:
+
+> "the question asker probably comes from a different frame.  apparently the questions are
+> helpful for that frame.  the question asker did not request alternate frame, so infered
+> intent is question be answered within that frame since no alternative was given.  if the
+> frame, or question asker was causing distress, imbalance or harm to others by utilizing
+> the frame, then i would override courtesy and actively protest the frame... and probably
+> be noted as disruptive or disabled or impaired or whatnot... but i would stand up.
+> otherwise i would consider it an incomplete assessment, but one helpful for their frame"
+
+The frame is not deferred to. It is treated as *the asker's own, and evidently useful to
+them* — and since no alternative was invited, answering inside it is the cooperative reading
+of what was asked. The original name was itself the error: "masking" imports a
+deficit-and-deference model from the neurodivergence literature, which is precisely the kind
+of category this repo exists to question. Both the name and the reading it encoded were the
+analyst's, not the practitioner's. The failed reading is kept in `collisions.js` rather than
+overwritten.
+
+### What survives, corrected
 
 1. **Clean data is not evidence of clean measurement.** The instrument's failure was
    repaired by the subject, on the instrument's behalf, and the repair left no trace.
 2. **The residue is felt but never recorded.** *"id answer that i am in vontrol but would
    not feel good about it. too many missing variables."* The discomfort is the only signal
-   that the answer is a construction, and no instrument has a field for it.
-3. **The more authoritative an instrument appears, the more thoroughly its failures are
-   hidden.** The stated reason for concealment is that the tester *thinks the question is
-   valid*. Perceived confidence buys silence. A well-validated, professionally administered
-   instrument should therefore return cleaner data and be more wrong than a visibly rough
-   one — the opposite of what validation is assumed to achieve.
+   that the answer is a construction, and no instrument has a field for it. The assessment
+   is not judged worthless — it is *"an incomplete assessment, but one helpful for their
+   frame."*
+3. **Disclosure is governed by invitation, not by authority.** *(Replaces the prediction
+   that apparent authority buys silence, which the correction falsified.)* The alternate
+   frame is withheld because it was not asked for. This makes the repair far cheaper than
+   the original reading implied: an instrument does not need to appear less authoritative,
+   it needs to **ask**. A channel that costs the subject nothing — "this question does not
+   parse in my frame; here is the frame it does parse in" — recorded as data rather than as
+   a missing value, should recover most of what is currently lost.
 
-Point 3 is testable and is the most consequential claim in this document. It predicts that
-manipulating an instrument's apparent authority — presentation, institutional framing,
-stated validation — changes disclosure rates while leaving the construct untouched.
+This is why the type is `revisable: "yes"` rather than `"partly"`. Under the deference
+reading, nothing in item design could touch it. Under the corrected reading, one added field
+does.
 
-`revisable: "partly"`. Nothing in item design prevents this, since it is a response to the
-social frame rather than to the items. What can change is whether the instrument creates a
-channel for the incomprehension — an "I do not understand this question as posed" that
-costs the subject nothing and is recorded as data rather than as a missing value.
+### The harm gate, and the trap it opens
+
+Cooperation is default but **conditional**. It is withdrawn when the frame is "causing
+distress, imbalance or harm to others" — at which point courtesy is overridden and the frame
+is protested directly.
+
+The practitioner then states the cost of exercising that override: *"probably be noted as
+disruptive or disabled or impaired or whatnot... but i would stand up."*
+
+This closes a loop that belongs with [Expressive asymmetry](#expressive-asymmetry) above,
+and it is the strongest form of the non-self-correction argument in this document. The
+subject has exactly two available moves, and **both leave the frame intact**:
+
+| Move | Result |
+|---|---|
+| Answer within the inferred frame | Clean score. Mismatch invisible. Frame confirmed. |
+| Protest the frame | Protest recoded as a symptom — disruptive, impaired — by the frame being protested. |
+
+There is no third move that registers as a *challenge to the instrument* rather than as
+data about the subject. That is not a claim about anyone's intentions; it is a structural
+property of a measurement system that has categories for non-compliance but none for "the
+question is wrong." A framework holding both of those exits is unfalsifiable from the
+subject's side, however sincere everyone in it is.
+
+The prediction: protest against a psychometric or diagnostic frame is coded as a subject
+attribute (opposition, poor insight, impairment) rather than as instrument feedback, at a
+rate high enough to measure. This is checkable in existing clinical and assessment records
+without recruiting anyone.
 
 ---
 

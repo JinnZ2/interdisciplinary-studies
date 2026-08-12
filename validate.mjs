@@ -86,6 +86,16 @@ for (const r of C.records) {
   }
   if (r.verbatim === r.analystReading) { console.log('VOICES CONFLATED in', r.id); bad++; }
 
+  // A correction must keep the reading it corrects. Overwriting the failed
+  // analystReading would erase the evidence that the analyst layer makes the
+  // same errors as the instruments.
+  if (r.practitionerCorrection && !r.correctionEffect) {
+    console.log('CORRECTION WITHOUT EFFECT NOTE in', r.id); bad++;
+  }
+  if (r.correctionEffect && !r.practitionerCorrection) {
+    console.log('EFFECT NOTE WITHOUT VERBATIM CORRECTION in', r.id); bad++;
+  }
+
   if (!r.types.length) { console.log('UNTYPED collision', r.id); bad++; }
   for (const t of r.types) if (!typeIds.has(t)) { console.log('BAD collision type', r.id, t); bad++; }
   if (!asymmetries.has(r.asymmetry)) { console.log('BAD asymmetry', r.id, r.asymmetry); bad++; }
@@ -110,5 +120,6 @@ console.log('by stage:', Object.fromEntries(C.stages.map(s => [
   C.records.filter(r => r.types.some(t => C.collisionTypes.find(ct => ct.id === t).stage === s.id)).length
 ])));
 console.log('asymmetry:', Object.fromEntries([...asymmetries].map(a => [a, C.records.filter(r => r.asymmetry === a).length])));
+console.log('practitioner corrections on record:', C.records.filter(r => r.practitionerCorrection).length);
 
 console.log(bad ? `\n${bad} PROBLEM(S)` : '\nAll checks passed');

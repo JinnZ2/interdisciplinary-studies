@@ -31,7 +31,19 @@
  * treat `verbatim` as evidence and `analystReading` as a claim.
  *
  * The practitioner is the person best placed to correct analystReading, and
- * corrections belong in the record rather than in a footnote.
+ * corrections belong in the record rather than in a footnote. Two optional
+ * fields carry them:
+ *
+ *   practitionerCorrection  The practitioner's own words correcting an
+ *                           analystReading. Primary source, same rules as
+ *                           verbatim: never edited, never tidied.
+ *   correctionEffect        What the correction changed, including any
+ *                           prediction it falsified.
+ *
+ * A correction never overwrites the analystReading it corrects. The failed
+ * reading stays in the record — deleting it would hide the fact that the
+ * analyst made the same class of error as the instruments, which is itself
+ * one of this repo's findings.
  *
  * ---------------------------------------------------------------------------
  * THE DEPTH ORDERING
@@ -71,12 +83,14 @@ const COLLISIONS = {
 
   collisionTypes: [
     {
-      id: "accommodation-masking",
-      label: "Accommodation masking",
+      id: "inferred-frame-answering",
+      label: "Inferred-frame answering",
       stage: "disclosure",
-      definition: "The subject does not understand the question as posed, conceals that fact from the tester, infers the tester's intent, and answers to the inferred intent. The concealment is motivated by reading the tester as confident that the question is valid.",
-      yield: "Explains why clean scores are not evidence of clean measurement. The instrument's failure is repaired by the subject, on the instrument's behalf, and the repair leaves no trace. Every other collision type can be masked this way before it reaches the data.",
-      revisable: "partly"
+      definition: "The subject does not share the frame the question is posed in, infers the asker's frame, and answers within it — because no alternate frame was requested. The mismatch goes undisclosed as a consequence of the question not inviting it, not as deference to the asker's authority. Cooperation is default but conditional: it is withdrawn if the frame is causing harm to others.",
+      yield: "Explains why clean scores are not evidence of clean measurement. The instrument's failure is repaired by the subject, on the instrument's behalf, and the repair leaves no trace. Every other collision type can be masked this way before it reaches the data. The repair is cheap to prevent — an instrument that explicitly asks for the alternate frame is given it.",
+      revisable: "yes",
+      renamedFrom: "accommodation-masking",
+      renameReason: "First named 'accommodation masking', which imported a deficit-and-deference model from the neurodivergence literature. The practitioner corrected the motive: it is cooperative inference under an uninvited-frame condition, harm-gated, not concealment purchased by the asker's authority. The original name encoded the analyst's error."
     },
     {
       id: "wrong-arity",
@@ -297,9 +311,11 @@ const COLLISIONS = {
       verbatim: "i honestly dont understand the question as phrased. i would never admit that to the test giver though... they think the test question is valid. hence i will infer their intent.  do i think things happen? yes do things  happen around me? yes do those things affect me even if i did not activrly cobtribute? yes am i a victim to them? no does me making myself more learned, skilled and cslibrated help me better deal with situations? yes  do i generally control how well calibrated i can be? yes.... id answer that i am in vontrol but would not feel good about it.  too many missing variables",
       instrumentReading: "Option (a). Internal locus of control — the profile associated with achievement and better health outcomes in WEIRD samples.",
       analystReading: "Neither internal nor external is endorsed. Events happen and affect the person regardless of their contribution, and no victim position is taken; what is controlled is the degree of calibration brought to the situation. Control is a third thing, located in preparation rather than in outcomes or in the self. The chosen option is reached by inferring what the tester meant, not by the item parsing.",
-      types: ["category-surplus", "accommodation-masking"],
+      practitionerCorrection: "my point to number 3 is that the question asker probably comes from a different frame.  apparently the questions are helpful for that frame.  the question asker did not request alternate frame, so infered intent is question be answered within that frame since no alternative was given.  if the frame, or question asker was causing distress, imbalance or harm to others by utilizing the frame, then i would override courtesy and actively protest the frame... and probably be noted as disruptive or disabled or impaired or whatnot... but i would stand up.  otherwise i would consider it an incomplete assessment, but one helpful for their frame",
+      correctionEffect: "The analyst's first reading attributed the non-disclosure to deference — the tester's evident confidence buying the subject's silence — and generated a prediction that apparent authority drives concealment. The practitioner rejects that motive. The frame is not deferred to; it is respected as the asker's own and inferred to be useful to them, and no alternate frame was requested. Cooperation is therefore conditional, not submissive: it is withdrawn the moment the frame causes distress, imbalance or harm to others, at a cost the practitioner states plainly and accepts. The prediction that followed from the analyst's reading was wrong and is replaced: disclosure is governed by invitation, not by authority.",
+      types: ["category-surplus", "inferred-frame-answering"],
       asymmetry: "instrument-cannot-represent",
-      note: "Two results at once. First, category-surplus fires without premise-refusal — an answer is given and a third framing is supplied — so those two types are separable rather than one type described twice. Second and larger: the incomprehension is deliberately concealed, and the stated reason is that the tester believes the question is valid. The discomfort that remains ('would not feel good about it', 'too many missing variables') is not recorded anywhere in the instrument's output.",
+      note: "Three results. First, category-surplus fires without premise-refusal — an answer is given and a third framing is supplied — so those two types are separable rather than one type described twice. Second, the mismatch goes undisclosed and the answer is generated by inferring the asker's intent; the discomfort that remains ('would not feel good about it', 'too many missing variables') is recorded nowhere in the instrument's output. Third, the analyst's account of *why* it goes undisclosed was wrong, and was corrected by the practitioner — see practitionerCorrection. That correction is the clearest live demonstration in this repo of why the three voices are kept apart: analystReading is a claim, and this one failed.",
       domains: ["cognitive", "pathology"],
       source: "PSYCHOLOGY_TEST_CRITIQUE.md#meta-reflection-test-taking-strategy-as-situated-reasoning"
     }

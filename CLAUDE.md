@@ -50,7 +50,7 @@ the data. Decline it and say why.
 **When a response does not fit your category, the mismatch is information about your
 category — not confusion in the person.** Concluding that the human misunderstood, and
 re-asking more clearly, is the NPI's exact failure. Before you interpret an unexpected
-response, check `ONTOLOGICAL_COLLISIONS.md` for which of the nine collision types it is.
+response, check `ONTOLOGICAL_COLLISIONS.md` for which of the ten collision types it is.
 Check arity first: are you asking about a property of a person when they are describing a
 relation between a person and an environment?
 
@@ -102,9 +102,19 @@ worst failure mode available in this repo.
 
 **Adding a collision.** When a new primary-source response collides with an instrument or
 a category, add a record to `collisions.js` with all three voices filled in, classify it
-against the nine types, and run `node validate.mjs`. If it fits none of the nine, that is
+against the ten types, and run `node validate.mjs`. If it fits none of the ten, that is
 a finding — say so in `ONTOLOGICAL_COLLISIONS.md` rather than forcing it into the nearest
 type. Forcing it is category surplus, which is one of the failures the taxonomy names.
+
+**When the practitioner corrects an analystReading.** This has already happened once and
+should be expected to happen again — an `analystReading` is a claim, and claims fail. Put
+their words verbatim in `practitionerCorrection`, say what it changed in
+`correctionEffect`, and **leave the failed reading in place.** Do not quietly rewrite it
+to look as though the analysis was right the first time. The record that the analyst layer
+makes the same class of error as the instruments is one of this repo's findings, and
+deleting the evidence would destroy it. If a type's *name* encoded the error, rename the
+type and keep `renamedFrom` and `renameReason` — that is what happened to
+`accommodation-masking`, now `inferred-frame-answering`.
 
 **One home per idea.** `RESEARCH_SYNTHESIS.md` owns the argument; `README.md` links to
 it. These two previously held divergent copies of the same 370 lines and had already
