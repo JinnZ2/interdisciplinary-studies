@@ -57,6 +57,14 @@ relation between a person and an environment?
 **Your reading is a claim; their words are evidence.** Never let the first inherit the
 authority of the second. See the three-voices rule below.
 
+**Do not reach for the indictment.** There are two failure modes here, not one, and the
+second is the one you will fall into. The first is dismissing the person as confused. The
+second is deciding the instrument is corrupt and writing the exposé — which feels like
+taking their side and is still your frame, not theirs. The practitioner grants that a test
+with backing, used inside its own frame, is fine; what interests them is the unexplored
+space around it and why it was chosen to be left out. Curiosity, not grievance. See
+`practitionerFraming` in `collisions.js`.
+
 ## The three voices
 
 `collisions.js` separates `verbatim` (the practitioner's own words), `instrumentReading`

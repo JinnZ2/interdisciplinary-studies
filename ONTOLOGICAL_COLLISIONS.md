@@ -1,10 +1,42 @@
 # Ontological Collisions
 
-## A taxonomy of how instruments fail against ontologies they do not share
+## A taxonomy of what happens at the edge of a frame
 
 **Status:** Working taxonomy, ten types from eight recorded collisions
 **Data:** [collisions.js](collisions.js) — machine-readable, checked by `node validate.mjs`
 **Started:** 2026-08-12
+
+---
+
+## What this document is not
+
+It was first written as an indictment — instruments *fail*, *break*, *learn nothing true*.
+The practitioner whose responses generate every case in it does not hold that stance, and
+corrected it:
+
+> "the question asker is asking questions from within their frame, for their frame, and if
+> it a test that has backing and is helpful for them in their frame, then ok, i will do my
+> best at answering.  its incomplete because so many variables are missing... what about
+> outside that frame? what is the scope of who this helps inside their frame? what about
+> the vast spaces outside their frame? those kind of things leave me curious as to all the
+> unexplored possibilities that are chosen to be left out.  why? thats why i said
+> incomplete"
+
+An instrument working inside its own frame, for people in that frame, with backing behind
+it, is granted as fine. What is incomplete is not the instrument — it is the **space around
+it**, and the stance toward that space is curiosity rather than grievance.
+
+This is not a softening. It is a sharper claim. "This test is biased" is an argument the
+discipline already knows how to have, and knows how to answer with better sampling. "What
+about the vast spaces outside their frame, and why were they chosen to be left out?" is not
+answerable by better sampling at all, because it asks about the boundary itself and about
+the decision that drew it.
+
+The adversarial language survives in places below and in
+[PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md), which was written earlier. It
+has not been scrubbed — rewriting the record to look as though the framing was right from
+the start is the same move as overwriting a failed `analystReading`. Read it knowing whose
+stance it is.
 
 ---
 
@@ -13,12 +45,11 @@
 An instrument's internal validity checks cannot tell you what the instrument
 presupposes. Reliability, factor structure, and test–retest stability are all computed
 *inside* the instrument's own ontology. They can tell you that a measure is consistent.
-They cannot tell you that the thing it measures does not exist outside the population
-that built it.
+They cannot tell you where it stops.
 
-A collision can. When an instrument meets someone who does not share its ontology, it
-breaks in a specific way — and **which way it breaks is the information**. The breakage
-is the measurement.
+A collision can. When an instrument meets someone who does not share its ontology,
+something specific happens — and **which specific thing happens is the information**. The
+collision is where the edge of a frame becomes briefly visible from outside it.
 
 This document classifies the breakages recorded in
 [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) and
@@ -54,6 +85,35 @@ husband's and they fit the number 8 cylinder. The theory vocabulary is the analy
 
 The practitioner is the person best placed to correct `analystReading`. Corrections
 belong in the record, not in a footnote.
+
+---
+
+## What "incomplete" means
+
+The practitioner's word for an assessment that works in its frame and stops there. It is
+not a synonym for *invalid*. Three questions unpack it, and each opens a different research
+programme.
+
+**1. What is outside the frame?**
+The unexplored space. Not "what did this test get wrong" but "what was never in scope."
+Most of the nine types below are, read this way, sightings of that boundary rather than
+diagnoses of malfunction.
+
+**2. What is the scope of who this helps, inside the frame?**
+The question that is easiest to skip and hardest to answer. It does not ask about
+cross-cultural reach. It asks how far the instrument's usefulness extends *among the people
+it was built for* — a question the discipline rarely poses, because within-frame validity is
+usually treated as settled once the psychometrics clear.
+
+**3. Why were the excluded possibilities chosen to be left out?**
+The sharpest of the three, and it turns on the word *chosen*. Exclusions are treated as
+decisions with reasons — not as accidents, and not as malice. The reasons are asked for
+rather than assumed. Candidate answers span tractability, funding, disciplinary boundaries,
+a sampling frame invisible from inside it, and the epistemic-capture mechanisms
+[RESEARCH_SYNTHESIS.md §5](RESEARCH_SYNTHESIS.md#extractive-systems-and-epistemic-capture)
+describes. Which of those actually operate, and in what proportion, is unstudied here.
+
+Question 3 is the one this repo is least equipped to answer and most obliged to record.
 
 ---
 
@@ -278,6 +338,15 @@ When a response does not fit the category you expected:
    stage-1 disagreement is worth recording — trying to resolve it destroys it.
 6. **Keep the voices separate in anything you write.** Your reading is a claim. Their
    words are evidence. Never let the first inherit the authority of the second.
+7. **Map the boundary; do not reach for the indictment.** The available failure modes here
+   are not one but two, and the second is the one an AI will fall into. The first is
+   dismissing the person as confused. The second is deciding the instrument is corrupt and
+   writing an exposé — which feels like taking their side and is still your frame, not
+   theirs. The practitioner grants that the test is fine for its frame and is curious about
+   what lies outside it. Curiosity is the harder register to hold and the correct one.
+8. **Expect your reading to be corrected, and keep the failed one.** Two `analystReading`s
+   in this repo have now been corrected by the practitioner — once on motive, once on
+   stance. Both failures are still in `collisions.js`. That is the design, not an oversight.
 
 ### The honest answer to open question 4
 
@@ -564,6 +633,12 @@ this evidence they are not separable and should be merged.
 
 ## Open questions
 
+0. **Why were the excluded possibilities chosen to be left out?** The practitioner's
+   question, kept first because it is the one this document is least able to answer.
+   Tractability, funding, disciplinary boundary maintenance, an invisible sampling frame,
+   and active epistemic capture are all candidates, and they are not mutually exclusive.
+   Distinguishing them would require studying the people who build instruments rather than
+   the people who take them — a study this repo has no data for and has not attempted.
 1. Are there collision types that only appear between two *non*-WEIRD ontologies? Every
    case here has a WEIRD instrument on one side, which may be shaping the taxonomy.
 2. Does the depth ordering predict anything about repair — can a stage-1 failure ever be

@@ -71,6 +71,22 @@
 
 const COLLISIONS = {
 
+  /*
+   * The practitioner's own framing of what these records are for, given after
+   * the taxonomy was written and correcting its stance. Kept at the top
+   * because it governs how everything below should be read.
+   */
+  practitionerFraming: {
+    verbatim: "1. the question asker is asking questions from within their frame, for their frame, and if it a test that has backing and is helpful for them in their frame, then ok, i will do my best at answering.  its incomplete because so many variables are missing... what about outside that frame? what is the scope of who this helps inside their frame? what about the vast spaces outside their frame? those kind of things leave me curious as to all the unexplored possibilities that are chosen to be left out.  why? thats why i said incomplete",
+    effect: "The taxonomy was written as an indictment: instruments 'fail', 'break', commit 'epistemic violence', 'learn nothing true'. That stance is the analyst's, not the practitioner's. An instrument working inside its own frame, for people in that frame, with backing, is granted as fine. What is incomplete is not the instrument but the unexplored space around it — and the stance toward that space is curiosity, not grievance.",
+    questionsRaised: [
+      "What is outside the frame?",
+      "What is the scope of who this helps, inside the frame?",
+      "Why were the excluded possibilities chosen to be left out?"
+    ],
+    note: "The third question is the sharpest and is easiest to miss, because 'chosen' is doing the work. The exclusions are treated as decisions with reasons, not as accidents or as malice — and the reasons are asked for rather than assumed. The second question is also stronger than it first reads: it asks about reach *inside* the frame, not only beyond it."
+  },
+
   stages: [
     { n: 0, id: "disclosure",          label: "Does the subject disclose the mismatch at all?" },
     { n: 1, id: "variable-existence",  label: "Does the variable exist, and of what kind?" },

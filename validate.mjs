@@ -122,4 +122,17 @@ console.log('by stage:', Object.fromEntries(C.stages.map(s => [
 console.log('asymmetry:', Object.fromEntries([...asymmetries].map(a => [a, C.records.filter(r => r.asymmetry === a).length])));
 console.log('practitioner corrections on record:', C.records.filter(r => r.practitionerCorrection).length);
 
+// The practitioner's framing governs how the whole file reads; it must carry
+// their words, what it changed, and the questions it raises.
+if (!C.practitionerFraming) { console.log('MISSING practitionerFraming'); bad++; }
+else {
+  for (const f of ['verbatim', 'effect']) {
+    if (!C.practitionerFraming[f]) { console.log('MISSING practitionerFraming.' + f); bad++; }
+  }
+  if (!(C.practitionerFraming.questionsRaised || []).length) {
+    console.log('practitionerFraming raises no questions'); bad++;
+  }
+  console.log('framing questions on record:', C.practitionerFraming.questionsRaised.length);
+}
+
 console.log(bad ? `\n${bad} PROBLEM(S)` : '\nAll checks passed');
