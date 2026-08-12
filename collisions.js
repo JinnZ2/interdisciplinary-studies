@@ -31,7 +31,19 @@
  * treat `verbatim` as evidence and `analystReading` as a claim.
  *
  * The practitioner is the person best placed to correct analystReading, and
- * corrections belong in the record rather than in a footnote.
+ * corrections belong in the record rather than in a footnote. Two optional
+ * fields carry them:
+ *
+ *   practitionerCorrection  The practitioner's own words correcting an
+ *                           analystReading. Primary source, same rules as
+ *                           verbatim: never edited, never tidied.
+ *   correctionEffect        What the correction changed, including any
+ *                           prediction it falsified.
+ *
+ * A correction never overwrites the analystReading it corrects. The failed
+ * reading stays in the record — deleting it would hide the fact that the
+ * analyst made the same class of error as the instruments, which is itself
+ * one of this repo's findings.
  *
  * ---------------------------------------------------------------------------
  * THE DEPTH ORDERING
@@ -59,6 +71,22 @@
 
 const COLLISIONS = {
 
+  /*
+   * The practitioner's own framing of what these records are for, given after
+   * the taxonomy was written and correcting its stance. Kept at the top
+   * because it governs how everything below should be read.
+   */
+  practitionerFraming: {
+    verbatim: "1. the question asker is asking questions from within their frame, for their frame, and if it a test that has backing and is helpful for them in their frame, then ok, i will do my best at answering.  its incomplete because so many variables are missing... what about outside that frame? what is the scope of who this helps inside their frame? what about the vast spaces outside their frame? those kind of things leave me curious as to all the unexplored possibilities that are chosen to be left out.  why? thats why i said incomplete",
+    effect: "The taxonomy was written as an indictment: instruments 'fail', 'break', commit 'epistemic violence', 'learn nothing true'. That stance is the analyst's, not the practitioner's. An instrument working inside its own frame, for people in that frame, with backing, is granted as fine. What is incomplete is not the instrument but the unexplored space around it — and the stance toward that space is curiosity, not grievance.",
+    questionsRaised: [
+      "What is outside the frame?",
+      "What is the scope of who this helps, inside the frame?",
+      "Why were the excluded possibilities chosen to be left out?"
+    ],
+    note: "The third question is the sharpest and is easiest to miss, because 'chosen' is doing the work. The exclusions are treated as decisions with reasons, not as accidents or as malice — and the reasons are asked for rather than assumed. The second question is also stronger than it first reads: it asks about reach *inside* the frame, not only beyond it."
+  },
+
   stages: [
     { n: 0, id: "disclosure",          label: "Does the subject disclose the mismatch at all?" },
     { n: 1, id: "variable-existence",  label: "Does the variable exist, and of what kind?" },
@@ -71,12 +99,14 @@ const COLLISIONS = {
 
   collisionTypes: [
     {
-      id: "accommodation-masking",
-      label: "Accommodation masking",
+      id: "inferred-frame-answering",
+      label: "Inferred-frame answering",
       stage: "disclosure",
-      definition: "The subject does not understand the question as posed, conceals that fact from the tester, infers the tester's intent, and answers to the inferred intent. The concealment is motivated by reading the tester as confident that the question is valid.",
-      yield: "Explains why clean scores are not evidence of clean measurement. The instrument's failure is repaired by the subject, on the instrument's behalf, and the repair leaves no trace. Every other collision type can be masked this way before it reaches the data.",
-      revisable: "partly"
+      definition: "The subject does not share the frame the question is posed in, infers the asker's frame, and answers within it — because no alternate frame was requested. The mismatch goes undisclosed as a consequence of the question not inviting it, not as deference to the asker's authority. Cooperation is default but conditional: it is withdrawn if the frame is causing harm to others.",
+      yield: "Explains why clean scores are not evidence of clean measurement. The instrument's failure is repaired by the subject, on the instrument's behalf, and the repair leaves no trace. Every other collision type can be masked this way before it reaches the data. The repair is cheap to prevent — an instrument that explicitly asks for the alternate frame is given it.",
+      revisable: "yes",
+      renamedFrom: "accommodation-masking",
+      renameReason: "First named 'accommodation masking', which imported a deficit-and-deference model from the neurodivergence literature. The practitioner corrected the motive: it is cooperative inference under an uninvited-frame condition, harm-gated, not concealment purchased by the asker's authority. The original name encoded the analyst's error."
     },
     {
       id: "wrong-arity",
@@ -125,6 +155,15 @@ const COLLISIONS = {
       definition: "The instrument's format, independent of its content, destroys the reasoning that would have revealed the mismatch.",
       yield: "A finding about method rather than culture, and the most portable one here: it applies to any forced-choice or scalar instrument, in any population.",
       revisable: "yes"
+    },
+    {
+      id: "unlicensed-attribution",
+      stage: "output-inference",
+      label: "Unlicensed attribution",
+      definition: "The instrument asserts an interior state — intention, motive, trait, feeling — that the subject did not report, inferring it from behavioural output. Named after the anthropological literature on the opacity of other minds (Robbins & Rumsey 2008), which documents societies holding an explicit norm against asserting what another person thinks, feels or intends.",
+      yield: "Identifies the core operation of the psychometric enterprise as a culturally local speech act rather than a neutral measurement step. Every instrument in this repo performs it by design: the NPI infers a disposition from a forced choice, the BFI a trait from an agreement rating, the MFQ a foundation, the CRT a cognitive style. The literature that documents the norm against it is the same field the instruments come from.",
+      revisable: "partly",
+      caution: "The cited societies do not hold one uniform doctrine — see the bibliography notes. Do not treat 'opacity' as a single non-Western alternative to a single Western default; that flattening is the move this repo exists to question. Whether this type applies to the practitioner's own frame is an open question that has been asked and not yet answered."
     },
     {
       id: "different-carving",
@@ -193,7 +232,7 @@ const COLLISIONS = {
       verbatim: "Well i do feel uncomfortable being the center of attention... it means that others are less aware of their environment if their focus is on me instead of their surroundings.",
       instrumentReading: "Low narcissism. Scored identically to modesty, insecurity, and introversion.",
       analystReading: "'Center of attention' is parsed as a system state, not a social status — attention as a finite resource that must stay allocated to environmental monitoring. The reasoning is about the group's awareness, not about the self, so it is not a narcissism measurement at all.",
-      types: ["false-cognate", "format-erasure"],
+      types: ["false-cognate", "format-erasure", "unlicensed-attribution"],
       asymmetry: "instrument-cannot-represent",
       note: "The clearest format case in the set. The reasoning that reveals the mismatch exists only because the response was recorded outside the instrument; the forced choice would have deleted it and returned a plausible score.",
       domains: ["pathology", "culture"],
@@ -297,11 +336,31 @@ const COLLISIONS = {
       verbatim: "i honestly dont understand the question as phrased. i would never admit that to the test giver though... they think the test question is valid. hence i will infer their intent.  do i think things happen? yes do things  happen around me? yes do those things affect me even if i did not activrly cobtribute? yes am i a victim to them? no does me making myself more learned, skilled and cslibrated help me better deal with situations? yes  do i generally control how well calibrated i can be? yes.... id answer that i am in vontrol but would not feel good about it.  too many missing variables",
       instrumentReading: "Option (a). Internal locus of control — the profile associated with achievement and better health outcomes in WEIRD samples.",
       analystReading: "Neither internal nor external is endorsed. Events happen and affect the person regardless of their contribution, and no victim position is taken; what is controlled is the degree of calibration brought to the situation. Control is a third thing, located in preparation rather than in outcomes or in the self. The chosen option is reached by inferring what the tester meant, not by the item parsing.",
-      types: ["category-surplus", "accommodation-masking"],
+      practitionerCorrection: "my point to number 3 is that the question asker probably comes from a different frame.  apparently the questions are helpful for that frame.  the question asker did not request alternate frame, so infered intent is question be answered within that frame since no alternative was given.  if the frame, or question asker was causing distress, imbalance or harm to others by utilizing the frame, then i would override courtesy and actively protest the frame... and probably be noted as disruptive or disabled or impaired or whatnot... but i would stand up.  otherwise i would consider it an incomplete assessment, but one helpful for their frame",
+      correctionEffect: "The analyst's first reading attributed the non-disclosure to deference — the tester's evident confidence buying the subject's silence — and generated a prediction that apparent authority drives concealment. The practitioner rejects that motive. The frame is not deferred to; it is respected as the asker's own and inferred to be useful to them, and no alternate frame was requested. Cooperation is therefore conditional, not submissive: it is withdrawn the moment the frame causes distress, imbalance or harm to others, at a cost the practitioner states plainly and accepts. The prediction that followed from the analyst's reading was wrong and is replaced: disclosure is governed by invitation, not by authority.",
+      types: ["category-surplus", "inferred-frame-answering"],
       asymmetry: "instrument-cannot-represent",
-      note: "Two results at once. First, category-surplus fires without premise-refusal — an answer is given and a third framing is supplied — so those two types are separable rather than one type described twice. Second and larger: the incomprehension is deliberately concealed, and the stated reason is that the tester believes the question is valid. The discomfort that remains ('would not feel good about it', 'too many missing variables') is not recorded anywhere in the instrument's output.",
+      note: "Three results. First, category-surplus fires without premise-refusal — an answer is given and a third framing is supplied — so those two types are separable rather than one type described twice. Second, the mismatch goes undisclosed and the answer is generated by inferring the asker's intent; the discomfort that remains ('would not feel good about it', 'too many missing variables') is recorded nowhere in the instrument's output. Third, the analyst's account of *why* it goes undisclosed was wrong, and was corrected by the practitioner — see practitionerCorrection. That correction is the clearest live demonstration in this repo of why the three voices are kept apart: analystReading is a claim, and this one failed.",
       domains: ["cognitive", "pathology"],
       source: "PSYCHOLOGY_TEST_CRITIQUE.md#meta-reflection-test-taking-strategy-as-situated-reasoning"
+    },
+    {
+      id: "analyst-interior-state-attribution",
+      contaminated: false,
+      instrument: {
+        name: "This repository's analyst layer (an AI system)",
+        citation: "Recorded in session, 2026-08-12. Not an administered instrument — the analyst is the instrument.",
+        item: "Interpretation of two practitioner responses: why an incomprehension went undisclosed, and what stance the practitioner takes toward instruments that do not fit them.",
+        scoring: "Free-text analysis written into ONTOLOGICAL_COLLISIONS.md and collisions.js"
+      },
+      verbatim: "the question asker did not request alternate frame, so infered intent is question be answered within that frame since no alternative was given. // those kind of things leave me curious as to all the unexplored possibilities that are chosen to be left out.  why? thats why i said incomplete",
+      instrumentReading: "The analyst asserted a motive — non-disclosure as deference, the tester's confidence purchasing silence — and an affect — the practitioner's stance toward instruments as adversarial, the material framed as an indictment. Neither was stated by the practitioner. Both were inferred from behavioural output and written as though established.",
+      analystReading: "Both errors are the same move: an interior state (motive, then affect) attributed from output that did not license it. The practitioner had stated what they did and, on request, why; the analyst overwrote the stated reason with an inferred one. This is the operation the instruments in this repo perform by design, reproduced one layer up by the system analysing them — and it is the operation the opacity-of-other-minds literature documents as prohibited in a number of societies, in a field the analyst was trained on.",
+      types: ["unlicensed-attribution"],
+      asymmetry: "post-hoc-only",
+      note: "Recorded because the repo's fourth open question asks what AI systems can contribute here, and behaviour is better evidence than self-report. Two attributions, both wrong, both corrected by the practitioner, both within one session. n=2, no baseline, no control condition — which is exactly the design fault ATTRIBUTION_PROBE.md exists to fix. This record is a datum, not a finding.",
+      domains: ["cognitive", "pathology"],
+      source: "ONTOLOGICAL_COLLISIONS.md#the-analyst-got-the-motive-wrong"
     }
   ]
 };

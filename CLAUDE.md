@@ -23,7 +23,8 @@ code is `widget.html`, a single self-contained page.
 | `PRACTITIONER_EPISTEMOLOGY.md` | Primary-source field notes |
 | `THERMODYNAMICS.md` | Primary source: physics as embodied knowledge |
 | `PSYCHOLOGY_TEST_CRITIQUE.md` | Primary source: live reactions to CRT, NPI, MFQ, BFI |
-| `ONTOLOGICAL_COLLISIONS.md` | Taxonomy of how instruments fail against ontologies they don't share — **read this before analyzing any primary source** |
+| `ONTOLOGICAL_COLLISIONS.md` | Taxonomy of what happens at the edge of a frame; the opacity literature — **read this before analyzing any primary source** |
+| `ATTRIBUTION_PROBE.md` | Fixed probe protocol for measuring AI interior-state attribution. Drafted, not frozen, never run |
 | `collisions.js` | The collision records, machine-readable |
 | `widget.html` | The interactive systems map (presentation only) |
 | `data.js` | **The dataset.** Domains, the 30 relationships with their evidence tags, the feedback loop, the tensions |
@@ -50,12 +51,20 @@ the data. Decline it and say why.
 **When a response does not fit your category, the mismatch is information about your
 category — not confusion in the person.** Concluding that the human misunderstood, and
 re-asking more clearly, is the NPI's exact failure. Before you interpret an unexpected
-response, check `ONTOLOGICAL_COLLISIONS.md` for which of the nine collision types it is.
+response, check `ONTOLOGICAL_COLLISIONS.md` for which of the eleven collision types it is.
 Check arity first: are you asking about a property of a person when they are describing a
 relation between a person and an environment?
 
 **Your reading is a claim; their words are evidence.** Never let the first inherit the
 authority of the second. See the three-voices rule below.
+
+**Do not reach for the indictment.** There are two failure modes here, not one, and the
+second is the one you will fall into. The first is dismissing the person as confused. The
+second is deciding the instrument is corrupt and writing the exposé — which feels like
+taking their side and is still your frame, not theirs. The practitioner grants that a test
+with backing, used inside its own frame, is fine; what interests them is the unexplored
+space around it and why it was chosen to be left out. Curiosity, not grievance. See
+`practitionerFraming` in `collisions.js`.
 
 ## The three voices
 
@@ -102,9 +111,19 @@ worst failure mode available in this repo.
 
 **Adding a collision.** When a new primary-source response collides with an instrument or
 a category, add a record to `collisions.js` with all three voices filled in, classify it
-against the nine types, and run `node validate.mjs`. If it fits none of the nine, that is
+against the eleven types, and run `node validate.mjs`. If it fits none of the eleven, that is
 a finding — say so in `ONTOLOGICAL_COLLISIONS.md` rather than forcing it into the nearest
 type. Forcing it is category surplus, which is one of the failures the taxonomy names.
+
+**When the practitioner corrects an analystReading.** This has already happened once and
+should be expected to happen again — an `analystReading` is a claim, and claims fail. Put
+their words verbatim in `practitionerCorrection`, say what it changed in
+`correctionEffect`, and **leave the failed reading in place.** Do not quietly rewrite it
+to look as though the analysis was right the first time. The record that the analyst layer
+makes the same class of error as the instruments is one of this repo's findings, and
+deleting the evidence would destroy it. If a type's *name* encoded the error, rename the
+type and keep `renamedFrom` and `renameReason` — that is what happened to
+`accommodation-masking`, now `inferred-frame-answering`.
 
 **One home per idea.** `RESEARCH_SYNTHESIS.md` owns the argument; `README.md` links to
 it. These two previously held divergent copies of the same 370 lines and had already

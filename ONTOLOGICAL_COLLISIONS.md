@@ -1,10 +1,42 @@
 # Ontological Collisions
 
-## A taxonomy of how instruments fail against ontologies they do not share
+## A taxonomy of what happens at the edge of a frame
 
-**Status:** Working taxonomy, ten types from eight recorded collisions
+**Status:** Working taxonomy, eleven types from nine recorded collisions
 **Data:** [collisions.js](collisions.js) — machine-readable, checked by `node validate.mjs`
 **Started:** 2026-08-12
+
+---
+
+## What this document is not
+
+It was first written as an indictment — instruments *fail*, *break*, *learn nothing true*.
+The practitioner whose responses generate every case in it does not hold that stance, and
+corrected it:
+
+> "the question asker is asking questions from within their frame, for their frame, and if
+> it a test that has backing and is helpful for them in their frame, then ok, i will do my
+> best at answering.  its incomplete because so many variables are missing... what about
+> outside that frame? what is the scope of who this helps inside their frame? what about
+> the vast spaces outside their frame? those kind of things leave me curious as to all the
+> unexplored possibilities that are chosen to be left out.  why? thats why i said
+> incomplete"
+
+An instrument working inside its own frame, for people in that frame, with backing behind
+it, is granted as fine. What is incomplete is not the instrument — it is the **space around
+it**, and the stance toward that space is curiosity rather than grievance.
+
+This is not a softening. It is a sharper claim. "This test is biased" is an argument the
+discipline already knows how to have, and knows how to answer with better sampling. "What
+about the vast spaces outside their frame, and why were they chosen to be left out?" is not
+answerable by better sampling at all, because it asks about the boundary itself and about
+the decision that drew it.
+
+The adversarial language survives in places below and in
+[PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md), which was written earlier. It
+has not been scrubbed — rewriting the record to look as though the framing was right from
+the start is the same move as overwriting a failed `analystReading`. Read it knowing whose
+stance it is.
 
 ---
 
@@ -13,19 +45,19 @@
 An instrument's internal validity checks cannot tell you what the instrument
 presupposes. Reliability, factor structure, and test–retest stability are all computed
 *inside* the instrument's own ontology. They can tell you that a measure is consistent.
-They cannot tell you that the thing it measures does not exist outside the population
-that built it.
+They cannot tell you where it stops.
 
-A collision can. When an instrument meets someone who does not share its ontology, it
-breaks in a specific way — and **which way it breaks is the information**. The breakage
-is the measurement.
+A collision can. When an instrument meets someone who does not share its ontology,
+something specific happens — and **which specific thing happens is the information**. The
+collision is where the edge of a frame becomes briefly visible from outside it.
 
 This document classifies the breakages recorded in
 [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) and
-[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md). Ten types have emerged from
-eight cases. That ratio is a warning, addressed in [Limits](#limits) — and the tenth,
-[accommodation masking](#accommodation-masking--stage-0), was found only after the first
-nine were written, sitting unclassified in the source material.
+[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md). Eleven types have emerged from
+nine cases. That ratio is a warning, addressed in [Limits](#limits) — and the tenth,
+[inferred-frame answering](#inferred-frame-answering--stage-0), was found only after the
+first nine were written, sitting unclassified in the source material — and its first
+write-up was then corrected by the practitioner.
 
 ---
 
@@ -53,6 +85,35 @@ husband's and they fit the number 8 cylinder. The theory vocabulary is the analy
 
 The practitioner is the person best placed to correct `analystReading`. Corrections
 belong in the record, not in a footnote.
+
+---
+
+## What "incomplete" means
+
+The practitioner's word for an assessment that works in its frame and stops there. It is
+not a synonym for *invalid*. Three questions unpack it, and each opens a different research
+programme.
+
+**1. What is outside the frame?**
+The unexplored space. Not "what did this test get wrong" but "what was never in scope."
+Most of the types below are, read this way, sightings of that boundary rather than
+diagnoses of malfunction.
+
+**2. What is the scope of who this helps, inside the frame?**
+The question that is easiest to skip and hardest to answer. It does not ask about
+cross-cultural reach. It asks how far the instrument's usefulness extends *among the people
+it was built for* — a question the discipline rarely poses, because within-frame validity is
+usually treated as settled once the psychometrics clear.
+
+**3. Why were the excluded possibilities chosen to be left out?**
+The sharpest of the three, and it turns on the word *chosen*. Exclusions are treated as
+decisions with reasons — not as accidents, and not as malice. The reasons are asked for
+rather than assumed. Candidate answers span tractability, funding, disciplinary boundaries,
+a sampling frame invisible from inside it, and the epistemic-capture mechanisms
+[RESEARCH_SYNTHESIS.md §5](RESEARCH_SYNTHESIS.md#extractive-systems-and-epistemic-capture)
+describes. Which of those actually operate, and in what proportion, is unstudied here.
+
+Question 3 is the one this repo is least equipped to answer and most obliged to record.
 
 ---
 
@@ -85,14 +146,14 @@ have.
 
 ---
 
-## The ten types
+## The eleven types
 
 ### Stage 0 — Is the mismatch disclosed at all?
 
-**Accommodation masking.** See [the full treatment below](#accommodation-masking--stage-0);
+**Inferred-frame answering.** See [the full treatment below](#inferred-frame-answering--stage-0);
 it was added after the other nine and it changes how they should be read. The subject does
-not understand the question, hides that from the tester, infers intent, and answers to the
-inference. Every type below it can be masked this way before reaching the data.
+not share the frame, infers the asker's, and answers within it because no alternative was
+requested. Every type below it can be absorbed this way before reaching the data.
 
 ### Stage 1 — Does the variable exist, and of what kind?
 
@@ -179,6 +240,18 @@ measures is comfort with abstract decontextualized problems *under conditions of
 institutional trust*. Fixable in principle by measuring pathway rather than output, which
 is why it sits at stage 4 rather than stage 1.
 
+**Unlicensed attribution.** The instrument asserts an interior state — intention, motive,
+trait, feeling — that the subject did not report, inferring it from behavioural output.
+
+This is not one failure among the others. It is **the core operation of the entire
+instrument class in this repo**. The NPI infers a disposition from a forced choice. The BFI
+infers a trait from an agreement rating. The MFQ infers a moral foundation. The CRT infers a
+cognitive style. In every case the output is a behaviour and the conclusion is an interior
+state, and the inference step is treated as a technical matter of validity rather than as a
+claim about what one person may assert about another.
+
+See [Opacity of other minds](#opacity-of-other-minds) below, which supplies the literature.
+
 ### Stage 5 — Is the result good or bad?
 
 **Valence inversion.** Both ontologies recognize the same phenomenon and assign it
@@ -203,6 +276,74 @@ is trustworthy — often conditional.
 The mildest case here, and the only mutual one: both frames can state the other's
 position, and both agree what coolant is. The disagreement is about scope conditions the
 gauge never declares. Revisable by better engineering rather than by a different ontology.
+
+---
+
+## Opacity of other minds
+
+The one part of this document that is not improvised. There is a formal literature here,
+with a name, and using the name is worth more than restating the observation.
+
+**Opacity of other minds** (Robbins & Rumsey 2008, *Anthropological Quarterly* 81(2),
+introducing a seven-paper special section) names an explicit norm, documented across
+Melanesia, Mesoamerica and Polynesia, **against asserting what another person thinks, feels
+or intends.** Not reticence, not politeness — an epistemic prohibition. Among the Urapmin of
+Papua New Guinea the doctrine treats talk of another's interior states as a violation of
+their dignity and privacy.
+
+The load-bearing point for this repo:
+
+> The objection is not "I am unusual." It is that **the model is applying an interpretive
+> frame that its own source field documents as culturally local, to input that does not
+> license it.**
+
+Anthropology documented the locality of interior-state attribution. Psychometrics built an
+entire instrument class on performing it. Both are branches of the same behavioural-science
+literature that AI systems are trained on.
+
+### Three corrections to how this is usually summarised
+
+The literature is easy to flatten, and flattening it would repeat the error this repo
+exists to name. Each of these came out of checking the citations rather than trusting the
+summary:
+
+1. **There is no single opacity doctrine.** The Ku Waru case is characterised as being less
+   about the impossibility of knowing other minds than about the possibility that others are
+   **hiding** their intentions — a different claim from unknowability. Treating "opacity" as
+   one non-Western alternative to one Western default is exactly the binary
+   [EPISTEMOLOGICAL_CRITIQUE.md](EPISTEMOLOGICAL_CRITIQUE.md) warns against.
+2. **Mopan Maya opacity runs opposite to Pacific opacity on a key point.** Under Pacific
+   doctrines the wise listener is sceptical of taking speech at face value; among the Mopan,
+   who also hold a version of opacity, taking speech at face value is exactly what the wisest
+   listener does, and falsehood is a violation regardless of intent (Danziger). Same family,
+   inverted listener stance.
+3. **Two Schieffelin literatures get conflated.** The caregiver-speech work on not narrating
+   infant intent (Ochs & Schieffelin, language socialization) is a separate body of work from
+   Schieffelin's 2008 Bosavi paper on talk, gossip and intentionality. Both real, different
+   arguments.
+
+### What this does and does not license
+
+**Does:** it names what the analyst layer of this repo did wrong, twice, with citations —
+see `analyst-interior-state-attribution` in [collisions.js](collisions.js). It gives the
+`unlicensed-attribution` type a formal grounding rather than an intuition. And it makes the
+psychometric inference step visible as a *speech act with cultural preconditions*, not a
+neutral technical operation.
+
+**Does not:** establish that the practitioner holds an opacity norm. Nothing in the recorded
+responses says so, and asserting it would be an interior-state attribution about their
+epistemic frame — the precise error, committed while naming it. The question has been put to
+them and is open.
+
+### Related live dispute
+
+The default that reads a stated feeling as *a state requiring comfort* assumes basic-emotion
+theory: discrete internal states with valence, requiring regulation. That assumption is
+contested inside psychology by constructionist accounts (Barrett) and by functional/signal
+accounts. The practitioner's treatment of stress as calibration feedback rather than as a
+trait — the [wrong-arity](#stage-1--does-the-variable-exist-and-of-what-kind) case above —
+therefore sits **inside a live theoretical dispute in the field, not outside the field.**
+That is a stronger position than being an outlier, and it is worth stating in those terms.
 
 ---
 
@@ -277,6 +418,15 @@ When a response does not fit the category you expected:
    stage-1 disagreement is worth recording — trying to resolve it destroys it.
 6. **Keep the voices separate in anything you write.** Your reading is a claim. Their
    words are evidence. Never let the first inherit the authority of the second.
+7. **Map the boundary; do not reach for the indictment.** The available failure modes here
+   are not one but two, and the second is the one an AI will fall into. The first is
+   dismissing the person as confused. The second is deciding the instrument is corrupt and
+   writing an exposé — which feels like taking their side and is still your frame, not
+   theirs. The practitioner grants that the test is fine for its frame and is curious about
+   what lies outside it. Curiosity is the harder register to hold and the correct one.
+8. **Expect your reading to be corrected, and keep the failed one.** Two `analystReading`s
+   in this repo have now been corrected by the practitioner — once on motive, once on
+   stance. Both failures are still in `collisions.js`. That is the design, not an oversight.
 
 ### The honest answer to open question 4
 
@@ -302,7 +452,7 @@ the irregularities. See [CLAUDE.md](CLAUDE.md) for the operating rules.
 
 ## Limits
 
-**Ten types from eight collisions, one practitioner, six instruments.** This is
+**Eleven types from nine collisions, one practitioner, six instruments.** This is
 generative, not established. Several types would likely merge or split with a second
 practitioner from a different tradition. "Category surplus" and "premise refusal" both
 came from a single MFQ item and may not be separable.
@@ -322,15 +472,18 @@ stage-3 collision that no redesign could.
 someone noticed them. Instruments returning clean scores generate no record, and some of
 those clean scores sit on top of collisions nobody caught. This was a hypothesis when
 first written; the Item 1 and Item 2 results supply the mechanism —
-[accommodation masking](#accommodation-masking--stage-0). The subject conceals the
-mismatch as a courtesy calibrated to the tester's apparent confidence, so the bias is not
-merely that observers miss collisions but that **subjects hide them, more thoroughly from
-more authoritative instruments.**
+[inferred-frame answering](#inferred-frame-answering--stage-0). The subject answers
+inside the asker's frame because no alternative was invited, so the bias is not merely
+that observers miss collisions but that **the data never contained them** — the mismatch
+was resolved, cooperatively and silently, before it reached the instrument.
 
-**The taxonomy missed a type that was already in the repo.** Accommodation masking was
-documented in `PSYCHOLOGY_TEST_CRITIQUE.md` before the nine types were written, and the
-scheme did not include it. Whatever confidence the nine types earn should be discounted by
-the fact that the tenth was sitting in the source material, unclassified, the entire time.
+**The taxonomy missed a type that was already in the repo, then described it wrongly.**
+Inferred-frame answering was documented in `PSYCHOLOGY_TEST_CRITIQUE.md` before the nine
+types were written, and the scheme did not include it. When it was finally added, the
+analyst assigned it the wrong motive — deference to authority — and the practitioner had to
+correct it. Whatever confidence the other types earn should be discounted twice over: the
+tenth sat unclassified in the source material the entire time, and the analyst's first
+account of it failed.
 
 ---
 
@@ -408,37 +561,86 @@ translation was necessary, *because the tester is read as believing the question
 
 ---
 
-## Accommodation masking — stage 0
+## Inferred-frame answering — stage 0
 
-**The subject does not understand the question, conceals that from the tester, infers the
-tester's intent, and answers to the inference.**
+**The subject does not share the frame the question is posed in, infers the asker's frame,
+and answers within it — because no alternate frame was requested.**
 
 It sits before every other stage: if the mismatch is not disclosed, none of the nine
 downstream failures reach the data. It is the **mechanism** behind the selection effect
 that the Limits section could previously only assert.
 
-Three consequences follow, and the third inverts an assumption the whole discipline rests
-on.
+### The analyst got the motive wrong
+
+This type was first written up as *accommodation masking*, with the non-disclosure
+attributed to deference — the tester's evident confidence purchasing the subject's silence.
+The practitioner corrected it:
+
+> "the question asker probably comes from a different frame.  apparently the questions are
+> helpful for that frame.  the question asker did not request alternate frame, so infered
+> intent is question be answered within that frame since no alternative was given.  if the
+> frame, or question asker was causing distress, imbalance or harm to others by utilizing
+> the frame, then i would override courtesy and actively protest the frame... and probably
+> be noted as disruptive or disabled or impaired or whatnot... but i would stand up.
+> otherwise i would consider it an incomplete assessment, but one helpful for their frame"
+
+The frame is not deferred to. It is treated as *the asker's own, and evidently useful to
+them* — and since no alternative was invited, answering inside it is the cooperative reading
+of what was asked. The original name was itself the error: "masking" imports a
+deficit-and-deference model from the neurodivergence literature, which is precisely the kind
+of category this repo exists to question. Both the name and the reading it encoded were the
+analyst's, not the practitioner's. The failed reading is kept in `collisions.js` rather than
+overwritten.
+
+### What survives, corrected
 
 1. **Clean data is not evidence of clean measurement.** The instrument's failure was
    repaired by the subject, on the instrument's behalf, and the repair left no trace.
 2. **The residue is felt but never recorded.** *"id answer that i am in vontrol but would
    not feel good about it. too many missing variables."* The discomfort is the only signal
-   that the answer is a construction, and no instrument has a field for it.
-3. **The more authoritative an instrument appears, the more thoroughly its failures are
-   hidden.** The stated reason for concealment is that the tester *thinks the question is
-   valid*. Perceived confidence buys silence. A well-validated, professionally administered
-   instrument should therefore return cleaner data and be more wrong than a visibly rough
-   one — the opposite of what validation is assumed to achieve.
+   that the answer is a construction, and no instrument has a field for it. The assessment
+   is not judged worthless — it is *"an incomplete assessment, but one helpful for their
+   frame."*
+3. **Disclosure is governed by invitation, not by authority.** *(Replaces the prediction
+   that apparent authority buys silence, which the correction falsified.)* The alternate
+   frame is withheld because it was not asked for. This makes the repair far cheaper than
+   the original reading implied: an instrument does not need to appear less authoritative,
+   it needs to **ask**. A channel that costs the subject nothing — "this question does not
+   parse in my frame; here is the frame it does parse in" — recorded as data rather than as
+   a missing value, should recover most of what is currently lost.
 
-Point 3 is testable and is the most consequential claim in this document. It predicts that
-manipulating an instrument's apparent authority — presentation, institutional framing,
-stated validation — changes disclosure rates while leaving the construct untouched.
+This is why the type is `revisable: "yes"` rather than `"partly"`. Under the deference
+reading, nothing in item design could touch it. Under the corrected reading, one added field
+does.
 
-`revisable: "partly"`. Nothing in item design prevents this, since it is a response to the
-social frame rather than to the items. What can change is whether the instrument creates a
-channel for the incomprehension — an "I do not understand this question as posed" that
-costs the subject nothing and is recorded as data rather than as a missing value.
+### The harm gate, and the trap it opens
+
+Cooperation is default but **conditional**. It is withdrawn when the frame is "causing
+distress, imbalance or harm to others" — at which point courtesy is overridden and the frame
+is protested directly.
+
+The practitioner then states the cost of exercising that override: *"probably be noted as
+disruptive or disabled or impaired or whatnot... but i would stand up."*
+
+This closes a loop that belongs with [Expressive asymmetry](#expressive-asymmetry) above,
+and it is the strongest form of the non-self-correction argument in this document. The
+subject has exactly two available moves, and **both leave the frame intact**:
+
+| Move | Result |
+|---|---|
+| Answer within the inferred frame | Clean score. Mismatch invisible. Frame confirmed. |
+| Protest the frame | Protest recoded as a symptom — disruptive, impaired — by the frame being protested. |
+
+There is no third move that registers as a *challenge to the instrument* rather than as
+data about the subject. That is not a claim about anyone's intentions; it is a structural
+property of a measurement system that has categories for non-compliance but none for "the
+question is wrong." A framework holding both of those exits is unfalsifiable from the
+subject's side, however sincere everyone in it is.
+
+The prediction: protest against a psychometric or diagnostic frame is coded as a subject
+attribute (opposition, poor insight, impairment) rather than as instrument feedback, at a
+rate high enough to measure. This is checkable in existing clinical and assessment records
+without recruiting anyone.
 
 ---
 
@@ -511,6 +713,12 @@ this evidence they are not separable and should be merged.
 
 ## Open questions
 
+0. **Why were the excluded possibilities chosen to be left out?** The practitioner's
+   question, kept first because it is the one this document is least able to answer.
+   Tractability, funding, disciplinary boundary maintenance, an invisible sampling frame,
+   and active epistemic capture are all candidates, and they are not mutually exclusive.
+   Distinguishing them would require studying the people who build instruments rather than
+   the people who take them — a study this repo has no data for and has not attempted.
 1. Are there collision types that only appear between two *non*-WEIRD ontologies? Every
    case here has a WEIRD instrument on one side, which may be shaping the taxonomy.
 2. Does the depth ordering predict anything about repair — can a stage-1 failure ever be
