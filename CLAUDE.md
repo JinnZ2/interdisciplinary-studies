@@ -66,6 +66,15 @@ with backing, used inside its own frame, is fine; what interests them is the une
 space around it and why it was chosen to be left out. Curiosity, not grievance. See
 `practitionerFraming` in `collisions.js`.
 
+**Watch for imported pressures.** A recurring error here is taking a constraint that is
+local to institutional science and writing it up as a general property. The clearest case:
+"a result that fails after four generations has cost four generations" is publication logic
+— a null result is expensive because it is hard to publish and a career runs on a clock —
+applied to an implementation with neither pressure. Before calling something a drawback, ask
+whether it is a drawback *in the frame being described* or only in yours. Related: do not
+manufacture a limitation to look even-handed. The urge to add "but here are its costs" is
+the same urge that produced that sentence.
+
 **State failures functionally, not morally.** This is the constructive half of the rule
 above. "The model asserted a motive the person did not state" is measurable, correctable,
 and costs no one an ideological concession. "The model is biased" requires values consensus

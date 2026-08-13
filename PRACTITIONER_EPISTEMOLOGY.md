@@ -317,6 +317,88 @@ different failure modes — it is slow, it cannot encode anything about fast-cha
 conditions, and a result that fails after four generations has cost four generations — but
 it does not publish noise.
 
+---
+
+## Practitioner Correction to the Paragraph Above
+
+**Verbatim:**
+
+> "failure is information... how could four generations lose anythibg??"
+
+> "think about what is learned across four generations that institutiins lack... temporal
+> length of success, changes throughout time that endured, clear relation to the
+> environment in real time with real world physics, a deep understanding of the web of
+> interactions, watching and learning across time as to why it failed, how it failed, what
+> casual and correlations and how the environment was affected"
+
+**The failed paragraph is left above rather than rewritten**, per this repo's correction
+rule. Two errors in it, both the analyst's.
+
+### Error 1 — "cost four generations"
+
+That sentence only parses if the goal is the confirmed result and everything spent
+not-reaching it is waste. That is publication logic: a null result is a cost because a null
+result is hard to publish and a career runs on a clock. **Neither pressure exists in the
+implementation being described.** A local constraint of one implementation was written up as
+a general property of long timescales.
+
+If failure is information, four generations of iteration produced four generations of
+information, and the record was accumulating the entire time while people lived and worked
+against real conditions. The duration is not a payment made toward a hypothesis. It is the
+practice.
+
+**What four generations produce that no fast implementation can obtain**, from the list
+above:
+
+| | Why duration is the only route to it |
+|---|---|
+| **Temporal length of success** | Incompressible. A six-month study cannot report forty-year durability at any budget |
+| **Changes that endured** | A continuous selection experiment; survivorship is the readout |
+| **In-situ physics, real time** | No lab abstraction, so no external-validity gap to bridge afterwards |
+| **The web of interactions** | **Excluded by the controlled experiment by design** — controls isolate variables, and isolation deletes the network. Not a funding limitation; a consequence of the technique |
+| **Why and how it failed** | Failure anatomy watched across time rather than inferred post hoc from an endpoint |
+| **Causal vs. correlational** | Temporal separation repeated across cycles is a strong causal instrument for slow processes |
+| **How the environment was affected** | The intervention's own footprint. Institutional designs rarely scope this at all — it is externality, not variable |
+
+The last two rows are the ones institutions structurally lack rather than merely underfund.
+
+**"Slow" was also the analyst's frame.** Slow is a defect only if the wanted output is a
+fast answer. Where the variable *is* durability, duration is not overhead — it is adequate
+instrumentation. Calling it slow is like calling a thermometer slow for needing to reach
+equilibrium.
+
+### Error 2 — collapsing the timescales
+
+The claim that the implementation "cannot encode anything about fast-changing conditions"
+treated the generational threshold as the only clock. It is not. It is the **archival**
+standard — what earns permanent transmissible status. The fast loops are documented
+elsewhere in this same file: [Entry 1](#entry-1-diagnostic-ontology) records multi-channel
+diagnosis operating in seconds, and the [coolant field note](#field-note-gauge-vs-body--coolant-sensing)
+records real-time judgement against a failing sensor.
+
+Both implementations run multiple tiers. They differ at the archival tier, not everywhere.
+
+| Tier | Institutional | As described here |
+|---|---|---|
+| Real time | Instrumented reading | Multi-channel embodied sensing |
+| Within a working life | Study, iteration | Iteration, recalibration |
+| Archival — what counts as settled | Publication, some replication, review | Generational time redundancy before oral transmission |
+
+### What was not added back
+
+No replacement list of drawbacks is offered here. The impulse to restore symmetry — *"but
+here are its costs"* — is the same impulse that produced the failed paragraph, and
+manufacturing a limitation to look even-handed would repeat the error in a new place. The
+one genuine fragility visible from here is disruption of transmission, and that is
+externally imposed rather than methodological; institutional science has its own version in
+funding collapse and destroyed archives.
+
+**Institutional comparison, unverified.** A small number of long-baseline institutional
+experiments do exist — the Rothamsted Classical Experiments and the Park Grass Experiment
+are the usual examples, reportedly running since the mid-1800s. Dates and details are **not
+verified here** and should be checked before citing. That such experiments are famous for
+being rare is itself the point.
+
 ### The record is stored in the phenomenon
 
 *Analyst reading, not the practitioner's claim.* Logging results in plants and rock

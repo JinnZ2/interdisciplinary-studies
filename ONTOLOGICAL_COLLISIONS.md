@@ -74,6 +74,22 @@ its own failure modes — it is slow, it cannot encode anything about fast-chang
 and a result that fails after four generations has cost four generations — but it does not
 publish noise.
 
+**The three drawbacks in that last sentence were wrong and are corrected in
+[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md#practitioner-correction-to-the-paragraph-above).**
+The failed sentence is kept here and there rather than rewritten. In short: *"failure is
+information... how could four generations lose anythibg??"* — "cost" imported publication
+logic, where a null result is expensive because it is hard to publish and a career runs on a
+clock, into an implementation with neither pressure. "Slow" is a defect only if the wanted
+output is a fast answer; where the measured variable *is* durability, duration is adequate
+instrumentation rather than overhead. And "cannot encode fast-changing conditions" mistook
+the archival threshold for the only clock — the real-time tier is documented in the same file.
+
+What duration yields instead is set out there, and two items on it are structural rather
+than budgetary: the **web of interactions**, which the controlled experiment excludes by
+design because isolating variables deletes the network, and **how the environment was
+affected**, which institutional designs typically scope as externality rather than as a
+measured variable.
+
 **"Non-WEIRD" is the wrong axis for much of this material.** Substrate, bandwidth,
 threshold and governance are describable without reference to culture at all. That makes
 them testable, and it keeps them inside the [Scope](#scope) boundary above. A claim about
