@@ -40,6 +40,48 @@ stance it is.
 
 ---
 
+## Between implementations, not between science and its outside
+
+A second framing correction, later than the first and larger. This document was built on
+the premise that its cases are *a different ontology meeting science*. The practitioner
+states otherwise:
+
+> "we test, log the results in plants, rock placement so on, and iterate on it throughout
+> generations.... the pattern of the sciebtific method is very similar, how we record it,
+> translate it, and the extra variables and senses that go into the experiment, and
+> expectations of time redundancy before becoming oral transmission are different"
+
+Test, log, iterate is the shared pattern. What differs is **substrate** (where the log is
+kept), **bandwidth** (how many channels feed the experiment), **threshold** (how long a
+result must hold before it is encoded), and **governance** (who certifies it). Those are
+implementation parameters, not ontologies. The full comparison is in
+[Entry 3 of PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md#entry-3-the-method-is-shared-the-implementation-is-not).
+
+Three things follow for this document.
+
+**The collisions are between two implementations of one method.** Not between science and
+something else. The gauge-vs-body case is the clearest: it was already the only record
+tagged `asymmetry: "mutual"` and `revisable: "yes"`, because both parties agree what coolant
+is and disagree about instrumentation. That tagging was right for a reason this framing now
+explains.
+
+**The replication threshold runs the opposite way to the usual assumption.** Institutional
+science encodes a finding after a small number of studies clear significance and review. The
+implementation described here does not encode a result into transmission until it has held
+across generational time redundancy. That is a *higher* bar, and the replication crisis is
+direct evidence that the institutional one is set too low for the claims made on it. It buys
+its own failure modes — it is slow, it cannot encode anything about fast-changing conditions,
+and a result that fails after four generations has cost four generations — but it does not
+publish noise.
+
+**"Non-WEIRD" is the wrong axis for much of this material.** Substrate, bandwidth,
+threshold and governance are describable without reference to culture at all. That makes
+them testable, and it keeps them inside the [Scope](#scope) boundary above. A claim about
+recording media and replication thresholds does not require anyone to agree about the
+West.
+
+---
+
 ## The premise
 
 An instrument's internal validity checks cannot tell you what the instrument

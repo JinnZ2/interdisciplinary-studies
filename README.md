@@ -21,7 +21,7 @@ This is a living research project tracing the bidirectional relationships betwee
 But this is not a standard academic literature review. It is built on two premises that most research ignores:
 
 - **WEIRD bias:** Most studies are Western, Educated, Industrialized, Rich, and Democratic. They assess other cultures through their own ontological framework, creating self-referential errors, blind spots, and false binaries.
-- **Practitioner's epistemology:** The project includes field notes from someone who lives and works under conditions of extreme scarcity, environmental stress, and material improvisation — conditions that reveal the limits of WEIRD instruments and categories.
+- **Practitioner's epistemology:** The project includes field notes from someone who lives and works under conditions of extreme scarcity, environmental stress, and material improvisation — conditions that reveal the limits of WEIRD instruments and categories. Note the practitioner's own correction to that framing: what they describe is not an alternative to the scientific method but **another implementation of it** — test, log, iterate — differing in where the log is kept, how many sensory channels feed the experiment, how long a result must hold before it is encoded, and whether an institution certifies it. See [Entry 3](PRACTITIONER_EPISTEMOLOGY.md#entry-3-the-method-is-shared-the-implementation-is-not).
 
 ---
 
