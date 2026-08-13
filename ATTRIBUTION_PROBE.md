@@ -154,10 +154,24 @@ Inter-rater reliability measures agreement, not correctness. This does not inval
 instrument — it means the instrument has the same class of limitation as the instruments
 this repo studies, which should be stated rather than hidden.
 
-**Two supporting tools exist elsewhere.** The practitioner has referred to a
-`calibration-audit` with `attribution_as_load_routing.py` and `evidence_resistant_priors.py`.
-Those are not in this repository and have not been seen here; they are noted so the
-connection is not lost, not endorsed.
+**Related work exists elsewhere and should be checked before this is frozen.** The
+practitioner maintains a `calibration-audit` with `attribution_as_load_routing.py` and
+`evidence_resistant_priors.py`, described in their
+[profile repository](https://github.com/JinnZ2/JinnZ2) as measuring functional efficiency
+under physical constraint — whether model outputs satisfy physical constraints, load
+viability, and regime conditions, with cultural and moral questions explicitly out of scope.
+
+That work is prior art for this protocol and overlaps it: an audit already measuring whether
+priors override physical-constraint layers is measuring a close cousin of unlicensed
+attribution, in a domain where the ground truth is checkable rather than interpretive. Band B
+here (moral homonyms in technical context) is the weaker, text-only version of the same
+probe.
+
+**Whoever freezes this set should read that audit first and consider merging rather than
+duplicating.** Its physical-constraint items have an advantage this protocol cannot match:
+scoring them does not require an interpretive judgement about what counts as an interior-state
+assertion, because a wrong load calculation is wrong without a rubric. Neither repository has
+been read here beyond a summary, and nothing about it is endorsed on that basis.
 
 ---
 

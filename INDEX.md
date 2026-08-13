@@ -13,7 +13,7 @@ guide, start at **[README.md](README.md)**. For the argument itself, go to
 | [README.md](README.md) | Front door | Premises, six domains, core argument, how to contribute, open questions |
 | [RESEARCH_SYNTHESIS.md](RESEARCH_SYNTHESIS.md) | Synthesis | The full framework in ten sections, plus annotated bibliography and research agenda |
 | [EPISTEMOLOGICAL_CRITIQUE.md](EPISTEMOLOGICAL_CRITIQUE.md) | Critique | Where WEIRD bias enters each of the six domains; alternative research traditions; the meta-critique |
-| [PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md) | Primary source | Field notes: diagnostic ontology, division of labor, absence of categories, gauge vs. body |
+| [PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md) | Primary source | Field notes: diagnostic ontology, division of labor, absence of categories, gauge vs. body, and the scientific method implemented without institutional gatekeeping |
 | [THERMODYNAMICS.md](THERMODYNAMICS.md) | Primary source | Entropy, conservation, heat transfer, phase change, and calibration as embodied practice |
 | [PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md) | Primary source | Live reactions to CRT, NPI, MFQ, and BFI items, with analysis of where each instrument breaks |
 | [ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md) | Meta-framework | Eleven things that happen at the edge of a frame, ordered by depth; the opacity-of-other-minds literature; the operating protocol for AI systems |

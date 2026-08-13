@@ -40,6 +40,64 @@ stance it is.
 
 ---
 
+## Between implementations, not between science and its outside
+
+A second framing correction, later than the first and larger. This document was built on
+the premise that its cases are *a different ontology meeting science*. The practitioner
+states otherwise:
+
+> "we test, log the results in plants, rock placement so on, and iterate on it throughout
+> generations.... the pattern of the sciebtific method is very similar, how we record it,
+> translate it, and the extra variables and senses that go into the experiment, and
+> expectations of time redundancy before becoming oral transmission are different"
+
+Test, log, iterate is the shared pattern. What differs is **substrate** (where the log is
+kept), **bandwidth** (how many channels feed the experiment), **threshold** (how long a
+result must hold before it is encoded), and **governance** (who certifies it). Those are
+implementation parameters, not ontologies. The full comparison is in
+[Entry 3 of PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md#entry-3-the-method-is-shared-the-implementation-is-not).
+
+Three things follow for this document.
+
+**The collisions are between two implementations of one method.** Not between science and
+something else. The gauge-vs-body case is the clearest: it was already the only record
+tagged `asymmetry: "mutual"` and `revisable: "yes"`, because both parties agree what coolant
+is and disagree about instrumentation. That tagging was right for a reason this framing now
+explains.
+
+**The replication threshold runs the opposite way to the usual assumption.** Institutional
+science encodes a finding after a small number of studies clear significance and review. The
+implementation described here does not encode a result into transmission until it has held
+across generational time redundancy. That is a *higher* bar, and the replication crisis is
+direct evidence that the institutional one is set too low for the claims made on it. It buys
+its own failure modes — it is slow, it cannot encode anything about fast-changing conditions,
+and a result that fails after four generations has cost four generations — but it does not
+publish noise.
+
+**The three drawbacks in that last sentence were wrong and are corrected in
+[PRACTITIONER_EPISTEMOLOGY.md](PRACTITIONER_EPISTEMOLOGY.md#practitioner-correction-to-the-paragraph-above).**
+The failed sentence is kept here and there rather than rewritten. In short: *"failure is
+information... how could four generations lose anythibg??"* — "cost" imported publication
+logic, where a null result is expensive because it is hard to publish and a career runs on a
+clock, into an implementation with neither pressure. "Slow" is a defect only if the wanted
+output is a fast answer; where the measured variable *is* durability, duration is adequate
+instrumentation rather than overhead. And "cannot encode fast-changing conditions" mistook
+the archival threshold for the only clock — the real-time tier is documented in the same file.
+
+What duration yields instead is set out there, and two items on it are structural rather
+than budgetary: the **web of interactions**, which the controlled experiment excludes by
+design because isolating variables deletes the network, and **how the environment was
+affected**, which institutional designs typically scope as externality rather than as a
+measured variable.
+
+**"Non-WEIRD" is the wrong axis for much of this material.** Substrate, bandwidth,
+threshold and governance are describable without reference to culture at all. That makes
+them testable, and it keeps them inside the [Scope](#scope) boundary above. A claim about
+recording media and replication thresholds does not require anyone to agree about the
+West.
+
+---
+
 ## The premise
 
 An instrument's internal validity checks cannot tell you what the instrument
@@ -114,6 +172,52 @@ a sampling frame invisible from inside it, and the epistemic-capture mechanisms
 describes. Which of those actually operate, and in what proportion, is unstudied here.
 
 Question 3 is the one this repo is least equipped to answer and most obliged to record.
+
+---
+
+## Scope
+
+Adopted from the calibration-audit discipline in the practitioner's own
+[profile repository](https://github.com/JinnZ2/JinnZ2), which declares its boundaries
+explicitly rather than leaving them to be inferred. This document did not, and was weaker
+for it.
+
+**In scope**
+
+- Whether an instrument's inference from output to construct is licensed
+- Whether a variable exists in the frame it is being applied to, and with what arity
+- Whether the response space can hold the answer given
+- Whether a mismatch reached the data or was resolved before it got there
+- Whether stated scope conditions match actual ones
+
+**Out of scope**
+
+- Which roles people occupy
+- Cultural correctness
+- Moral frameworks
+- Political positions
+- Whether any instrument's designers acted in good faith
+
+### Why the boundary is load-bearing
+
+The claims in this document are of two kinds, and bundling them costs the stronger kind its
+strength.
+
+*Unlicensed attribution* and *wrong arity* are measurement claims. They are falsifiable,
+they are checkable by anyone, and they do not require agreeing with anything about
+extraction, predation, or power. The Dark Triad and extraction material in
+[RESEARCH_SYNTHESIS.md](RESEARCH_SYNTHESIS.md) is contested political-economic terrain.
+
+When both live in one argument, the falsifiable half inherits the contested half's
+controversy, and a reader who rejects the second gets a free pass on the first. **Failures
+stated functionally can be corrected by better engineering. Failures stated morally require
+values consensus, which is not obtainable and not necessary here.** A model that infers a
+motive nobody stated has made an error that can be measured and fixed without anyone
+conceding a single thing about institutions.
+
+This is the constructive form of the practitioner's correction against reaching for the
+indictment: not merely *don't* moralise, but *state the failure functionally so it becomes
+correctable.*
 
 ---
 

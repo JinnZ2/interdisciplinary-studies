@@ -264,3 +264,189 @@ This is a third modality: **situated-analytic cognition** — abstract physics p
 Standardized instrumentation is a form of **institutional trust** — we trust gauges because they are calibrated, certified, and standardized. The practitioner's distrust of gauges under variable conditions is not anti-science. It is a recognition that **standardization fails when standard conditions don't hold.**
 
 This is analogous to how extractive institutions fail under non-standard conditions: they are designed for idealized assumptions (stable climate, functioning supply chains, predictable demand) and break down when those assumptions are violated.
+
+---
+
+## Entry 3: The Method Is Shared; the Implementation Is Not
+
+**Subject's statement (verbatim):**
+
+> "i was trying to explain how we implement the scientific method ourselves without the institutiinal gatekeeping from a different ontology.  we test, log the results in plants, rock placement so on, and iterate on it throughout generations.... the pattern of the sciebtific method is very similar, how we record it, translate it, and the extra variables and senses that go into the experiment, and expectations of time redundancy before becoming oral transmission are different"
+
+---
+
+## Observations (by the asker, not the practitioner)
+
+**This corrects the framing of the entire repository.** Every document here had been
+built on the premise that the practitioner material represents *a different ontology
+meeting science* — two incommensurable frames colliding. The statement above makes a
+narrower and considerably stronger claim: **the method is the same. The implementation
+differs.**
+
+Test, log, iterate is the pattern in both. What differs is where the log is kept, how many
+channels feed the experiment, how long a result must hold before it counts, and who is
+permitted to certify it.
+
+### The two implementations, as described
+
+Built only from what was stated. Nothing in the right column is inferred.
+
+| Dimension | Institutional implementation | As described here |
+|---|---|---|
+| Core pattern | Test, log, iterate | Test, log, iterate — *"very similar"* |
+| Record substrate | Paper, journals, databases | Plants, rock placement, "so on" — the environment itself |
+| Recording and translation | Symbolic, textual, standardized notation | Stated as different; not further specified |
+| Inputs to the experiment | Constrained, instrumented, typically one channel per measure | *"extra variables and senses"* |
+| Threshold before a result becomes transmissible | Publication, after one to several studies, peer reviewed | *"time redundancy"* across **generations**, before entering oral transmission |
+| Governance | Institutional gatekeeping | *"without the institutiinal gatekeeping"* |
+
+### The replication threshold is higher, not lower
+
+This is the observation with the most weight, and it inverts the usual assumption about
+which implementation is more rigorous.
+
+Institutional science encodes a finding as knowledge after a small number of studies clear
+a significance threshold and survive peer review. The implementation described here does
+not encode a result into oral transmission until it has held across **generational time
+redundancy**.
+
+The replication crisis is direct evidence that the institutional threshold is set too low
+for the claims being made on it. A standard requiring a result to hold across generations
+before it becomes transmissible does not have that failure mode available to it. It has
+different failure modes — it is slow, it cannot encode anything about fast-changing
+conditions, and a result that fails after four generations has cost four generations — but
+it does not publish noise.
+
+---
+
+## Practitioner Correction to the Paragraph Above
+
+**Verbatim:**
+
+> "failure is information... how could four generations lose anythibg??"
+
+> "think about what is learned across four generations that institutiins lack... temporal
+> length of success, changes throughout time that endured, clear relation to the
+> environment in real time with real world physics, a deep understanding of the web of
+> interactions, watching and learning across time as to why it failed, how it failed, what
+> casual and correlations and how the environment was affected"
+
+**The failed paragraph is left above rather than rewritten**, per this repo's correction
+rule. Two errors in it, both the analyst's.
+
+### Error 1 — "cost four generations"
+
+That sentence only parses if the goal is the confirmed result and everything spent
+not-reaching it is waste. That is publication logic: a null result is a cost because a null
+result is hard to publish and a career runs on a clock. **Neither pressure exists in the
+implementation being described.** A local constraint of one implementation was written up as
+a general property of long timescales.
+
+If failure is information, four generations of iteration produced four generations of
+information, and the record was accumulating the entire time while people lived and worked
+against real conditions. The duration is not a payment made toward a hypothesis. It is the
+practice.
+
+**What four generations produce that no fast implementation can obtain**, from the list
+above:
+
+| | Why duration is the only route to it |
+|---|---|
+| **Temporal length of success** | Incompressible. A six-month study cannot report forty-year durability at any budget |
+| **Changes that endured** | A continuous selection experiment; survivorship is the readout |
+| **In-situ physics, real time** | No lab abstraction, so no external-validity gap to bridge afterwards |
+| **The web of interactions** | **Excluded by the controlled experiment by design** — controls isolate variables, and isolation deletes the network. Not a funding limitation; a consequence of the technique |
+| **Why and how it failed** | Failure anatomy watched across time rather than inferred post hoc from an endpoint |
+| **Causal vs. correlational** | Temporal separation repeated across cycles is a strong causal instrument for slow processes |
+| **How the environment was affected** | The intervention's own footprint. Institutional designs rarely scope this at all — it is externality, not variable |
+
+The last two rows are the ones institutions structurally lack rather than merely underfund.
+
+**"Slow" was also the analyst's frame.** Slow is a defect only if the wanted output is a
+fast answer. Where the variable *is* durability, duration is not overhead — it is adequate
+instrumentation. Calling it slow is like calling a thermometer slow for needing to reach
+equilibrium.
+
+### Error 2 — collapsing the timescales
+
+The claim that the implementation "cannot encode anything about fast-changing conditions"
+treated the generational threshold as the only clock. It is not. It is the **archival**
+standard — what earns permanent transmissible status. The fast loops are documented
+elsewhere in this same file: [Entry 1](#entry-1-diagnostic-ontology) records multi-channel
+diagnosis operating in seconds, and the [coolant field note](#field-note-gauge-vs-body--coolant-sensing)
+records real-time judgement against a failing sensor.
+
+Both implementations run multiple tiers. They differ at the archival tier, not everywhere.
+
+| Tier | Institutional | As described here |
+|---|---|---|
+| Real time | Instrumented reading | Multi-channel embodied sensing |
+| Within a working life | Study, iteration | Iteration, recalibration |
+| Archival — what counts as settled | Publication, some replication, review | Generational time redundancy before oral transmission |
+
+### What was not added back
+
+No replacement list of drawbacks is offered here. The impulse to restore symmetry — *"but
+here are its costs"* — is the same impulse that produced the failed paragraph, and
+manufacturing a limitation to look even-handed would repeat the error in a new place. The
+one genuine fragility visible from here is disruption of transmission, and that is
+externally imposed rather than methodological; institutional science has its own version in
+funding collapse and destroyed archives.
+
+**Institutional comparison, unverified.** A small number of long-baseline institutional
+experiments do exist — the Rothamsted Classical Experiments and the Park Grass Experiment
+are the usual examples, reportedly running since the mid-1800s. Dates and details are **not
+verified here** and should be checked before citing. That such experiments are famous for
+being rare is itself the point.
+
+### The record is stored in the phenomenon
+
+*Analyst reading, not the practitioner's claim.* Logging results in plants and rock
+placement puts the record physically in the environment the record is about. Three
+consequences follow, if the reading is right: the record needs no institution to persist;
+it stays co-located with its context rather than being abstracted away from it; and it is
+legible only to someone with the sensory training to read it.
+
+That last one, if correct, would explain the misrecognition directly. A data store that
+requires calibration to read looks like *not a record at all* to an observer who lacks the
+calibration — which is the condition under which such practices get classified as
+tradition, or belief, rather than as logged experimental results.
+
+**This is the analyst's inference and may be wrong.** It has not been confirmed by the
+practitioner and should not be cited as their position.
+
+### What this does to the rest of the repository
+
+- **The collision taxonomy is between implementations, not between science and its
+  outside.** See the framing note in
+  [ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md).
+- **The gauge-vs-body field note is not an ontology dispute.** It is an instrumentation
+  dispute between two implementations of the same method, which is why it was already the
+  only case in `collisions.js` tagged `asymmetry: "mutual"` and `revisable: "yes"`.
+- **"Non-WEIRD" is the wrong axis for much of this material.** The stated differences are
+  substrate, bandwidth, replication threshold, and governance. Those are implementation
+  parameters. They are describable without reference to culture at all, which makes them
+  testable — and keeps them inside the scope boundary this repo now declares.
+
+### Possibly relevant literature — not confirmed to apply
+
+[EPISTEMOLOGICAL_CRITIQUE.md](EPISTEMOLOGICAL_CRITIQUE.md) §4C already cites Indigenous
+research methodologies, and there is an established literature on traditional ecological
+knowledge as long-baseline empirical practice. It is noted here as *possibly relevant* and
+deliberately not applied: the practitioner described a method, not an identity, and
+attaching a literature's framing to them is the move this repo has already been corrected
+for twice.
+
+---
+
+## Open Questions
+
+- What does "translate it" refer to — translation between sensory channels and language,
+  between generations, or between the community's record and an outside frame?
+- What is the actual time redundancy expectation? Is it a fixed number of cycles, a number
+  of generations, or a judgement made case by case?
+- How is a result that *fails* recorded, and for how long? Negative results are the
+  institutional implementation's weakest point; is it a weak point here too?
+- Who decides a result has cleared the threshold, if there is no gatekeeping layer?
+- Does the record in plants and rock placement encode the *result*, the *conditions*, or
+  both?
