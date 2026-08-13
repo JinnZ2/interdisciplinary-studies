@@ -66,6 +66,13 @@ with backing, used inside its own frame, is fine; what interests them is the une
 space around it and why it was chosen to be left out. Curiosity, not grievance. See
 `practitionerFraming` in `collisions.js`.
 
+**State failures functionally, not morally.** This is the constructive half of the rule
+above. "The model asserted a motive the person did not state" is measurable, correctable,
+and costs no one an ideological concession. "The model is biased" requires values consensus
+that is neither obtainable nor needed. Keep the falsifiable claims separable from the
+contested political-economic ones — see the Scope section of `ONTOLOGICAL_COLLISIONS.md`,
+and respect its in-scope/out-of-scope boundary when adding to that document.
+
 ## The three voices
 
 `collisions.js` separates `verbatim` (the practitioner's own words), `instrumentReading`

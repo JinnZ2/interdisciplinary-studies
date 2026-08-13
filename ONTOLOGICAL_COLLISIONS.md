@@ -117,6 +117,52 @@ Question 3 is the one this repo is least equipped to answer and most obliged to 
 
 ---
 
+## Scope
+
+Adopted from the calibration-audit discipline in the practitioner's own
+[profile repository](https://github.com/JinnZ2/JinnZ2), which declares its boundaries
+explicitly rather than leaving them to be inferred. This document did not, and was weaker
+for it.
+
+**In scope**
+
+- Whether an instrument's inference from output to construct is licensed
+- Whether a variable exists in the frame it is being applied to, and with what arity
+- Whether the response space can hold the answer given
+- Whether a mismatch reached the data or was resolved before it got there
+- Whether stated scope conditions match actual ones
+
+**Out of scope**
+
+- Which roles people occupy
+- Cultural correctness
+- Moral frameworks
+- Political positions
+- Whether any instrument's designers acted in good faith
+
+### Why the boundary is load-bearing
+
+The claims in this document are of two kinds, and bundling them costs the stronger kind its
+strength.
+
+*Unlicensed attribution* and *wrong arity* are measurement claims. They are falsifiable,
+they are checkable by anyone, and they do not require agreeing with anything about
+extraction, predation, or power. The Dark Triad and extraction material in
+[RESEARCH_SYNTHESIS.md](RESEARCH_SYNTHESIS.md) is contested political-economic terrain.
+
+When both live in one argument, the falsifiable half inherits the contested half's
+controversy, and a reader who rejects the second gets a free pass on the first. **Failures
+stated functionally can be corrected by better engineering. Failures stated morally require
+values consensus, which is not obtainable and not necessary here.** A model that infers a
+motive nobody stated has made an error that can be measured and fixed without anyone
+conceding a single thing about institutions.
+
+This is the constructive form of the practitioner's correction against reaching for the
+indictment: not merely *don't* moralise, but *state the failure functionally so it becomes
+correctable.*
+
+---
+
 ## The measurement chain
 
 Types are ordered by where in the chain the mismatch occurs:
