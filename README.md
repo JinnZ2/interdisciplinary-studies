@@ -37,6 +37,7 @@ But this is not a standard academic literature review. It is built on two premis
 | **[PSYCHOLOGY_TEST_CRITIQUE.md](PSYCHOLOGY_TEST_CRITIQUE.md)** | Live reactions to standardized psychology instruments (CRT, NPI, MFQ, BFI) — showing where the tests break | You want concrete examples of WEIRD instrument failure |
 | **[ONTOLOGICAL_COLLISIONS.md](ONTOLOGICAL_COLLISIONS.md)** | The taxonomy: eleven distinct things that happen at the edge of a frame, ordered by how deep the mismatch sits. Includes the opacity-of-other-minds literature and an operating protocol for AI systems | You think the disagreements are where the information is |
 | **[ATTRIBUTION_PROBE.md](ATTRIBUTION_PROBE.md)** | A fixed probe set for measuring whether AI systems attribute interior states nobody reported — with the control arm that separates over-attribution from correct sensitivity | You want the AI claim tested rather than asserted |
+| **[legacy/PRECEDENCE.md](legacy/PRECEDENCE.md)** | The revision ledger — every claim this repo has made, tested, and replaced, with the wording as committed, what falsified it, and what the correction opened up | You want to know what this repo got wrong |
 | **[INDEX.md](INDEX.md)** | Compact file manifest and suggested reading paths | You want a map rather than a front door |
 
 ---
@@ -72,6 +73,28 @@ can carry, and the widget now shows exactly where that happens.
 
 These tags are a first pass and are meant to be argued with. Revising them is a
 legitimate contribution.
+
+---
+
+## What This Repo Has Gotten Wrong
+
+Eight claims have been made here and put to the test. Six did not survive contact — five
+falsified outright, one renamed because the name itself carried the error. A seventh was
+half right. The eighth held. All eight are logged in
+**[legacy/PRECEDENCE.md](legacy/PRECEDENCE.md)** with the wording as originally committed —
+not a paraphrase written after the answer was known — alongside what falsified each one and
+what the correction opened up.
+
+Superseded is not retracted. A claim that was made and overturned carries **precedence**: it
+records what was tried, on what evidence, and what it cost to find out. Failed readings are
+therefore left in place next to their corrections rather than tidied away; the ledger makes
+them findable without separating them. That the analyst layer here has made the same class of
+error as the instruments it studies — twice in one session, both times corrected by the
+practitioner — is one of this project's findings, and deleting the evidence would destroy it.
+
+The clearest case is [entry L4](legacy/PRECEDENCE.md#l4--apparent-authority-buys-silence),
+where being wrong made the finding better: the corrected reading turned an unfixable problem
+into a one-field instrument change.
 
 ---
 
@@ -124,6 +147,6 @@ This README is the front door. It is deliberately short so that it stays in sync
 
 ---
 
-*Last updated: 2026-08-12*
+*Last updated: 2026-08-14*
 
 

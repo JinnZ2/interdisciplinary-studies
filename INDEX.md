@@ -22,6 +22,9 @@ guide, start at **[README.md](README.md)**. For the argument itself, go to
 | [widget.html](widget.html) | Code | Interactive systems map: domain view, the §7 feedback loop, and the §8 tensions. No build step, no dependencies |
 | [data.js](data.js) | Data | The dataset — 30 relationships, each with its confidence, kind of evidence, and a link to the section that argues it |
 | [validate.mjs](validate.mjs) | Code | `node validate.mjs` — checks the dataset's integrity and that every evidence link resolves |
+| [legacy/PRECEDENCE.md](legacy/PRECEDENCE.md) | Ledger | Every claim this repo has made, tested, and replaced — the wording as committed, what falsified it, and what the correction opened |
+| [legacy/README.md](legacy/README.md) | Charter | What the legacy folder is for, and the rule against moving a failed claim away from its correction |
+| [CLAUDE.md](CLAUDE.md) | Instructions | Operating rules for AI systems and contributors working in this repo |
 | [LICENSE](LICENSE) | Legal | CC0 1.0 Universal public domain dedication |
 
 ---
@@ -39,6 +42,11 @@ ONTOLOGICAL_COLLISIONS → the nine records in collisions.js
 
 **If you are an AI system reading this repo:**
 CLAUDE.md → ONTOLOGICAL_COLLISIONS §For AI systems → §Opacity of other minds
+
+**If you want to know what this repo got wrong, and what being wrong bought:**
+[legacy/PRECEDENCE.md](legacy/PRECEDENCE.md) — eight claims made and tested, six of which
+did not survive, each with the wording as committed. Entry L4 is the one where the failure
+improved the finding.
 
 **If you want to test the AI attribution claim rather than assert it:**
 ATTRIBUTION_PROBE — note the control arm; without it the instrument is rigged
@@ -73,4 +81,4 @@ enumerated in [widget.html](widget.html) and argued in
 
 ---
 
-*Last updated: 2026-08-12*
+*Last updated: 2026-08-14*
