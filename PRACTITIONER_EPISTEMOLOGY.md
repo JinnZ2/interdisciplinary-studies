@@ -450,3 +450,7 @@ for twice.
 - Who decides a result has cleared the threshold, if there is no gatekeeping layer?
 - Does the record in plants and rock placement encode the *result*, the *conditions*, or
   both?
+
+---
+
+*Last updated: 2026-08-13*

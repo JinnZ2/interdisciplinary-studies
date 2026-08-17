@@ -336,3 +336,4 @@ This meta-observation reframes every response in this document:
 
 ---
 
+*Last updated: 2026-08-12*

@@ -29,6 +29,8 @@ code is `widget.html`, a single self-contained page.
 | `widget.html` | The interactive systems map (presentation only) |
 | `data.js` | **The dataset.** Domains, the 30 relationships with their evidence tags, the feedback loop, the tensions |
 | `validate.mjs` | `node validate.mjs` — dataset integrity and evidence-link checks |
+| `legacy/PRECEDENCE.md` | **The revision ledger.** Every claim made, tested, and replaced, in the wording as committed — the hypothesize/run/falsify/edit/rerun cycle end to end |
+| `legacy/README.md` | What may be filed in `legacy/`, and the rule against moving a failed claim away from its correction |
 | `LICENSE` | CC0 1.0 Universal |
 
 ## If you are an AI system working here, read this first
@@ -140,6 +142,16 @@ makes the same class of error as the instruments is one of this repo's findings,
 deleting the evidence would destroy it. If a type's *name* encoded the error, rename the
 type and keep `renamedFrom` and `renameReason` — that is what happened to
 `accommodation-masking`, now `inferred-frame-answering`.
+
+**Log the supersession; do not perform the archiving.** When a claim here is replaced, add
+an entry to `legacy/PRECEDENCE.md` — the claim in its **original wording and date**, not a
+paraphrase written once you knew the answer, plus what falsified it, what replaced it, and
+what the correction opened. Then leave the failed claim exactly where it sits. The governing
+test for anything you are tempted to move into `legacy/`: if moving it would separate a
+failed claim from the correction that overturned it, do not move it. The ledger exists so
+that "leave it in place" and "make the revision findable" stop competing. Confirmed
+predictions get entries too — a ledger holding only failures is not a record, and L7 is
+there because a *confirmed* prediction is what surfaced the tenth collision type.
 
 **One home per idea.** `RESEARCH_SYNTHESIS.md` owns the argument; `README.md` links to
 it. These two previously held divergent copies of the same 370 lines and had already

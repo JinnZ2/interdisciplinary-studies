@@ -597,6 +597,10 @@ Both items were answered. Scoring below is against the predictions as committed,
 the ones that failed. Records are in `collisions.js` as `ultimatum-minimum-offer` and
 `rotter-locus-of-control`, both flagged `contaminated: true`.
 
+These two items are entries L6 and L7 in [legacy/PRECEDENCE.md](legacy/PRECEDENCE.md), which
+logs every claim this repo has made and replaced — including the framing corrections above,
+which were not pre-registered and are harder to find from inside this document.
+
 ### Item 1 result — the selection effect is worse than stated
 
 **Predicted:** a scorable answer; reasoning that is not fairness-as-norm and is invisible
@@ -837,4 +841,4 @@ this evidence they are not separable and should be merged.
 
 ---
 
-*Last updated: 2026-08-12*
+*Last updated: 2026-08-14*
