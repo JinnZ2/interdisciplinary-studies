@@ -28,6 +28,8 @@ code is `widget.html`, a single self-contained page.
 | `collisions.js` | The collision records, machine-readable |
 | `widget.html` | The interactive systems map (presentation only) |
 | `data.js` | **The dataset.** Domains, the 30 relationships with their evidence tags, the feedback loop, the tensions |
+| `DOMAINS.md` | The population the six domains were selected from, the four coordinates a cross-domain claim needs, and why there is no 2,786-node widget |
+| `domains.js` | 2,786 domains across nineteen carvings, plus seven named gaps. **Read the naming rule in its header before adding anything** |
 | `validate.mjs` | `node validate.mjs` — dataset integrity and evidence-link checks |
 | `legacy/PRECEDENCE.md` | **The revision ledger.** Every claim made, tested, and replaced, in the wording as committed — the hypothesize/run/falsify/edit/rerun cycle end to end |
 | `legacy/README.md` | What may be filed in `legacy/`, and the rule against moving a failed claim away from its correction |
@@ -126,6 +128,16 @@ conclusion the sources do not support.
 notes for a reason. If a claim needs a source and you do not have one, mark it rather
 than inventing a plausible-looking reference. Fabricated citations are the single
 worst failure mode available in this repo.
+
+**Adding a domain.** `domains.js` names every entry in ordinary English or as a plain
+descriptive phrase. Never coin a foreign-looking term, and never name a domain after a
+people or a named tradition — a plausible-looking borrowed term is a fabricated citation
+in different clothes, and it is harder to catch than a fake reference because nothing about
+it looks like a claim. "Reading water depth by sound" describes without attributing, which
+is the whole trick. The seven entries in `gaps` are content and `validate.mjs` fails if they
+are removed: an enumeration with no gaps section asserts a completeness it cannot have. Do
+not pad the smaller carvings to make the institutional-academic one look less dominant —
+that ratio is the measurement.
 
 **Adding a collision.** When a new primary-source response collides with an instrument or
 a category, add a record to `collisions.js` with all three voices filled in, classify it

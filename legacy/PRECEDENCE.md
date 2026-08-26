@@ -4,8 +4,8 @@ Every claim this repository has made and put to the test — the ones that were 
 the ones that held. Nothing here is retracted. A superseded claim carries precedence: it
 records what was tried, in what words, on what date, and what it took to overturn it.
 
-Eight to date: five falsified outright, one renamed because the name itself carried the
-error, one half right, one confirmed.
+Nine to date: five falsified outright, one renamed because the name itself carried the
+error, one half right, one confirmed, and one that held and was made countable.
 
 Written because the loop was previously legible only to someone who had read all six
 documents and the commit log. For what belongs in this folder and what must stay where it
@@ -372,6 +372,59 @@ assert.
 **Rerun.** The scheme remains falsifiable by construction: a collision fitting none of the
 eleven breaks it. Per [CLAUDE.md](../CLAUDE.md), such a collision is to be reported as a
 finding, not forced into the nearest type.
+
+---
+
+### L9 — A six-node graph falsifies its subject
+
+| | |
+|---|---|
+| **Committed** | 2026-08-12, `58b3d80`, as the widget's caveat panel |
+| **Status** | **Quantified** 2026-08-14 — not falsified, and no longer an assertion |
+
+**Claim.** The caveat panel states that single-channel instruments falsify multi-channel
+reality, "which is what a six-node graph does to this subject." Committed as prose, with
+nothing behind it but the argument in two other documents.
+
+**Run.** Enumerated the population the six domains were selected from —
+[`domains.js`](../domains.js), 2,786 domains across nineteen carvings — and had
+`validate.mjs` compute the coverage from the data rather than stating it.
+
+**Result.** The claim holds and is now a number. The widget covers **15 of 3,879,505**
+possible domain pairs: **0.0004%**. Recomputed on every validator run, so it cannot drift
+away from the file it describes.
+
+**Edit.** None to the caveat panel — it was right. What changed is that the insufficiency
+is now *located* rather than general. Two of the four coordinates a cross-domain claim
+needs are collapsed to a point in `data.js`, silently: every domain is from the
+institutional-academic carving, and every edge is stated at the timescale institutional
+publication runs on.
+
+**What it opened.**
+
+- **A candidate mechanism for open question zero.** Fifteen pairs fit on a screen; 3.9
+  million do not, at any budget. Tractability is therefore *sufficient* to explain the
+  exclusion with nobody acting in bad faith. It is not thereby shown to be the actual
+  reason, and the other four candidates are untouched — but any competing account now has
+  to beat it.
+- **A checkable prediction that follows.** If tractability is what did the work, the
+  excluded domains should be the ones expensive to render — no citation trail, no standard
+  vocabulary, no department — rather than the ones that are unimportant. Untested.
+- **The next map is a slice, not a bigger graph.** Rendering 3.9 million edges would mean
+  asserting 3.9 million relations, which is category surplus at industrial volume. Varying
+  coordinate 3 on a small slice is the useful move.
+- **A measurement in the file's own shape**, and a caveat on it. The
+  institutional-academic carving is 627 domains, two and a half times the next largest —
+  but the non-academic carvings are ~100–150 each because that is the size aimed at, not
+  because they ran dry. The honest claim is about the marginal cost of the next entry, not
+  the totals. Recorded as the `granularity-arbitrary` gap.
+
+**Rerun.** The coverage figure recomputes on every `node validate.mjs`. The prediction
+about which domains get excluded has not been tested.
+
+**Superseded text lives in.** Nothing superseded — the caveat panel stands unchanged in
+[`widget.html`](../widget.html). Logged here because the ledger records claims put to the
+test, and a claim that survives being made countable is one of them.
 
 ---
 

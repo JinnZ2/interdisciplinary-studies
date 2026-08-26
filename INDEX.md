@@ -22,6 +22,8 @@ guide, start at **[README.md](README.md)**. For the argument itself, go to
 | [widget.html](widget.html) | Code | Interactive systems map: domain view, the §7 feedback loop, and the §8 tensions. No build step, no dependencies |
 | [data.js](data.js) | Data | The dataset — 30 relationships, each with its confidence, kind of evidence, and a link to the section that argues it |
 | [validate.mjs](validate.mjs) | Code | `node validate.mjs` — checks the dataset's integrity and that every evidence link resolves |
+| [DOMAINS.md](DOMAINS.md) | Enumeration | The population the six domains were selected from — 2,786 domains, nineteen carvings, and the coverage arithmetic that turns the widget's caveat into a number |
+| [domains.js](domains.js) | Data | The domain list itself, grouped by carving, with seven named gaps |
 | [legacy/PRECEDENCE.md](legacy/PRECEDENCE.md) | Ledger | Every claim this repo has made, tested, and replaced — the wording as committed, what falsified it, and what the correction opened |
 | [legacy/README.md](legacy/README.md) | Charter | What the legacy folder is for, and the rule against moving a failed claim away from its correction |
 | [CLAUDE.md](CLAUDE.md) | Instructions | Operating rules for AI systems and contributors working in this repo |
@@ -42,6 +44,11 @@ ONTOLOGICAL_COLLISIONS → the nine records in collisions.js
 
 **If you are an AI system reading this repo:**
 CLAUDE.md → ONTOLOGICAL_COLLISIONS §For AI systems → §Opacity of other minds
+
+**If you want to know how much the six domains leave out:**
+[DOMAINS.md](DOMAINS.md) — 2,786 domains across nineteen carvings. The widget covers
+fifteen of 3,879,505 possible pairs, which is 0.0004%, and gives open question zero a
+mechanism that can be argued with.
 
 **If you want to know what this repo got wrong, and what being wrong bought:**
 [legacy/PRECEDENCE.md](legacy/PRECEDENCE.md) — eight claims made and tested, six of which

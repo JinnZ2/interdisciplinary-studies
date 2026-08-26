@@ -3,6 +3,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const D = require('./data.js');
 const C = require('./collisions.js');
+const G = require('./domains.js');
 
 // GitHub's heading slugs: lowercase, drop punctuation, then map each remaining
 // space to one hyphen (so " & " becomes a double hyphen — do not collapse).
@@ -134,5 +135,72 @@ else {
   }
   console.log('framing questions on record:', C.practitionerFraming.questionsRaised.length);
 }
+
+/* ---------------------------------------------------------------- *
+ * domains.js
+ *
+ * The point of these checks is the last three lines of output. The
+ * widget's caveat panel claims a six-node graph falsifies its subject;
+ * the coverage figure is that claim as arithmetic, recomputed from the
+ * data on every run so it cannot drift away from the file it describes.
+ * ---------------------------------------------------------------- */
+const carvingIds = new Set();
+const domainNames = new Map();
+
+for (const c of G.carvings) {
+  if (carvingIds.has(c.id)) { console.log('DUPLICATE carving id', c.id); bad++; }
+  carvingIds.add(c.id);
+
+  // A carving without `cut` and `note` is a bare list. The note has to say
+  // what the carving hides as well as what it shows, or the file becomes a
+  // taxonomy that forgets it is one.
+  for (const f of ['name', 'cut', 'note']) {
+    if (!c[f] || !c[f].trim()) { console.log('MISSING', f, 'in carving', c.id); bad++; }
+  }
+  if (!c.domains.length) { console.log('EMPTY carving', c.id); bad++; }
+
+  for (const n of c.domains) {
+    if (typeof n !== 'string' || !n.trim()) { console.log('BAD domain entry in', c.id); bad++; continue; }
+    // Names are lowercase so that nothing is elevated by capitalization.
+    // Acronyms (MIG, PFAS) and forms like "pH" are left alone; only Title
+    // Case is a real inconsistency.
+    if (n.split(' ').some(w => /^[A-Z][a-z]/.test(w))) {
+      console.log('TITLE-CASED domain:', n, 'in', c.id); bad++;
+    }
+    if (domainNames.has(n)) { console.log('DUPLICATE domain:', n, `[${domainNames.get(n)} + ${c.id}]`); bad++; }
+    else domainNames.set(n, c.id);
+  }
+}
+
+// Gaps are content, not a disclaimer. A file that lost them would be
+// asserting the enumeration is complete, which it cannot be.
+if (!(G.gaps || []).length) { console.log('MISSING gaps — an unqualified enumeration claims completeness'); bad++; }
+for (const g of G.gaps || []) {
+  for (const f of ['id', 'absence', 'why', 'consequence']) {
+    if (!g[f] || !g[f].trim()) { console.log('MISSING', f, 'in gap', g.id || '(unnamed)'); bad++; }
+  }
+}
+
+const N = domainNames.size;
+const pairs = N * (N - 1) / 2;
+const widgetEdges = Object.values(D.connections).flat().length;
+const widgetPairs = D.domains.length * (D.domains.length - 1) / 2;
+
+console.log('\ncarvings:', G.carvings.length);
+console.log('domains:', N);
+console.log('named gaps:', G.gaps.length);
+console.log('by carving:', Object.fromEntries(G.carvings.map(c => [c.id, c.domains.length])));
+
+// The institutional-academic share is the WEIRD sampling frame as a row
+// count. It is reported, not corrected — padding the other carvings to
+// balance it would hide the measurement rather than fix it.
+const inst = G.carvings.find(c => c.id === 'institutional-academic');
+if (inst) {
+  console.log('institutional-academic share:', (inst.domains.length / N * 100).toFixed(1) + '%');
+}
+
+console.log('\ncross-domain pairs at this scale:', pairs.toLocaleString('en-US'));
+console.log('pairs the widget renders:', widgetPairs, `(${widgetEdges} directed edges)`);
+console.log('coverage:', (widgetPairs / pairs * 100).toExponential(3) + '%');
 
 console.log(bad ? `\n${bad} PROBLEM(S)` : '\nAll checks passed');
